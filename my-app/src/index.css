@@ -1,0 +1,16 @@
+/* Predefined properties*/
+:root {
+  --colorBg: #FDDC9B;
+  --colorNavBar: #F63522;
+  --colorBoxBg: #FFF2Ec;
+  --colorBrown: #693B17;
+  --colorYellow: #FAC74F;
+  --logotypeFont: 'Chewy', sans-serif;
+  --principalFont: 'Alegreya Sans', sans-serif;
+}
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
