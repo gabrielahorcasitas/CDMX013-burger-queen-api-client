@@ -9,7 +9,7 @@ function Admin() {
   return (
     <div className="admin">
      <h1>Admin view</h1>
-     <button className='goBack' onClick= {handleNavigate}>Go back</button>
+     <button className='goBack' onClick= {handleNavigate}>Log Out</button>
     </div>
   );
 }
