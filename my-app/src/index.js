@@ -5,6 +5,7 @@ import LoginView from './components/Login/LoginView';
 import Admin from './components/Admin/AdminView';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import Waiters from './components/Waiters/WaitersLayout';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/Admin",
     element: <Admin/>,
+  },
+  {
+    path: "/Waiters",
+    element: <Waiters/>,
   },
   
 ]);
