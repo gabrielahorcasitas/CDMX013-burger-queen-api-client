@@ -1,0 +1,69 @@
+/* Predefined properties*/
+:root {
+    --colorBg: #FDDC9B;
+    --colorNavBar: #F63522;
+    --colorBoxBg: #FFF2Ec;
+    --colorBrownTables: #693B17;
+    --colorBrown: #773F2F;
+    --colorYellow: #FAC74F;
+    --colorWhiteish: #FFFEEC;
+    --logotypeFont: 'Chewy';
+    --principalFont: 'Alegreya Sans', sans-serif;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+#root {
+    width: 113rem;
+    height: 75rem;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0.1rem solid var(--colorBrownTables);
+    border-radius: 0.5rem;
+    width: 10.1rem;
+    height: 5rem;
+    font-size: 4rem;
+}
+.count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.9rem;
+    height: 4.7rem;
+    background-color: var(--colorBg);
+    color: var(--colorBrownTables);
+   
+   
+}
+.increment, .decrement {
+    display: flex;
+    justify-content: center;
+    border: none;
+    width: 3.4rem;
+    height: 5rem;
+    background-color: var(--colorBrownTables);
+    color: var(--colorWhiteish);
+   
+}
+.increment {
+    border-radius: 0.2rem 0 0 0.2rem;
+}
+.decrement {
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+.tableMenu {
+    width: 42rem;
+    height: 64rem;
+    background-color: var(--colorBoxBg);
+    border: 0.5rem solid var(--colorNavBar);
+    font-family: var(--principalFont);
+    font-size: 3.2rem;
+}

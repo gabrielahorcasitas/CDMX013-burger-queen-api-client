@@ -6,6 +6,7 @@ import Admin from './components/Admin/AdminView';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Waiters from './components/Waiters/WaitersLayout';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
   {
     path: "/Waiters",
     element: <Waiters/>,
+    loader:({request,params}) => {
+      return axios.get('https://6372d80a348e947299fdd17b.mockapi.io/products').then(response =>{
+        return response.data;
+      })
+    }
   },
   
 ]);

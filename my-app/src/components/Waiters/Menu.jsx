@@ -9,7 +9,7 @@ function Menu({products}){
   });
 
   return (
-    <table>
+    <table className="tableMenu">
     <thead>
       <tr>
         <th>Name</th>
