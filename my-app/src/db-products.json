@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "_id 1",
+    "name": "Coffe",
+    "price": 4,
+    "product": "1",
+    "qty": 2
+  },
+  {
+    "_id": "_id 2",
+    "name": "Sandwich",
+    "price": 89,
+    "product": "2",
+    "qty": 3
+  },
+  {
+    "_id": "_id 3",
+    "name": "Burger",
+    "price": 33,
+    "product": "3",
+    "qty": 5
+  },
+  {
+    "_id": "_id 4",
+    "name": "Juice",
+    "price": 81,
+    "product": "4",
+    "qty": 2
+  }
+]

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function Form () {
 let navigate = useNavigate();
   function handleClick() {
-    navigate("/Admin");
+    navigate("/Waiters");
   }
     return (
         <form className="form-box">
