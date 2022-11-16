@@ -121,6 +121,7 @@ table {
     width: 7rem;
     height: 7rem;
     align-self: center;
+    cursor: pointer;
  }
  .log-out{
     margin-bottom: 2rem;
@@ -129,4 +130,6 @@ table {
  width: 4.8rem;
  height: 4.2rem;
  align-self: center;
+ cursor: pointer;
+
  }

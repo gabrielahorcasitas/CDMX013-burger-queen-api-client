@@ -12,6 +12,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginView/>,
+    loader:({request,params}) => {
+      return axios.get('https://6372d80a348e947299fdd17b.mockapi.io/users').then(response =>{
+        return response.data;
+      })
+    }
   },
   {
     path: "/Admin",
