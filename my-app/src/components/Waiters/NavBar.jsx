@@ -22,15 +22,24 @@ function NavBar() {
           ></img>
           <img className="queen-letters" src={Queen} alt="queen-letters"></img>
         </div>
-        <img className="new-order" 
-        src={plus}
-        alt="new-order"></img>
-        <img className="ready"
-        src={check}
-        alt="ready"></img>
-        <img className="log-out" 
-        src={logout}
-        alt="log-out" onClick = {handleNavigate} ></img>
+          <div className= "menu-btns-box">
+            <img className="new-order" 
+            src={plus}
+            alt="new-order"></img>
+            <label className='menu-letters'>New Order</label>
+          </div>
+          <div className= "menu-btns-box">
+            <img className="ready"
+            src={check}
+            alt="ready"></img>
+            <label className='menu-letters'>Ready</label>
+          </div>
+          <div className= "menu-btns-box" id="log-out-box">
+            <img className="log-out" 
+            src={logout}
+            alt="log-out" onClick = {handleNavigate} ></img>
+            <label className='menu-letters'>Log Out</label>
+          </div>
       </div>
     </>
   );
