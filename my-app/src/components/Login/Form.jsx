@@ -1,18 +1,25 @@
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 function Form () {
 let navigate = useNavigate();
-  function handleClick(e) {
+  
+  const [text, setText] = useState('');
+  const handleInputChange = ({target}) => {
+    setText(target.value)
+  }
+  const handleSubmit= (e) => {
     e.preventDefault();
     navigate("/waiters");
+    console.log(text);
   }
     return (
-        <form className="form-box">
+        <form className="form-box" onSubmit={handleSubmit} >
             <label id="logIn-logo">Log In</label>
             <span className="fields-form">Email</span>
                 <input
                     className="input-form"
                     placeholder="email"
+                    value={text} onChange={handleInputChange}
                     type="text"
                 />
             <span className="fields-form">Password</span>
@@ -21,7 +28,7 @@ let navigate = useNavigate();
                     placeholder="password"
                     type="text"
                 />
-         <button id="start" onClick={handleClick}>Start</button>
+         <button id="start"  type= 'submit'>Start</button>
         </form>
     )
 }
