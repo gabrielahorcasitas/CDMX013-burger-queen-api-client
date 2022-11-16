@@ -5,14 +5,14 @@ function Menu({products}){
   const rows = [];
 
   products.forEach(product => {
-    rows.push(<Item product={product} key={product._id} />)
+    rows.push(<Item product={product} key={product.id} />)
   });
 
   return (
     <table className="tableMenu">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Menu</th>
       </tr>
     </thead>
     <tbody>{rows}</tbody>

@@ -1,14 +1,16 @@
-
 import Menu from "./Menu";
+import NavBar from "./NavBar";
 import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 
-
-function Waiters(){
+function WaitersLayout(){
   const products= useLoaderData();
   return (
-   <Menu products={products}/>
+    <>
+    <NavBar/>
+    <Menu products={products}/>
+    </>
   )
 }
 
-export default Waiters;
+export default WaitersLayout;
