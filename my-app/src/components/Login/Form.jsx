@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 function Form () {
 let navigate = useNavigate();
-  function handleClick() {
-    navigate("/Waiters");
+  function handleClick(e) {
+    e.preventDefault();
+    navigate("/waiters");
   }
     return (
         <form className="form-box">
