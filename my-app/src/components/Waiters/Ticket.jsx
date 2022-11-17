@@ -1,7 +1,7 @@
+import ItemTicket from "./ItemTicket";
 
-
-function Ticket({text, productQty}){
-    const products = Object.entries(productQty);
+function Ticket({text, productQty, products}){
+    const productsEntries = Object.entries(productQty);
 
     return (
         <table className="tableTicket">
@@ -11,15 +11,27 @@ function Ticket({text, productQty}){
             </tr>
             </thead>
             <tbody className="ticket-body">
-                {products.map(product => {
+                {  products.map(item =>{
+                    return productsEntries.map(product => {
                     const productName = product[0];
                     const productQty = product[1];
+                    const itemPrice = item.price*productQty;
 
                     if(productQty === 0){
                         return null;
                     }
-                    return <div key={productName}> {productName} {productQty}</div>
-                })}
+
+                    if(productName === item.name){
+                    
+                        return <ItemTicket key={productName} product={productName} quantity={productQty}  price={itemPrice}/>
+                    }
+                    
+                    return null;
+                })
+                }
+                )}
+                    
+                   
                 <div className="ticket-total-box">
                 <label className="ticket-total">Total  $</label>
                 </div>

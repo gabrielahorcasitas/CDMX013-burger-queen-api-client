@@ -1,14 +1,11 @@
 
-function ItemTicket({product}){
+function ItemTicket({product, quantity, price}){
  
   return(
     <tr>
       <td>{product}</td>
-      <td><div className="buttonDelete">
-      <button className="increment" >
-       x
-      </button>
-      </div></td>
+      <td>x{quantity}</td>
+      <td>${price}</td>
     </tr>
   )
 }
