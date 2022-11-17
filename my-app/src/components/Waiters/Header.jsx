@@ -3,11 +3,17 @@ import bfNoClick from '../../images/bfNoClick.png'
 import dinnerClick from '../../images/dinnerClick.png'
 import dinnerNoClick from '../../images/dinnerNoClick.png'
 
-function Header(){
+
+function Header ({text, setText}){
 
    /* if(onClick en img de botones de hora){
     cambiar src
    }*/
+   
+   const handleInputChange = ({target}) => {
+    setText(target.value)
+   }
+
     return (
         <>
             <header>
@@ -15,7 +21,10 @@ function Header(){
                     <label className="choose-table-letter">Table: </label>
                     <input
                         className="input-table"
-                        type="text">
+                        type="text"
+                        value={text} onChange={handleInputChange}
+                        >
+                        
                     </input>
                 </div>
                 <div className="menu-hour-bottons">
@@ -37,7 +46,7 @@ function Header(){
 
                     </div>
                 </div>
-                <label className="role-letters">Waiters</label>;
+                <label className="role-letters">Waiters </label>;
             </header>
         </>
     )

@@ -1,11 +1,11 @@
 
 
-function Ticket(){
+function Ticket({text}){
     return (
         <table className="tableTicket">
             <thead className="table-ticket-header">
             <tr>
-                <th>Ticket - Table </th>
+                <th>Ticket Table #{text}</th>
             </tr>
             </thead>
             <tbody className="ticket-body">
