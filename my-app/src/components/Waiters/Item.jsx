@@ -1,22 +1,21 @@
-import {useState} from "react";
 
-function Item({product}){
-  const [count, setCount] = useState(0);
+function Item({product, productQty, setProductQty}){
 
   function increment() {
-    setCount(count + 1);
+    setProductQty({...productQty,[product.name]: productQty[product.name] + 1 });
   }
   function decrement() {
-    setCount(count - 1);
+    setProductQty({...productQty,[product.name]: productQty[product.name] - 1 <0 ? 0: productQty[product.name] - 1 });
   }
   return(
     <tr>
       <td>{product.name}</td>
+      <td >${product.price}</td>
       <td><div className="buttonBox">
       <button className="increment" onClick={increment}>
        +
       </button>
-      <div className="count">{count}</div>
+      <div className="count">{productQty[product.name]}</div>
       <button className="decrement" onClick={decrement}>
        -
       </button></div></td>
