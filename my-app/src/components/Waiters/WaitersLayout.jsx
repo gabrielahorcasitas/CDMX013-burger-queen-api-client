@@ -27,7 +27,8 @@ function WaitersLayout(){
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={products} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={products}/>
+    <Ticket text={text} productQty={productQty} products={products} />
+   
     </div>
     </div>
     </>

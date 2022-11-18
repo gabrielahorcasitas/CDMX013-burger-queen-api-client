@@ -236,12 +236,13 @@ header{
     width: 4.3rem;
     height: 4.3rem;
 }
+
 .menu-dinner{
     width: 4rem;
     height: 4rem;
 }
 
-.menu-bf-box, .menu-dinner-box{
+.menu-bf-box, .menu-dinner-box, .menu-bf-box-off, .menu-dinner-box-off {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,6 +252,10 @@ header{
     border: 0.2rem solid var(--colorNavBar);
 
 }
+.menu-bf-box-off{
+    background-color: var(--colorWhiteish);
+    border-radius: 0.6rem 0 0 0.6rem;
+}
 
 .menu-bf-box{
     background-color: var(--colorNavBar);
@@ -258,11 +263,14 @@ header{
 }
 
 .menu-dinner-box{
-    background-color: var(--colorBoxBg);
+    background-color: var(--colorNavBar);
     border-radius: 0 0.6rem 0.6rem 0;
 }
-
-.bf-letters, .dinner-letters{
+.menu-dinner-box-off{
+    background-color: var(--colorWhiteish);
+    border-radius: 0 0.6rem 0.6rem 0;
+}
+.bf-letters, .dinner-letters, .bf-letters-off, .dinner-letters-off {
     font-size: 2rem;
     font-family: 'Chewy', cursive;
 }
@@ -270,11 +278,15 @@ header{
 .bf-letters{
     color: var(--colorBoxBg);
 }
-
-.dinner-letters{
+.bf-letters-off{
     color: var(--colorNavBar);
 }
-
+.dinner-letters{
+    color: var(--colorWhiteish);
+}
+.dinner-letters-off{
+    color:var(--colorNavBar)
+}
 .tables-menu-ticket{
     display: flex;
     flex-direction: row;

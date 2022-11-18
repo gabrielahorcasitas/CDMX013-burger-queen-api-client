@@ -1,11 +1,15 @@
 import ItemTicket from "./ItemTicket";
-import { useState } from "react";
 
-function Ticket({text, productQty, products}){
+
+
+function Ticket({text, productQty, products, visibility, setVisibility}){
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
+    
+
     return (
+        <>
         <table className="tableTicket">
             <thead className="table-ticket-header">
             <tr>
@@ -43,6 +47,7 @@ function Ticket({text, productQty, products}){
                 </div>
             </tbody>
         </table>
+        </>
     )
 }
 
