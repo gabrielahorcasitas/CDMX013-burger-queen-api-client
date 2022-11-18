@@ -2,7 +2,7 @@ import ItemTicket from "./ItemTicket";
 
 
 
-function Ticket({text, productQty, products, visibility, setVisibility}){
+function Ticket({text, productQty, products, openConfirmOrder}){
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
@@ -42,7 +42,7 @@ function Ticket({text, productQty, products, visibility, setVisibility}){
                 <label className="ticket-total">Total  ${total}</label>
                 </div>
                 <div className="confirm-order-buttons">
-                    <button className="button-confirm-order">Confirm</button>
+                    <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
                     <button className="button-cancel-order">Cancel</button>
                 </div>
             </tbody>
