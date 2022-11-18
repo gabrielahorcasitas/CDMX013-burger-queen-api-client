@@ -69,11 +69,13 @@
 .tableMenu {
     width: 42rem;
     height: 64rem;
-    background-color: var(--colorBoxBg);
+    background-color: var(--colorWhiteish);
     border: 0.5rem solid var(--colorNavBar);
     border-radius: 2rem;
+    font-weight: bold;
     font-family: var(--principalFont);
-    font-size: 10rem;
+    color: var(--colorBrown);
+    font-size: 15rem;
     margin-top: 2rem;
     margin-left: 5rem;
 
@@ -281,11 +283,13 @@ header{
 .tableTicket {
     width: 42rem;
     height: 64rem;
-    background-color: var(--colorBoxBg);
+    background-color: var(--colorWhiteish);
     border: 0.5rem solid var(--colorBrown);
     border-radius: 2rem;
+    font-weight: bold;
     font-family: var(--principalFont);
-    font-size: 10rem;
+    color: var(--colorBrown);
+    font-size: 15rem;
     margin-top: 2rem;
     margin-left: 5rem;
 
@@ -326,12 +330,14 @@ header{
     width: 42rem;
     display: flex;
     justify-content: flex-end;
+    padding-right: 3.5rem;
 }
 
 .ticket-total{
     color:var(--colorBrown);
     font-family: 'Chewy', cursive;
     font-size: 3.6rem;
+    border-top: solid;
 }
 
 .ticket-body{
