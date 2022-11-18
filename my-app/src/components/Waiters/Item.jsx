@@ -5,7 +5,7 @@ function Item({product, productQty, setProductQty}){
     setProductQty({...productQty,[product.name]: productQty[product.name] + 1 });
   }
   function decrement() {
-    setProductQty({...productQty,[product.name]: productQty[product.name] - 1 });
+    setProductQty({...productQty,[product.name]: productQty[product.name] - 1 <0 ? 0: productQty[product.name] - 1 });
   }
   return(
     <tr>
