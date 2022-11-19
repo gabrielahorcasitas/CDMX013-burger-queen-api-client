@@ -1,10 +1,28 @@
+/* Predefined properties*/
+:root {
+    --colorBg: #FDDC9B;
+    --colorNavBar: #F63522;
+    --colorBoxBg: #FFF2Ec;
+    --colorBrownTables: #693B17;
+    --colorBrown: #773F2F;
+    --colorYellow: #FAC74F;
+    --colorWhiteish: #FFFEEC;
+    --logotypeFont: 'Chewy';
+    --principalFont: 'Alegreya Sans', sans-serif;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
 .modal {
     position: fixed;
     z-index: 999;
     top: 0;
     left: 0;
-    width: 100%;
-    min-height: 100vh;
+    width: 113rem;
+    height: 75rem;
     background-color: rgba(0, 0, 0, 0.75);
     display: none;
     justify-content: center;
@@ -12,16 +30,55 @@
   }
   
   .modal-container {
-    position: relative;
     padding: 1rem;
-    min-width: 320px;
-    max-width: 480px;
-    min-height: 200px;
-    max-height: 600px;
-    overflow-y: auto;
-    background-color: #fff;
+    width: 40rem;
+    height: 21rem;
+    background-color: var(--colorNavBar);
+    border-radius: 1.5rem;
+    
   }
   
   .modal.is-open {
     display: flex;
+    justify-content: center;
+   
+  }
+  .buttons-container{
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  .check{
+    display: flex;
+   width: 7.8rem;
+   height: 5rem;
+   border-radius: 1.5rem;
+   background-color: #48BF53  ;
+   align-items: center;
+   justify-content: center;
+   
+  }
+  .close{
+    display: flex;
+    width: 7.8rem;
+    height: 5rem;
+    border-radius: 1.5rem;
+    background-color: var(--colorWhiteish);
+    align-items: center;
+    justify-content: center;
+  }
+  .confirm-msg{
+    font-family: var(--principalFont);
+    font-weight: bold;
+    font-size: 3.6rem;
+    color: var(--colorWhiteish);
+
+  }
+  .confirm-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+    
   }

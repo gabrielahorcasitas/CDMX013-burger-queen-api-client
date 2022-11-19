@@ -6,8 +6,8 @@ function Modals ({isOpenConfirmOrder, closeConfirmOrder}){
     console.log(closeConfirmOrder);
     return(
         <Modal isOpenConfirmOrder= {isOpenConfirmOrder} closeConfirmOrder= {closeConfirmOrder} >
-            <div >
-            <label className="confirm-msg"></label>
+            <div className='confirm-container'>
+            <label className="confirm-msg">Is the order ready to be sent to the kitchen?</label>
             <div className="buttons-container">
                 <div className="check">
                     <img className='img-confirm-order'
@@ -16,10 +16,9 @@ function Modals ({isOpenConfirmOrder, closeConfirmOrder}){
                 <div className="close">
                     <img className='img-noconfirm-order'
                     alt='noconfirm-order'
-                    src={close}></img></div>
+                    src={close}
+                    onClick={closeConfirmOrder}></img></div>
             </div>
-        
-            <h1>Modals</h1>
         </div>
         </Modal>
         

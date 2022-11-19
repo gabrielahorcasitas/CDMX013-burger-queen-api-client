@@ -79,6 +79,7 @@
     margin-top: 2rem;
     margin-left: 5rem;
 
+
 }
 
 .container-bar{
@@ -130,14 +131,26 @@ table {
 .menu-table-body{
     display: flex;
     flex-direction: column;
+    min-height: 46rem;
+    max-height:  46rem; 
+    overflow-y: scroll;
 }
 
 .burger-logo-menu{
-    align-self: flex-end;
-    width: 12.6rem;
-    height: 12.4rem;
+    width: 8rem;
+    height: 8rem;
 }
-
+.container-logo-burger{
+    display: flex;
+    justify-content: flex-end;
+    width: 42rem;
+    margin-top: 0;
+}
+.logo-table-box{
+    width: 42rem;
+    height: 8rem;
+    bottom: 0.1rem;
+}
  .new-order,.log-out  {
     width: 7rem;
     height: 7rem;
