@@ -1,15 +1,10 @@
-import bfClick from '../../images/bfClick.png'
-import bfNoClick from '../../images/bfNoClick.png'
-import dinnerClick from '../../images/dinnerClick.png'
-import dinnerNoClick from '../../images/dinnerNoClick.png'
-
+import Menubuttons from "./Menubuttons";
 
 function Header ({text, setText}){
 
    /* if(onClick en img de botones de hora){
     cambiar src
    }*/
-   
    const handleInputChange = ({target}) => {
     setText(target.value)
    }
@@ -23,29 +18,10 @@ function Header ({text, setText}){
                         className="input-table"
                         type="text"
                         value={text} onChange={handleInputChange}
-                        >
-                        
+                        >  
                     </input>
                 </div>
-                <div className="menu-hour-bottons">
-                    <div className='menu-bf-box'>
-                        <img 
-                        className="menu-bf"
-                        src= {bfClick}
-                        alt="Breakfast-button">
-                        </img>
-                        <label className='bf-letters'>Breakfast</label>
-                    </div>
-                    <div className='menu-dinner-box'>
-                        <img 
-                        className="menu-dinner"
-                        src={dinnerNoClick}
-                        alt="Dinner-button">
-                        </img>
-                        <label className='dinner-letters'>Dinner</label>
-
-                    </div>
-                </div>
+                <Menubuttons/>
                 <label className="role-letters">Waiters </label>;
             </header>
         </>

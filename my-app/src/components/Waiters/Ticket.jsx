@@ -1,11 +1,15 @@
 import ItemTicket from "./ItemTicket";
-import { useState } from "react";
 
-function Ticket({text, productQty, products}){
+
+
+function Ticket({text, productQty, products, openConfirmOrder}){
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
+    
+
     return (
+        <>
         <table className="tableTicket">
             <thead className="table-ticket-header">
             <tr>
@@ -38,11 +42,12 @@ function Ticket({text, productQty, products}){
                 <label className="ticket-total">Total  ${total}</label>
                 </div>
                 <div className="confirm-order-buttons">
-                    <button className="button-confirm-order">Confirm</button>
+                    <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
                     <button className="button-cancel-order">Cancel</button>
                 </div>
             </tbody>
         </table>
+        </>
     )
 }
 
