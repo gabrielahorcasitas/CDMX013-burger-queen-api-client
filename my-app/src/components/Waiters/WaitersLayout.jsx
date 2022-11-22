@@ -13,16 +13,14 @@ function WaitersLayout(){
 
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
-  console.log(closeConfirmOrder);
   const [productQty, setProductQty] = useState(()=>{
     const quantities = {}
     products.forEach(product => {
       quantities[product.name] = 0
     })
     return quantities;
-  }
-    );
-
+  });
+    console.log(productQty);
   return (
     <>
     <NavBar/>
@@ -30,7 +28,7 @@ function WaitersLayout(){
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={products} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={products} openConfirmOrder={openConfirmOrder}/>
+    <Ticket text={text} productQty={productQty} products={products} openConfirmOrder={openConfirmOrder} setProductQty={setProductQty}/>
     <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} />
    
     </div>
