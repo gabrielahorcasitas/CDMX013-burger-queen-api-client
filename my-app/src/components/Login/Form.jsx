@@ -6,7 +6,7 @@ let navigate = useNavigate();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [login, setLogin] = useState(false);
+  const [errorCredentials, changeCredentials] = useState(null);
 
   const handleEmailChange = ({target}) => {
     setEmail(target.value)
@@ -19,32 +19,38 @@ let navigate = useNavigate();
   const handleSubmit= (e) => {
     e.preventDefault();
     axios.get('https://6372d80a348e947299fdd17b.mockapi.io/users').then((result) => {
+      let users = true;
       result.data.forEach((user) => {
           if (user.password === password && user.email === email) {
+            users = false;
             const role = user.role;
             switch(role){
               case('admin'):
-                console.log('admin');
+                console.log(users);
                 break;
               case('kitchen'):
-                console.log('kitchen');
+                console.log(users);
                 break;
               case('waiter'):
                 navigate('/waiters');
                 break;
               default:
+                users = true;
                 console.log('no estas registrado');
                 break;
             }
-        } else {
-          console.log('no estás registradox2')
         }
       })
+      console.log(users)
+      changeCredentials(users);
     })
   }
     return (
         <form className="form-box" onSubmit={handleSubmit} >
             <label id="logIn-logo">Log In</label>
+            {errorCredentials && <div className='error'>
+                <p><b>Error: </b> Credenciales Invalidas</p>
+            </div>}
             <span className="fields-form">Email</span>
                 <input
                     className="input-form"
