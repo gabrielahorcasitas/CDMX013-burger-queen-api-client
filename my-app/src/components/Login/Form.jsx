@@ -41,22 +41,21 @@ let navigate = useNavigate();
             }
         }
       })
-      console.log(users)
       changeCredentials(users);
     })
   }
     return (
         <form className="form-box" onSubmit={handleSubmit} >
             <label id="logIn-logo">Log In</label>
-            {errorCredentials && <div className='error'>
-                <p><b>Error: </b> Credenciales Invalidas</p>
-            </div>}
             <span className="fields-form">Email</span>
                 <input
                     className="input-form"
                     placeholder="email"
                     value={email} onChange={handleEmailChange}
                     type="text"
+                    required
+                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
+                    onInput = {e => e.target.setCustomValidity('')}
                 />
             <span className="fields-form">Password</span>
                 <input
@@ -64,7 +63,14 @@ let navigate = useNavigate();
                     placeholder="password"
                     value={password} onChange={handlePasswordChange}
                     type="password"
+                    required
+                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
+                    onInput = {e => e.target.setCustomValidity('')}
                 />
+            {errorCredentials && 
+            <div className='errorMessage'>
+                <p className="messageError">ERROR: Invalid Credentials</p>
+            </div>}
          <button id="start"  type= 'submit'>Start</button>
         </form>
     )
