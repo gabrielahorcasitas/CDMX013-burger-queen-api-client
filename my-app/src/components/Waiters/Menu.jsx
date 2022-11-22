@@ -1,6 +1,5 @@
 import Item from "./Item";
 import burgerMenu from '../../images/burgerMenu.png'
-import {useState} from "react";
 
 function Menu({products, productQty, setProductQty }){
   const rows = [];

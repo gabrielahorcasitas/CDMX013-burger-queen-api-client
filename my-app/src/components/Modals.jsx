@@ -3,7 +3,7 @@ import close from '../../src/images/close.png'
 
 import Modal from './Waiters/Modal.jsx'
 function Modals ({isOpenConfirmOrder, closeConfirmOrder}){
-    console.log(closeConfirmOrder);
+
     return(
         <Modal isOpenConfirmOrder= {isOpenConfirmOrder} closeConfirmOrder= {closeConfirmOrder} >
             <div className='confirm-container'>
