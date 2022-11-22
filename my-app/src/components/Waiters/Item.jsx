@@ -7,7 +7,7 @@ function Item({product, productQty, setProductQty}){
   function decrement() {
     setProductQty({...productQty,[product.name]: productQty[product.name] - 1 <0 ? 0: productQty[product.name] - 1 });
   }
-  console.log(productQty[product.name]);
+  
   return(
     <tr>
       <td>{product.name}</td>

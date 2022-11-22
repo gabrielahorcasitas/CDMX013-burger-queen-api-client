@@ -10,6 +10,12 @@ import { useModal } from "../useModal";
 
 function WaitersLayout(){
   const products= useLoaderData();
+  const bfProducts = products.filter((product) =>{
+    if (product.type === 'breakfast'){
+      return true
+    }
+    return false
+  })
 
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
@@ -20,15 +26,15 @@ function WaitersLayout(){
     })
     return quantities;
   });
-    console.log(productQty);
+ 
   return (
     <>
     <NavBar/>
     <div className="body-new-order">
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
-    <Menu products={products} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={products} openConfirmOrder={openConfirmOrder} setProductQty={setProductQty}/>
+    <Menu products={bfProducts} productQty={productQty} setProductQty={setProductQty}/>
+    <Ticket text={text} productQty={productQty} products={bfProducts} openConfirmOrder={openConfirmOrder} setProductQty={setProductQty}/>
     <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} />
    
     </div>

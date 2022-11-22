@@ -2,9 +2,6 @@ import Menubuttons from "./Menubuttons";
 
 function Header ({text, setText}){
 
-   /* if(onClick en img de botones de hora){
-    cambiar src
-   }*/
    const handleInputChange = ({target}) => {
     setText(target.value)
    }
