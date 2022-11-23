@@ -1,31 +1,39 @@
 import {useState} from 'react';
+import { useSearchParams } from 'react-router-dom';
 import bfClick from '../../images/bfClick.png'
 import bfNoClick from '../../images/bfNoClick.png'
 import dinnerClick from '../../images/dinnerClick.png'
 import dinnerNoClick from '../../images/dinnerNoClick.png'
 
 function Menubuttons (){
-    const [image, setImage ] = useState('false');
+    const [isBreakfast, setBreakfast ] = useState(true);
+    const [searchParams, setSearchParams] = useSearchParams();
     return (
         <div className="menu-hour-bottons">
-        <div className= {image ? 'menu-bf-box': 'menu-bf-box-off'}>
+        <div className= {isBreakfast ? 'menu-bf-box': 'menu-bf-box-off'}>
             <img 
             className="menu-bf"
-            src= {image ? bfClick : bfNoClick}
+            src= {isBreakfast ? bfClick : bfNoClick}
             alt="Breakfast-button" 
-            onClick = {()=> setImage(prevmode => !prevmode)}>
+            onClick = {()=> {
+                !isBreakfast ? setSearchParams("type=breakfast") : setSearchParams("type=dinner");
+                setBreakfast(prevmode => !prevmode)
+            }}>
             
             </img>
-            <label className={image ? 'bf-letters' : 'bf-letters-off'}>Breakfast</label>
+            <label className={isBreakfast ? 'bf-letters' : 'bf-letters-off'}>Breakfast</label>
         </div>
-        <div className={!image ? 'menu-dinner-box': 'menu-dinner-box-off'}>
+        <div className={!isBreakfast ? 'menu-dinner-box': 'menu-dinner-box-off'}>
             <img 
             className="menu-dinner"
-            src={!image ? dinnerClick : dinnerNoClick}
+            src={!isBreakfast ? dinnerClick : dinnerNoClick}
             alt="Dinner-button"
-            onClick = {()=> setImage(prevmode => !prevmode)}>
+            onClick =  {()=> {
+                !isBreakfast ? setSearchParams("type=breakfast") : setSearchParams("type=dinner");
+                setBreakfast(prevmode => !prevmode)
+            }}>
             </img>
-            <label className={!image ? 'dinner-letters' : 'dinner-letters-off'}>Dinner</label>
+            <label className={!isBreakfast ? 'dinner-letters' : 'dinner-letters-off'}>Dinner</label>
 
         </div>
     </div>
