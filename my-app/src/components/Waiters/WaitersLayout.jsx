@@ -7,11 +7,15 @@ import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { useModal } from "../useModal";
+import { useSearchParams } from 'react-router-dom'; 
 
 function WaitersLayout(){
   const products= useLoaderData();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const bfProducts = products.filter((product) =>{
-    if (product.type === 'breakfast'){
+    const type= searchParams.get('type') === null ? 'breakfast' : searchParams.get('type');
+    if (product.type === type){
       return true
     }
     return false
