@@ -25,7 +25,7 @@ function NavBar() {
         </div>
         <NavLink style = {({isActive}) => {
               return {backgroundColor: '#FAC74F'}
-            }} className='menu-letters' to='/waiters/new-order'>
+            }} className='menu-letters' to='/waiters/new_order'>
           <div className= "menu-btns-box">
             <img className="new-order" 
             src={plus}

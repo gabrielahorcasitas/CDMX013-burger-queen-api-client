@@ -50,11 +50,15 @@ function Ticket({text, productQty, products, openConfirmOrder, setProductQty}){
                 <div className="ticket-total-box">
                 <label className="ticket-total">Total  ${total}</label>
                 </div>
-                <div className="confirm-order-buttons">
+              
+            </tbody>
+            <tfoot className="logo-table-box">
+            <tr className="container-ticketbuttons"> 
+             <div className="confirm-order-buttons">
                     <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
                     <button className="button-cancel-order" onClick={resetQty}>Cancel</button>
-                </div>
-            </tbody>
+                </div></tr>
+             </tfoot>
         </table>
         </>
     )
