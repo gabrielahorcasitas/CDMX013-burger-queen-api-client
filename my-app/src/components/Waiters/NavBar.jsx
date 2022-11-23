@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Burger from "../../images/Burger.png";
 import Queen from "../../images/Queen.png";
 import check from "../../images/check.png";
@@ -22,12 +23,16 @@ function NavBar() {
           ></img>
           <img className="queen-letters" src={Queen} alt="queen-letters"></img>
         </div>
+        <NavLink style = {({isActive}) => {
+              return {backgroundColor: '#FAC74F'}
+            }} className='menu-letters' to='/waiters/new-order'>
           <div className= "menu-btns-box">
             <img className="new-order" 
             src={plus}
             alt="new-order"></img>
             <label className='menu-letters'>New Order</label>
           </div>
+          </NavLink>
           <div className= "menu-btns-box">
             <img className="ready"
             src={check}

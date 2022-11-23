@@ -78,8 +78,6 @@
     font-size: 15rem;
     margin-top: 2rem;
     margin-left: 5rem;
-
-
 }
 
 .container-bar{
@@ -108,6 +106,13 @@ tr {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 3rem;
+}
+
+td{
+    font-size: 3rem;
+    width: 14rem;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .table-menu-header{
@@ -185,8 +190,12 @@ table {
     margin-bottom: 2rem;
  }
 
-.menu-btns-box:hover{
+ #log-out-box:hover{
     background-color: var(--colorYellow);
+ }
+
+.menu-btns-box:hover{
+    cursor:pointer;
 }
 
 .body-new-order{
