@@ -2,20 +2,11 @@ import ItemTicket from "./ItemTicket";
 
 
 
-function Ticket({text, productQty, products, openConfirmOrder, setProductQty}){
+function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder}){
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
-    function resetQty() {
-        setProductQty(()=>{
-            const quantities = {}
-            products.forEach(product => {
-              quantities[product.name] = 0
-            })
-            return quantities;
-          }
-        );
-    }
+    
 
     return (
         <>
@@ -56,7 +47,7 @@ function Ticket({text, productQty, products, openConfirmOrder, setProductQty}){
             <tr className="container-ticketbuttons"> 
              <div className="confirm-order-buttons">
                     <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
-                    <button className="button-cancel-order" onClick={resetQty}>Cancel</button>
+                    <button className="button-cancel-order" onClick={/*resetQty*/openCancelOrder}>Cancel</button>
                 </div></tr>
              </tfoot>
         </table>

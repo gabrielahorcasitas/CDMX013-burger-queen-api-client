@@ -7,11 +7,15 @@ import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { useModal } from "../useModal";
+import { useSearchParams } from 'react-router-dom'; 
 
 function WaitersLayout(){
   const products= useLoaderData();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const bfProducts = products.filter((product) =>{
-    if (product.type === 'breakfast'){
+    const type= searchParams.get('type') === null ? 'breakfast' : searchParams.get('type');
+    if (product.type === type){
       return true
     }
     return false
@@ -19,6 +23,7 @@ function WaitersLayout(){
 
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
+  const [isOpenCancelOrder, openCancelOrder, closeCancelOrder] = useModal(false);
   const [productQty, setProductQty] = useState(()=>{
     const quantities = {}
     products.forEach(product => {
@@ -34,8 +39,11 @@ function WaitersLayout(){
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={bfProducts} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={bfProducts} openConfirmOrder={openConfirmOrder} setProductQty={setProductQty}/>
-    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} />
+    <Ticket text={text} productQty={productQty} products={bfProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
+    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
+    isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
+    setProductQty={setProductQty} products={bfProducts}
+    />
    
     </div>
     </div>
