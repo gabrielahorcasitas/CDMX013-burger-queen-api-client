@@ -13,7 +13,7 @@ function WaitersLayout(){
   const products= useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const bfProducts = products.filter((product) =>{
+  const actualProducts = products.filter((product) =>{
     const type= searchParams.get('type') === null ? 'breakfast' : searchParams.get('type');
     if (product.type === type){
       return true
@@ -31,6 +31,8 @@ function WaitersLayout(){
     })
     return quantities;
   });
+
+  console.log(productQty);
  
   return (
     <>
@@ -38,11 +40,11 @@ function WaitersLayout(){
     <div className="body-new-order">
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
-    <Menu products={bfProducts} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={bfProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
+    <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
+    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
     <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
     isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
-    setProductQty={setProductQty} products={bfProducts}
+    setProductQty={setProductQty} products={products}
     />
    
     </div>
