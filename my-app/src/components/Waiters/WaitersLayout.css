@@ -78,8 +78,6 @@
     font-size: 15rem;
     margin-top: 2rem;
     margin-left: 5rem;
-
-
 }
 
 .container-bar{
@@ -110,6 +108,13 @@ tr {
     margin-top: 3rem;
 }
 
+td{
+    font-size: 3rem;
+    width: 14rem;
+    word-wrap: break-word;
+    text-align: center;
+}
+
 .table-menu-header{
     display: flex;
     background-color: var(--colorBrownTables);
@@ -128,13 +133,20 @@ table {
     border-spacing: 0;
 }
 
-.menu-table-body{
+.menu-table-body, .ticket-body{
     display: flex;
     flex-direction: column;
     min-height: 46rem;
     max-height:  46rem; 
     overflow-y: scroll;
+    
 }
+.menu-table-body::-webkit-scrollbar{
+    display: none;
+  }
+.ticket-body::-webkit-scrollbar{
+    display: none;
+  }
 
 .burger-logo-menu{
     width: 8rem;
@@ -145,6 +157,13 @@ table {
     justify-content: flex-end;
     width: 42rem;
     margin-top: 0;
+}
+.container-ticketbuttons{
+    display: flex;
+    justify-content: flex-end;
+    width: 42rem;
+    margin-top: 0;
+
 }
 .logo-table-box{
     width: 42rem;
@@ -185,8 +204,12 @@ table {
     margin-bottom: 2rem;
  }
 
-.menu-btns-box:hover{
+ #log-out-box:hover{
     background-color: var(--colorYellow);
+ }
+
+.menu-btns-box:hover{
+    cursor:pointer;
 }
 
 .body-new-order{
@@ -223,6 +246,11 @@ header{
     border: 0.2rem solid var(--colorBrownTables);
     border-radius: 0.9rem;
     margin-left: 2rem;
+}
+.input-table::-webkit-outer-spin-button,
+.input-table::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .input-table, .choose-table-letter{

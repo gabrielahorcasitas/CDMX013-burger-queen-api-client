@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Admin/>,
   },
   {
-    path: "/waiters",
+    path: "/waiters/new_order",
     element: <WaitersLayout/>,
     loader:({request,params}) => {
       return axios.get('https://6372d80a348e947299fdd17b.mockapi.io/products').then(response =>{

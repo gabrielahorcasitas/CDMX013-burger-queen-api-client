@@ -7,10 +7,10 @@ function Item({product, productQty, setProductQty}){
   function decrement() {
     setProductQty({...productQty,[product.name]: productQty[product.name] - 1 <0 ? 0: productQty[product.name] - 1 });
   }
-  
+
   return(
     <tr>
-      <td>{product.name}</td>
+      <td className="product-names">{product.name}</td>
       <td >${product.price}</td>
       <td><div className="buttonBox">
       <button className="increment" onClick={increment}>
