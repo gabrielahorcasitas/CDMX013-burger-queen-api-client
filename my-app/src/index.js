@@ -5,20 +5,31 @@ import LoginView from './components/Login/LoginView';
 import Admin from './components/Admin/AdminView';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import Waiters from './components/Waiters/WaitersLayout';
+import WaitersLayout from './components/Waiters/WaitersLayout';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginView/>,
+    loader:({request,params}) => {
+      return axios.get('https://6372d80a348e947299fdd17b.mockapi.io/users').then(response =>{
+        return response.data;
+      })
+    }
   },
   {
     path: "/Admin",
     element: <Admin/>,
   },
   {
-    path: "/Waiters",
-    element: <Waiters/>,
+    path: "/waiters/new_order",
+    element: <WaitersLayout/>,
+    loader:({request,params}) => {
+      return axios.get('https://6372d80a348e947299fdd17b.mockapi.io/products').then(response =>{
+        return response.data;
+      })
+    }
   },
   
 ]);

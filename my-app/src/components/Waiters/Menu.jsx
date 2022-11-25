@@ -1,23 +1,33 @@
 import Item from "./Item";
+import burgerMenu from '../../images/burgerMenu.png'
 
-function Menu({products}){
-  
+function Menu({products, productQty, setProductQty }){
   const rows = [];
-
-  products.forEach(product => {
-    rows.push(<Item product={product} key={product._id} />)
-  });
-
+  
+  if(products !== undefined){
+    products.forEach(product => {
+      rows.push(<Item product={product} productQty= {productQty} setProductQty={setProductQty} key={product.id} />)
+    });
+    
+  }
+   
   return (
-    <table>
-    <thead>
+    <>
+      <table className="tableMenu">
+    <thead className="table-menu-header">
       <tr>
-        <th>Name</th>
+        <th>Menu</th>
       </tr>
     </thead>
-    <tbody>{rows}</tbody>
+    <tbody className="menu-table-body">
+      {rows}
+      </tbody>
+      <tfoot className="logo-table-box"><tr className="container-logo-burger"><img className="burger-logo-menu" src={burgerMenu} alt ='burger-logo-menu'></img></tr>
+      </tfoot>
   </table>
-  )
+  
+    </>
+    )
 }
 
 export default Menu;
