@@ -32,7 +32,7 @@ let navigate = useNavigate();
                 console.log(users);
                 break;
               case('waiter'):
-                navigate('/waiters');
+                navigate('/waiters/new_order');
                 break;
               default:
                 users = true;

@@ -7,11 +7,15 @@ import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { useModal } from "../useModal";
+import { useSearchParams } from 'react-router-dom'; 
 
 function WaitersLayout(){
   const products= useLoaderData();
-  const bfProducts = products.filter((product) =>{
-    if (product.type === 'breakfast'){
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const actualProducts = products.filter((product) =>{
+    const type= searchParams.get('type') === null ? 'breakfast' : searchParams.get('type');
+    if (product.type === type){
       return true
     }
     return false
@@ -19,6 +23,7 @@ function WaitersLayout(){
 
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
+  const [isOpenCancelOrder, openCancelOrder, closeCancelOrder] = useModal(false);
   const [productQty, setProductQty] = useState(()=>{
     const quantities = {}
     products.forEach(product => {
@@ -26,6 +31,8 @@ function WaitersLayout(){
     })
     return quantities;
   });
+
+  console.log(productQty);
  
   return (
     <>
@@ -33,9 +40,12 @@ function WaitersLayout(){
     <div className="body-new-order">
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
-    <Menu products={bfProducts} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={bfProducts} openConfirmOrder={openConfirmOrder} setProductQty={setProductQty}/>
-    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} />
+    <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
+    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
+    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
+    isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
+    setProductQty={setProductQty} products={products}
+    />
    
     </div>
     </div>

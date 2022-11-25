@@ -13,7 +13,7 @@ function Header ({text, setText}){
                     <label className="choose-table-letter">Table: </label>
                     <input
                         className="input-table"
-                        type="number"
+                        type="number" min='0'  
                         value={text} onChange={handleInputChange}
                         >  
                     </input>
