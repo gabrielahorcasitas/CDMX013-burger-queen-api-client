@@ -59,8 +59,7 @@
 
 .fields-form{
     font: var(--logotypeFont);
-    font-family:  'Chewy', cursive
-;
+    font-family:  'Chewy', cursive;
     font-size: 3.6rem;
     color: var(--colorBrown);
     margin-left: 4rem;
@@ -100,4 +99,20 @@
     cursor: pointer;
     border: 2px solid var(--colorNavBar);
 
+}
+
+.errorMessage{
+    width: 30rem;
+    height: 5rem;
+    align-self: center;
+    margin-top: 2rem
+}
+
+.messageError{
+    font-size: 2.5rem;
+    font-family: var(--principalFont);
+    font-weight: bold;
+    color: var(--colorNavBar);
+    text-align: center;
+    border-bottom: 0.3rem solid var(--colorNavBar);
 }
