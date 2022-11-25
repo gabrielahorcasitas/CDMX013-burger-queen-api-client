@@ -1,16 +1,11 @@
-import {useNavigate} from 'react-router-dom'
+import NavBars from "../NavBars";
 
 function Admin() {
-  let navigate = useNavigate();
-  function handleNavigate() {
-   navigate('/');
-  }
-
+  
   return (
-    <div className="admin">
-     <h1>Admin view</h1>
-     <button className='goBack' onClick= {handleNavigate}>Log Out</button>
-    </div>
+    <>
+    <NavBars/>
+    </>
   );
 }
 
