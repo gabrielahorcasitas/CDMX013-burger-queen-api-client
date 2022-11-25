@@ -1,5 +1,5 @@
 import Menu from "./Menu";
-import NavBar from "./NavBar";
+import NavBars from "../NavBars";
 import Header from "./Header";
 import Ticket from "./Ticket";
 import Modals from "../Modals";
@@ -36,7 +36,7 @@ function WaitersLayout(){
  
   return (
     <>
-    <NavBar/>
+    <NavBars/>
     <div className="body-new-order">
     <Header text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
