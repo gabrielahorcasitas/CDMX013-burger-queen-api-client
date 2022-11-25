@@ -5,7 +5,11 @@ import Queen from "../images/Queen.png";
 import check from "../images/check.png";
 import logout from "../images/logout.png";
 import plus from "../images/plus.png";
+import active from "../images/active.png"
+import prepared from "../images/prepared.png"
 import NavBar from './Waiters/NavBar';
+import {useLocation} from'react-router-dom';
+
 
 function NavBars() {
   let navigate = useNavigate();
@@ -13,41 +17,84 @@ function NavBars() {
    navigate('/');
   }
 
+const location = useLocation();
+  let content;
+  
+if (location.pathname === '/waiters/new_order') {
+  content = <NavBar>
+     
+  <div className="logo-box">
+    <img
+      className="burger-letters"
+      src={Burger}
+      alt="burger-letters"
+    ></img>
+    <img className="queen-letters" src={Queen} alt="queen-letters"></img>
+  </div>
+  <NavLink style = {({isActive}) => {
+        return {backgroundColor: '#FAC74F'}
+      }} className='menu-letters' to='/waiters/new_order'>
+    <div className= "menu-btns-box">
+      <img className="new-order" 
+      src={plus}
+      alt="new-order"></img>
+      <label className='menu-letters'>New Order</label>
+    </div>
+    </NavLink>
+    <div className= "menu-btns-box">
+      <img className="ready"
+      src={check}
+      alt="ready"></img>
+      <label className='menu-letters'>Ready</label>
+    </div>
+    <div className= "menu-btns-box" id="log-out-box">
+      <img className="log-out" 
+      src={logout}
+      alt="log-out" onClick = {handleNavigate} ></img>
+      <label className='menu-letters'>Log Out</label>
+    </div>
+
+</NavBar>
+} else {
+  content = <NavBar>
+  <div className="logo-box">
+   <img
+     className="burger-letters"
+     src={Burger}
+     alt="burger-letters"
+   ></img>
+   <img className="queen-letters" src={Queen} alt="queen-letters"></img>
+ </div>
+ <NavLink style = {({isActive}) => {
+       return {backgroundColor: '#FAC74F'}
+     }} className='menu-letters' to='/kitchen'>
+   <div className= "menu-btns-box">
+     <img className="active" 
+     src={active}
+     alt="active-order"></img>
+     <label className='menu-letters'>Active</label>
+   </div>
+   </NavLink>
+   <div className= "menu-btns-box">
+     <img className="prepared"
+     src={prepared}
+     alt="prepared-order"></img>
+     <label className='menu-letters'>Prepared</label>
+   </div>
+   <div className= "menu-btns-box" id="log-out-box">
+     <img className="log-out" 
+     src={logout}
+     alt="log-out" onClick = {handleNavigate} ></img>
+     <label className='menu-letters'>Log Out</label>
+   </div>
+
+</NavBar>;
+}
+
   return (
-    <NavBar>
-     
-        <div className="logo-box">
-          <img
-            className="burger-letters"
-            src={Burger}
-            alt="burger-letters"
-          ></img>
-          <img className="queen-letters" src={Queen} alt="queen-letters"></img>
-        </div>
-        <NavLink style = {({isActive}) => {
-              return {backgroundColor: '#FAC74F'}
-            }} className='menu-letters' to='/waiters/new_order'>
-          <div className= "menu-btns-box">
-            <img className="new-order" 
-            src={plus}
-            alt="new-order"></img>
-            <label className='menu-letters'>New Order</label>
-          </div>
-          </NavLink>
-          <div className= "menu-btns-box">
-            <img className="ready"
-            src={check}
-            alt="ready"></img>
-            <label className='menu-letters'>Ready</label>
-          </div>
-          <div className= "menu-btns-box" id="log-out-box">
-            <img className="log-out" 
-            src={logout}
-            alt="log-out" onClick = {handleNavigate} ></img>
-            <label className='menu-letters'>Log Out</label>
-          </div>
-     
-    </NavBar>
+    <>
+    {content};
+</>
   );
 }
 

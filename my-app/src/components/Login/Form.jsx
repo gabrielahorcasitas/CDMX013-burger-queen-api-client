@@ -30,6 +30,7 @@ let navigate = useNavigate();
                 console.log(users);
                 break;
               case('kitchen'):
+              navigate('/kitchen')
                 console.log(users);
                 break;
               case('waiter'):
