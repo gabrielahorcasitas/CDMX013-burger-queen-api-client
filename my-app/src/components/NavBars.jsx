@@ -103,7 +103,7 @@ if (location.pathname === '/waiters/new_order') {
  </div>
  <NavLink style = {({isActive}) => {
        return {backgroundColor: '#FAC74F'}
-     }} className='menu-letters' to='/kitchen'>
+     }} className='menu-letters' to='/admin'>
    <div className= "menu-btns-box">
      <img className="partners" 
      src={partners}

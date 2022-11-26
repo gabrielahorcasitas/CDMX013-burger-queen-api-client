@@ -35,22 +35,22 @@
     height: 21rem;
     background-color: var(--colorNavBar);
     border-radius: 1.5rem;
-    
   }
   
   .modal.is-open {
     display: flex;
     justify-content: center;
-   
   }
+
   .buttons-container{
     display: flex;
     flex-direction:row ;
     justify-content: space-around;
     margin-top: 2rem;
   }
+
   .check{
-    display: flex;
+   display: flex;
    width: 7.8rem;
    height: 5rem;
    border-radius: 1.5rem;
@@ -68,6 +68,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .confirm-msg{
     font-family: var(--principalFont);
     font-weight: bold;
@@ -75,6 +76,7 @@
     color: var(--colorWhiteish);
 
   }
+
   .confirm-container{
     display: flex;
     flex-direction: column;
