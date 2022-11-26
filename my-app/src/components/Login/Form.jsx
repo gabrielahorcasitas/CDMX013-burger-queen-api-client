@@ -27,9 +27,11 @@ let navigate = useNavigate();
             const role = user.role;
             switch(role){
               case('admin'):
+              navigate('/admin');
                 console.log(users);
                 break;
               case('kitchen'):
+              navigate('/kitchen')
                 console.log(users);
                 break;
               case('waiter'):

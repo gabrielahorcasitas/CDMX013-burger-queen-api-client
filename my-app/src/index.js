@@ -7,6 +7,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import WaitersLayout from './components/Waiters/WaitersLayout';
 import axios from 'axios';
+import Kitchen from './components/Kitchen/Kitchen';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     }
   },
   {
-    path: "/Admin",
+    path: "/admin",
     element: <Admin/>,
   },
   {
@@ -31,7 +32,10 @@ const router = createBrowserRouter([
       })
     }
   },
-  
+  {
+    path: "/kitchen",
+    element: <Kitchen/>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
