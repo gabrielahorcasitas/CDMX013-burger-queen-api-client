@@ -5,8 +5,8 @@ function Kitchen (){
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
     return(
     <> 
-    <NavBars isOrderReady={isOrderReady} closeOrderReady={closeOrderReady}/>
-    <Modals/>
+    <NavBars/>
+    <Modals  isOrderReady={isOrderReady} closeOrderReady={closeOrderReady} />
     <button onClick={openOrderReady}>Prueba confirmar orden lista</button>
     </>)
 }
