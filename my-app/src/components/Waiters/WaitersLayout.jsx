@@ -24,6 +24,7 @@ function WaitersLayout(){
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
   const [isOpenCancelOrder, openCancelOrder, closeCancelOrder] = useModal(false);
+  
   const [productQty, setProductQty] = useState(()=>{
     const quantities = {}
     products.forEach(product => {
@@ -46,7 +47,6 @@ function WaitersLayout(){
     isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
     setProductQty={setProductQty} products={products}
     />
-   
     </div>
     </div>
     </>

@@ -1,4 +1,4 @@
-function Order() {
+function Order({isOrderReady,openOrderReady, closeOrderReady}) {
   return (
     <>
       <tr>
@@ -19,7 +19,7 @@ function Order() {
         <td className="order-colum">
           <div className="recived-button-Box">
             <h1 className="mgs-recived">Recived:       09-11-2022     17:00:52</h1>
-            <button className="done">Done</button>
+            <button className="done" onClick={openOrderReady}>Done</button>
           </div>
         </td>
         </div>
