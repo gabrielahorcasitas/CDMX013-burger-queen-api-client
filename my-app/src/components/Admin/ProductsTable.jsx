@@ -1,7 +1,7 @@
 import ProductsItem from './ProductsItem'
 import burgerMenu from '../../images/burgerMenu.png'
 import add from '../../images/add.png'
-function ProductsTable() {
+function ProductsTable({ openAddProduct, openDeleteProduct }) {
     return (
         <>
             <table className="tableMenu" id="partners">
@@ -17,11 +17,16 @@ function ProductsTable() {
                 </thead>
                 <tbody className="menu-table-body" id="partners-body">
                     {[1, 23, 4, 5, 6, 12, 3, 12, 31, 23].map(() => (
-                        <ProductsItem />
+                        <ProductsItem openDeleteProduct={openDeleteProduct} />
                     ))}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
-                    <img src={add} alt="add" className="add-img"></img>
+                    <img
+                        src={add}
+                        alt="add"
+                        className="add-img"
+                        onClick={openAddProduct}
+                    ></img>
                     <img
                         className="burger-logo-menu"
                         src={burgerMenu}

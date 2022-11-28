@@ -1,7 +1,7 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function ProductsItem() {
+function ProductsItem({ openDeleteProduct }) {
     return (
         <tr>
             <td>Photo</td>
@@ -9,7 +9,7 @@ function ProductsItem() {
             <td>Items</td>
             <td>Price</td>
             <img alt="edit" src={pencil}></img>
-            <img alt="delete" src={trash}></img>
+            <img alt="delete" src={trash} onClick={openDeleteProduct}></img>
         </tr>
     )
 }
