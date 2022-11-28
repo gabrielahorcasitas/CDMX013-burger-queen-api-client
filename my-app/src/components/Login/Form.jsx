@@ -11,7 +11,6 @@ function Form() {
     const handleEmailChange = ({ target }) => {
         setEmail(target.value)
     }
-
     const handlePasswordChange = ({ target }) => {
         setPassword(target.value)
     }
@@ -35,7 +34,7 @@ function Form() {
                                 console.log(users)
                                 break
                             case 'kitchen':
-                                navigate('/kitchen')
+                                navigate('/kitchen/active')
                                 console.log(users)
                                 break
                             case 'waiter':
