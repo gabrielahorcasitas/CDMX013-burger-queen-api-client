@@ -103,8 +103,12 @@
 tr {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 3rem;
+}
+tbody {
+    margin-left: 5rem;
+    margin-right: 2rem;
 }
 
 td {

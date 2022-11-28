@@ -54,9 +54,12 @@ function Form() {
     return (
         <form className="form-box" onSubmit={handleSubmit}>
             <label id="logIn-logo">Log In</label>
-            <span className="fields-form">Email</span>
+            <label htmlFor="email" className="fields-form">
+                Email
+            </label>
             <input
                 className="input-form"
+                name="email"
                 placeholder="email"
                 value={email}
                 onChange={handleEmailChange}
@@ -67,9 +70,12 @@ function Form() {
                 }
                 onInput={(e) => e.target.setCustomValidity('')}
             />
-            <span className="fields-form">Password</span>
+            <label htmlFor="password" className="fields-form">
+                Password
+            </label>
             <input
                 className="input-form"
+                name="password"
                 placeholder="password"
                 value={password}
                 onChange={handlePasswordChange}
