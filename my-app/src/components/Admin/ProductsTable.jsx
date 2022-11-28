@@ -1,7 +1,23 @@
 import ProductsItem from './ProductsItem'
 import burgerMenu from '../../images/burgerMenu.png'
 import add from '../../images/add.png'
+import { useLoaderData } from 'react-router-dom'
+
 function ProductsTable({ openAddProduct, openDeleteProduct }) {
+    const products = useLoaderData()
+    const rows = []
+
+    if (products !== undefined) {
+        products.forEach((product) => {
+            rows.push(
+                <ProductsItem
+                    product={product}
+                    openDeleteProduct={openDeleteProduct}
+                    key={product.id}
+                />
+            )
+        })
+    }
     return (
         <>
             <table className="tableMenu" id="partners">
@@ -16,9 +32,7 @@ function ProductsTable({ openAddProduct, openDeleteProduct }) {
                     </tr>
                 </thead>
                 <tbody className="menu-table-body" id="partners-body">
-                    {[1, 23, 4, 5, 6, 12, 3, 12, 31, 23].map(() => (
-                        <ProductsItem openDeleteProduct={openDeleteProduct} />
-                    ))}
+                    {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
                     <img

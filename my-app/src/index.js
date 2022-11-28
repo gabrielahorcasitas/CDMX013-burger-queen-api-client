@@ -25,10 +25,24 @@ const router = createBrowserRouter([
     {
         path: '/admin/partners',
         element: <Partners />,
+        loader: ({ request, params }) => {
+            return axios
+                .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
+                .then((response) => {
+                    return response.data
+                })
+        },
     },
     {
         path: '/admin/products',
         element: <Products />,
+        loader: ({ request, params }) => {
+            return axios
+                .get('https://6372d80a348e947299fdd17b.mockapi.io/products')
+                .then((response) => {
+                    return response.data
+                })
+        },
     },
     {
         path: '/waiters/new_order',

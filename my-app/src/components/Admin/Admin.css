@@ -56,6 +56,10 @@ header {
     width: auto;
 }
 
+.product-name {
+    width: 13rem;
+}
+
 #partners-footer {
     display: flex;
     justify-content: space-between;
@@ -78,4 +82,17 @@ a:focus {
 
 a.active {
     background-color: #fac74f;
+}
+
+.product-img {
+    width: 7rem;
+}
+
+.product-actions {
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+}
+
+.td-partners {
+    margin-right: 9rem;
 }
