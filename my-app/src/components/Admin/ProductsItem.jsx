@@ -1,15 +1,36 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function ProductsItem({ openDeleteProduct }) {
+function ProductsItem({ product, openDeleteProduct }) {
     return (
         <tr>
-            <td>Photo</td>
-            <td>Name</td>
+            <td>
+                <img
+                    src={product.image}
+                    alt="product-img"
+                    className="product-img"
+                ></img>
+            </td>
+            <td className="product-name" style={{ width: '13rem' }}>
+                {product.name}
+            </td>
             <td>Items</td>
-            <td>Price</td>
-            <img alt="edit" src={pencil}></img>
-            <img alt="delete" src={trash} onClick={openDeleteProduct}></img>
+            <td className="price-product" style={{ width: '13rem' }}>
+                {product.price}
+            </td>
+            <img
+                alt="edit"
+                src={pencil}
+                style={{ height: '5rem' }}
+                className="product-actions"
+            ></img>
+            <img
+                alt="delete"
+                src={trash}
+                onClick={openDeleteProduct}
+                className="product-actions"
+                style={{ height: '5rem' }}
+            ></img>
         </tr>
     )
 }
