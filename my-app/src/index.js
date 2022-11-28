@@ -11,6 +11,7 @@ import axios from 'axios'
 import Kitchen from './components/Kitchen/Kitchen'
 
 const router = createBrowserRouter([
+ 
     {
         path: '/',
         element: <LoginView />,
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
         },
     },
     {
-        path: '/kitchen',
+        path: '/kitchen/active',
         element: <Kitchen />,
     },
 ])
