@@ -21,6 +21,7 @@ function NavBars() {
     const location = useLocation()
     let content
 
+
     if (location.pathname === '/waiters/new_order') {
         content = (
             <NavBar>
@@ -67,7 +68,7 @@ function NavBars() {
                 </div>
             </NavBar>
         )
-    } else if (location.pathname === '/kitchen') {
+    } else if (location.pathname === '/kitchen/active') {
         content = (
             <NavBar>
                 <div className="logo-box">
@@ -87,7 +88,7 @@ function NavBars() {
                         return { backgroundColor: '#FAC74F' }
                     }}
                     className="menu-letters"
-                    to="/kitchen"
+                    to="/kitchen/active"
                 >
                     <div className="menu-btns-box">
                         <img

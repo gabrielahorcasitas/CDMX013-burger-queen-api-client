@@ -193,8 +193,9 @@ table {
     font-family: 'Chewy', cursive;
     text-decoration-color: white;
 }
-
-.menu-btns-box {
+.menu-btns-box{
+    width: 10rem;
+    height: 11rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
