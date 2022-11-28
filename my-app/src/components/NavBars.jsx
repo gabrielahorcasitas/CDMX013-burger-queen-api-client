@@ -55,7 +55,7 @@ if (location.pathname === '/waiters/new_order') {
     </div>
 
 </NavBar>
-} else {
+} else if (location.pathname === '/kitchen/active'){
   content = <NavBar>
   <div className="logo-box">
    <img
@@ -67,7 +67,41 @@ if (location.pathname === '/waiters/new_order') {
  </div>
  <NavLink style = {({isActive}) => {
        return {backgroundColor: '#FAC74F'}
-     }} className='menu-letters' to='/kitchen'>
+     }} className='menu-letters' to='/kitchen/active'>
+   <div className= "menu-btns-box">
+     <img className="active" 
+     src={active}
+     alt="active-order"></img>
+     <label className='menu-letters'>Active</label>
+   </div>
+   </NavLink>
+   <div className= "menu-btns-box">
+     <img className="prepared"
+     src={prepared}
+     alt="prepared-order"></img>
+     <label className='menu-letters'>Prepared</label>
+   </div>
+   <div className= "menu-btns-box" id="log-out-box">
+     <img className="log-out" 
+     src={logout}
+     alt="log-out" onClick = {handleNavigate} ></img>
+     <label className='menu-letters'>Log Out</label>
+   </div>
+
+</NavBar>;
+}else if (location.pathname === '/kitchen/prepared'){
+  content = <NavBar>
+  <div className="logo-box">
+   <img
+     className="burger-letters"
+     src={Burger}
+     alt="burger-letters"
+   ></img>
+   <img className="queen-letters" src={Queen} alt="queen-letters"></img>
+ </div>
+ <NavLink style = {({isActive}) => {
+       return {backgroundColor: '#FAC74F'}
+     }} className='menu-letters' to='/kitchen/prepared'>
    <div className= "menu-btns-box">
      <img className="active" 
      src={active}

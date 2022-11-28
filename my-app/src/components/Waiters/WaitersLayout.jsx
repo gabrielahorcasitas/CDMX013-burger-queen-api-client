@@ -1,6 +1,6 @@
 import Menu from "./Menu";
 import NavBars from "../NavBars";
-import Header from "./Header";
+import Headers from "../Headers";
 import Ticket from "./Ticket";
 import Modals from "../Modals";
 import './WaitersLayout.css'
@@ -38,7 +38,7 @@ function WaitersLayout(){
     <>
     <NavBars/>
     <div className="body-new-order">
-    <Header text={text} setText = {setText}/>
+    <Headers text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
     <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
