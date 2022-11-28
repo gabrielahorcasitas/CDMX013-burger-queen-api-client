@@ -1,0 +1,109 @@
+/* Predefined properties*/
+:root {
+    --colorBg: #FDDC9B;
+    --colorNavBar: #F63522;
+    --colorBoxBg: #FFF2Ec;
+    --colorBrownTables: #693B17;
+    --colorBrown: #773F2F;
+    --colorYellow: #FAC74F;
+    --colorWhiteish: #FFFEEC;
+    --logotypeFont: 'Chewy';
+    --principalFont: 'Alegreya Sans', sans-serif;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+.modal-admin{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 113rem;
+    height: 75rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-admin-container{
+    width: 38rem;
+    height: 57rem;
+    background-color: var(--colorNavBar);
+    border-radius: 1.5rem;  
+}
+
+.modal-admin.is-open {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-add-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 38rem;
+    height: 57rem;
+}
+
+.add-msg{
+    font: var(--logotypeFont);
+    font-family: 'Chewy', cursive;
+    font-size: 4.8rem;
+    color: var(--colorWhiteish);
+    align-self: center;
+}
+
+.field{
+    font-family: var(--principalFont);
+    font-weight: bold;
+    font-size: 3.2rem;
+    color: var(--colorWhiteish);
+}
+
+.input-admin-form{
+    width: 33.8rem;
+    height: 4.3rem;
+    align-self: center;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 2.5rem;
+    font-family: var(--principalFont);
+    color: var(--colorBrown);
+}
+
+.buttons-admin-container{
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-around;
+    margin-top: 2rem;
+    width: 36rem;
+    height: 6rem;
+}
+
+.modal-admin-delete-container{
+    width: 38rem;
+    height: 27rem;
+    background-color: var(--colorNavBar);
+    border-radius: 1.5rem; 
+    padding: 1rem; 
+}
+
+.confirm-delete-container{
+    width: 36rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.confirm-delete-msg{
+    font-size: 3.6rem;
+    text-align: center;
+}
