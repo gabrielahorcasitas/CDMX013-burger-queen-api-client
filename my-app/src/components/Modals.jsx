@@ -4,12 +4,13 @@ import ModalAdd from './Admin/ModalAdd';
 import ModalConfirm from './Waiters/ModalConfirm'
 import ModalDelete from './Admin/ModalDelete'
 import ModalConfirmKitchen from './Kitchen/ModalConfirmKitchen'
+import axios from 'axios';
 function Modals ({isOpenConfirmOrder,closeConfirmOrder, 
     isOpenCancelOrder, closeCancelOrder, setProductQty, products, 
     isAddPartner, closeAddPartner, isAddProduct, closeAddProduct, 
     isOpenDeletePartner, closeDeletePartner, 
     isOpenDeleteProduct, closeDeletProduct,
-    isOrderReady, closeOrderReady}){
+    isOrderReady, closeOrderReady, idPartner}){
 
     function resetQty() {
         setProductQty(()=>{
@@ -22,7 +23,14 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
           }
         );
     }
-
+    function deletePartner (){
+        console.log(idPartner);
+        axios.delete(`https://6372d80a348e947299fdd17b.mockapi.io/users/${idPartner}`)  
+      .then(res =>{
+        return (res.data)
+      })
+    }
+    
     return(
         <>
         <ModalConfirm isOpen= {isOpenConfirmOrder} close= {closeConfirmOrder} >
@@ -161,7 +169,7 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     <img className='img-confirm-order'
                     alt='confirm-order'
                     src={check}
-                    onClick = {resetQty}>
+                    onClick = {deletePartner}>
                     </img>
                 </div>
                 <div className="close">
