@@ -4,10 +4,10 @@ import './Admin.css'
 import PartnersTable from './PartnersTable'
 import Modals from '../Modals'
 import { useModal } from '../useModal'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import axios from 'axios';
-
+import getData from '../../getData'
 
 function Partners() {
     const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false)
@@ -15,14 +15,14 @@ function Partners() {
     const [idModal, setIdModal] =useState('')
     const [partners, setPartners] = useState(useLoaderData())
 
+    const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users';
+
     function deletePartner (){
         axios.delete(`https://6372d80a348e947299fdd17b.mockapi.io/users/${idModal}`)  
-          .then(() =>{
-            return axios
-            .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
-            .then((response) => {
-                setPartners(response.data)
-            })
+          .then(async () =>{
+            const dataUsers =  await getData(urlUsers)
+            closeDeletePartner()
+            return setPartners(dataUsers)
           })
         };
 

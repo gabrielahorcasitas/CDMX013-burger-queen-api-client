@@ -10,7 +10,7 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
     isAddPartner, closeAddPartner, isAddProduct, closeAddProduct, 
     isOpenDeletePartner, closeDeletePartner, 
     isOpenDeleteProduct, closeDeletProduct,
-    isOrderReady, closeOrderReady, deletePartner}){
+    isOrderReady, closeOrderReady, deletePartner, deleteProduct}){
 
     function resetQty() {
         setProductQty(()=>{
@@ -184,7 +184,7 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     <img className='img-confirm-order'
                     alt='confirm-order'
                     src={check}
-                    onClick = {resetQty}>
+                    onClick = {deleteProduct}>
                     </img>
                 </div>
                 <div className="close">

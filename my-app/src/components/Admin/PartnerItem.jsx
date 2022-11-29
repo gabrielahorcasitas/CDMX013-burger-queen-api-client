@@ -1,7 +1,7 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function PartnerItem({ partner, openDeletePartner, idModal, setIdModal}) {
+function PartnerItem({ partner, openDeletePartner, setIdModal}) {
     function sendId (){
         openDeletePartner();
         setIdModal(partner.auth);
