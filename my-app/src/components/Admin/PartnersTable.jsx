@@ -1,9 +1,8 @@
 import burgerMenu from '../../images/burgerMenu.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
-import { useLoaderData } from 'react-router-dom'
-function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal}) {
-    const partners = useLoaderData()
+
+function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal, partners}) {
     const rows = []
 
     if (partners !== undefined) {
