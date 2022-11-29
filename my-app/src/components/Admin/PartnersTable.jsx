@@ -29,7 +29,7 @@ function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal,
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody className="menu-table-body" id="partners-body">
+                <tbody className="menu-partners-table-body" id="partners-body">
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">

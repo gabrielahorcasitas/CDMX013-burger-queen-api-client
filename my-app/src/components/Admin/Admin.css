@@ -96,3 +96,23 @@ a.active {
 .td-partners {
     margin-right: 9rem;
 }
+
+.menu-partners-table-body {
+    margin-left: 5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 46rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+}
+
+.menu-products-table-body{
+    margin-left: 5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 46rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+}

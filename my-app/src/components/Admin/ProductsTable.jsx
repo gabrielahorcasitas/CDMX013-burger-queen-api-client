@@ -30,7 +30,7 @@ function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody className="menu-table-body" id="partners-body">
+                <tbody className="menu-products-table-body" id="partners-body">
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
