@@ -1,7 +1,11 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function PartnerItem({ partner, openDeletePartner }) {
+function PartnerItem({ partner, openDeletePartner, idModal, setIdModal}) {
+    function sendId (){
+        openDeletePartner();
+        setIdModal(partner.auth);
+    }
     return (
         <tr>
             <td>{partner.email}</td>
@@ -11,7 +15,7 @@ function PartnerItem({ partner, openDeletePartner }) {
                 className="td-partners"
                 alt="delete"
                 src={trash}
-                onClick={openDeletePartner}
+                onClick={sendId}
             ></img>
         </tr>
     )

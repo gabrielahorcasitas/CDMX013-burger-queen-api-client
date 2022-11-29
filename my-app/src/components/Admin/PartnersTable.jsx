@@ -2,7 +2,7 @@ import burgerMenu from '../../images/burgerMenu.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
 import { useLoaderData } from 'react-router-dom'
-function PartnersTable({ openAddPartner, openDeletePartner }) {
+function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal}) {
     const partners = useLoaderData()
     const rows = []
 
@@ -13,6 +13,8 @@ function PartnersTable({ openAddPartner, openDeletePartner }) {
                     partner={partner}
                     openDeletePartner={openDeletePartner}
                     key={partner.id}
+                    idModal={idModal}
+                    setIdModal={setIdModal}
                 />
             )
         })
