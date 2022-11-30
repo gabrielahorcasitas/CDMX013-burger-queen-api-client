@@ -40,10 +40,7 @@ function Partners() {
                 return setPartners(dataUsers)
             })
     }
-    console.log('partners')
-    console.log(partners)
-    console.log('filteredpartners')
-    console.log(filteredPartners)
+
     return (
         <>
             <NavBars />
