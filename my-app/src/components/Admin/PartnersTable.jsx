@@ -12,7 +12,7 @@ function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal,
                 <PartnerItem
                     partner={partner}
                     openDeletePartner={openDeletePartner}
-                    key={partner.id}
+                    key={partner.auth}
                     idModal={idModal}
                     setIdModal={setIdModal}
                 />

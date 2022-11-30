@@ -11,7 +11,7 @@ function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal
                 <ProductsItem
                     product={product}
                     openDeleteProduct={openDeleteProduct}
-                    key={product.id}
+                    key={product.product}
                     setIdModal={setIdModal}
                 />
             )
