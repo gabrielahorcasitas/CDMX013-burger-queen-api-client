@@ -35,6 +35,7 @@ function Partners() {
             )
             .then(async () => {
                 const dataUsers = await getData(urlUsers)
+                setFilteredPartners(dataUsers)
                 closeDeletePartner()
                 return setPartners(dataUsers)
             })
