@@ -106,10 +106,6 @@ tr {
     justify-content: space-between;
     margin-top: 3rem;
 }
-tbody {
-    margin-left: 5rem;
-    margin-right: 2rem;
-}
 
 td {
     font-size: 3rem;
@@ -135,7 +131,7 @@ table {
     border-spacing: 0;
 }
 
-.menu-table-body,
+.menu-waiter-table-body,
 .ticket-body {
     display: flex;
     flex-direction: column;
@@ -143,7 +139,7 @@ table {
     max-height: 46rem;
     overflow-y: scroll;
 }
-.menu-table-body::-webkit-scrollbar {
+.menu-waiter-table-body::-webkit-scrollbar {
     display: none;
 }
 .ticket-body::-webkit-scrollbar {
@@ -195,7 +191,7 @@ table {
 }
 .menu-btns-box{
     width: 10rem;
-    height: 11rem;
+    height: 12rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

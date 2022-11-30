@@ -4,13 +4,13 @@ import ModalAdd from './Admin/ModalAdd';
 import ModalConfirm from './Waiters/ModalConfirm'
 import ModalDelete from './Admin/ModalDelete'
 import ModalConfirmKitchen from './Kitchen/ModalConfirmKitchen'
-import axios from 'axios';
+
 function Modals ({isOpenConfirmOrder,closeConfirmOrder, 
     isOpenCancelOrder, closeCancelOrder, setProductQty, products, 
     isAddPartner, closeAddPartner, isAddProduct, closeAddProduct, 
     isOpenDeletePartner, closeDeletePartner, 
     isOpenDeleteProduct, closeDeletProduct,
-    isOrderReady, closeOrderReady, idPartner}){
+    isOrderReady, closeOrderReady, deletePartner, deleteProduct}){
 
     function resetQty() {
         setProductQty(()=>{
@@ -22,15 +22,8 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
             return quantities;
           }
         );
-    }
-    function deletePartner (){
-        console.log(idPartner);
-        axios.delete(`https://6372d80a348e947299fdd17b.mockapi.io/users/${idPartner}`)  
-      .then(res =>{
-        return (res.data)
-      })
-    }
-    
+    }; 
+
     return(
         <>
         <ModalConfirm isOpen= {isOpenConfirmOrder} close= {closeConfirmOrder} >
@@ -99,6 +92,14 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     onInvalid={e => e.target.setCustomValidity('This field is empty')}
                     onInput = {e => e.target.setCustomValidity('')}
             />
+            <label className="field">Position</label>
+            <input 
+                    className='input-admin-form'
+                    type="text"
+                    required
+                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
+                    onInput = {e => e.target.setCustomValidity('')}
+            />
             <div className="buttons-admin-container">
                 <div className="check">
                     <img className='img-confirm-order'
@@ -136,6 +137,14 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     onInput = {e => e.target.setCustomValidity('')}
             />
             <label className="field">Price</label>
+            <input 
+                    className='input-admin-form'
+                    type="number"
+                    required
+                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
+                    onInput = {e => e.target.setCustomValidity('')}
+            />
+            <label className="field">Type</label>
             <input 
                     className='input-admin-form'
                     type="number"
@@ -191,7 +200,7 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     <img className='img-confirm-order'
                     alt='confirm-order'
                     src={check}
-                    onClick = {resetQty}>
+                    onClick = {deleteProduct}>
                     </img>
                 </div>
                 <div className="close">

@@ -4,13 +4,38 @@ import './Admin.css'
 import PartnersTable from './PartnersTable'
 import Modals from '../Modals'
 import { useModal } from '../useModal'
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
+import { useLoaderData } from 'react-router-dom'
+import axios from 'axios';
+import getData from '../../getData'
 
 function Partners() {
     const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false)
-    const [isOpenDeletePartner, openDeletePartner, closeDeletePartner] =
-        useModal(false)
+    const [isOpenDeletePartner, openDeletePartner, closeDeletePartner] = useModal(false)
     const [idModal, setIdModal] =useState('')
+    const [inputText, setInputText] = useState("");
+    const [partners, setPartners] = useState(useLoaderData())
+    const [filteredPartners, setFilteredPartners] = useState(partners);
+
+    const filterByEmail =  filteredPartners.filter((element) => {
+                 return element.email.toLowerCase().includes(inputText)
+            });
+
+    useEffect(() =>{
+        setFilteredPartners(inputText !== ''? filterByEmail: partners)
+    }, [inputText])
+
+    const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users';
+
+    function deletePartner (){
+        axios.delete(`https://6372d80a348e947299fdd17b.mockapi.io/users/${idModal}`)  
+          .then(async () =>{
+            const dataUsers =  await getData(urlUsers)
+            closeDeletePartner()
+            return setPartners(dataUsers)
+          })
+        };
+
     return (
         <>
             <NavBars />
@@ -19,16 +44,16 @@ function Partners() {
                 closeAddPartner={closeAddPartner}
                 isOpenDeletePartner={isOpenDeletePartner}
                 closeDeletePartner={closeDeletePartner}
-                idPartner={idModal}
+                deletePartner={deletePartner}
             />
             <div className="partners-layout">
-                <Header />
+                <Header inputText={inputText} setInputText={setInputText} />
                 <PartnersTable
                     openAddPartner={openAddPartner}
                     openDeletePartner={openDeletePartner}
                     idModal={idModal}
                     setIdModal={setIdModal}
-
+                    partners = {filteredPartners !== partners ? filteredPartners: partners}
                 />
             </div>
         </>

@@ -1,7 +1,12 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function ProductsItem({ product, openDeleteProduct }) {
+function ProductsItem({ product, openDeleteProduct, setIdModal }) {
+    function sendId (){
+        openDeleteProduct();
+        setIdModal(product.product);
+    }
+
     return (
         <tr>
             <td>
@@ -27,7 +32,7 @@ function ProductsItem({ product, openDeleteProduct }) {
             <img
                 alt="delete"
                 src={trash}
-                onClick={openDeleteProduct}
+                onClick={sendId}
                 className="product-actions"
                 style={{ height: '5rem' }}
             ></img>

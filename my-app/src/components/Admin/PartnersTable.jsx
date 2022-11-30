@@ -1,9 +1,9 @@
 import burgerMenu from '../../images/burgerMenu.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
-import { useLoaderData } from 'react-router-dom'
-function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal}) {
-    const partners = useLoaderData()
+import { useState } from 'react';
+
+function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal, partners}) {
     const rows = []
 
     if (partners !== undefined) {
@@ -12,7 +12,7 @@ function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal}
                 <PartnerItem
                     partner={partner}
                     openDeletePartner={openDeletePartner}
-                    key={partner.id}
+                    key={partner.auth}
                     idModal={idModal}
                     setIdModal={setIdModal}
                 />
@@ -30,7 +30,7 @@ function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal}
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody className="menu-table-body" id="partners-body">
+                <tbody className="menu-partners-table-body" id="partners-body">
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">

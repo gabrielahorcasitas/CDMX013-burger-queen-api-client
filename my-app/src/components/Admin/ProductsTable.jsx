@@ -1,10 +1,8 @@
 import ProductsItem from './ProductsItem'
 import burgerMenu from '../../images/burgerMenu.png'
 import add from '../../images/add.png'
-import { useLoaderData } from 'react-router-dom'
 
-function ProductsTable({ openAddProduct, openDeleteProduct }) {
-    const products = useLoaderData()
+function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal }) {
     const rows = []
 
     if (products !== undefined) {
@@ -13,7 +11,8 @@ function ProductsTable({ openAddProduct, openDeleteProduct }) {
                 <ProductsItem
                     product={product}
                     openDeleteProduct={openDeleteProduct}
-                    key={product.id}
+                    key={product.product}
+                    setIdModal={setIdModal}
                 />
             )
         })
@@ -31,7 +30,7 @@ function ProductsTable({ openAddProduct, openDeleteProduct }) {
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody className="menu-table-body" id="partners-body">
+                <tbody className="menu-products-table-body" id="partners-body">
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">

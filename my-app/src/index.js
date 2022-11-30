@@ -7,8 +7,11 @@ import Products from './components/Admin/Products'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 import WaitersLayout from './components/Waiters/WaitersLayout'
-import axios from 'axios'
+import getData from './getData'
 import Kitchen from './components/Kitchen/Kitchen'
+
+const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
+const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
 
 const router = createBrowserRouter([
  
@@ -16,44 +19,28 @@ const router = createBrowserRouter([
         path: '/',
         element: <LoginView />,
         loader: ({ request, params }) => {
-            return axios
-                .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
-                .then((response) => {
-                    return response.data
-                })
+            return getData(urlUsers)
         },
     },
     {
         path: '/admin/partners',
         element: <Partners />,
         loader: ({ request, params }) => {
-            return axios
-                .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
-                .then((response) => {
-                    return response.data
-                })
-        },
+            return getData(urlUsers)
+        }
     },
     {
         path: '/admin/products',
         element: <Products />,
         loader: ({ request, params }) => {
-            return axios
-                .get('https://6372d80a348e947299fdd17b.mockapi.io/products')
-                .then((response) => {
-                    return response.data
-                })
+            return getData(urlProducts)
         },
     },
     {
         path: '/waiters/new_order',
         element: <WaitersLayout />,
         loader: ({ request, params }) => {
-            return axios
-                .get('https://6372d80a348e947299fdd17b.mockapi.io/products')
-                .then((response) => {
-                    return response.data
-                })
+            return getData(urlProducts)
         },
     },
     {
