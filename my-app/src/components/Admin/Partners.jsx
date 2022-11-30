@@ -35,11 +35,15 @@ function Partners() {
             )
             .then(async () => {
                 const dataUsers = await getData(urlUsers)
+                setFilteredPartners(dataUsers)
                 closeDeletePartner()
                 return setPartners(dataUsers)
             })
     }
-
+    console.log('partners')
+    console.log(partners)
+    console.log('filteredpartners')
+    console.log(filteredPartners)
     return (
         <>
             <NavBars />
