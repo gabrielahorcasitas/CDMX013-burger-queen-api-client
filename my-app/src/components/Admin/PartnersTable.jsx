@@ -1,6 +1,7 @@
 import burgerMenu from '../../images/burgerMenu.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
+import { useState } from 'react';
 
 function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal, partners}) {
     const rows = []
