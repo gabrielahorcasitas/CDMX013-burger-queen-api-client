@@ -19,7 +19,7 @@ function Partners() {
     const [filteredPartners, setFilteredPartners] = useState(partners)
 
     const filterByEmail = partners.filter((element) => {
-        return element.email.toLowerCase().includes(inputText)
+        return  element.email.toLowerCase().includes(inputText) ||  element.role.toLowerCase().includes(inputText)
     })
 
     useEffect(() => {

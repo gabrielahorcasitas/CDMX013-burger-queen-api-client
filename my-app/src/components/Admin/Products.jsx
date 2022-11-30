@@ -18,7 +18,7 @@ function Products() {
     const [filteredProducts, setFilteredProducts] = useState(products)
 
     const filterByName = products.filter((element) => {
-        return element.name.toLowerCase().includes(inputText)
+        return element.name.toLowerCase().includes(inputText) || element.type.toLowerCase().includes(inputText)
     })
 
     useEffect(() => {

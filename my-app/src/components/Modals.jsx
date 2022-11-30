@@ -93,13 +93,14 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     onInput = {e => e.target.setCustomValidity('')}
             />
             <label className="field">Position</label>
-            <input 
-                    className='input-admin-form'
-                    type="text"
+            <select className='input-admin-form'
                     required
-                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
-                    onInput = {e => e.target.setCustomValidity('')}
-            />
+                    
+            ><option>Admin</option>
+             <option>Kitchen</option>
+             <option>Waiter</option>
+
+            </select>
             <div className="buttons-admin-container">
                 <div className="check">
                     <img className='img-confirm-order'
@@ -145,13 +146,11 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     onInput = {e => e.target.setCustomValidity('')}
             />
             <label className="field">Type</label>
-            <input 
-                    className='input-admin-form'
-                    type="number"
-                    required
-                    onInvalid={e => e.target.setCustomValidity('This field is empty')}
-                    onInput = {e => e.target.setCustomValidity('')}
-            />
+            <select className='input-admin-form'
+                    required>
+                        <option>Breakfast</option>
+                        <option>Dinner</option>
+                   </select>
             <div className="buttons-admin-container">
                 <div className="check">
                     <img className='img-confirm-order'
