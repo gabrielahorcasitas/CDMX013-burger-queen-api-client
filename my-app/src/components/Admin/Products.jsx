@@ -16,6 +16,11 @@ function Products() {
     const [products, setProducts] = useState(useLoaderData())
     const [inputText, setInputText] = useState('')
     const [filteredProducts, setFilteredProducts] = useState(products)
+    const [addProducts, setAddProducts]= useState({
+        name:'',
+        type:'',
+        price:''
+    })
 
     const filterByName = products.filter((element) => {
         return element.name.toLowerCase().includes(inputText) || element.type.toLowerCase().includes(inputText)
@@ -39,7 +44,12 @@ function Products() {
                 return setProducts(dataProducts)
             })
     }
-
+    function postProduct(){
+        axios.post(urlProducts, addProducts).then((resp) => {
+            console.log(resp.data)
+            return setProducts(resp.data)
+          })
+    }
     return (
         <>
             <NavBars />
@@ -49,6 +59,9 @@ function Products() {
                 isOpenDeleteProduct={isOpenDeleteProduct}
                 closeDeletProduct={closeDeleteProduct}
                 deleteProduct={deleteProduct}
+                addProducts={addProducts}
+                setAddProducts={setAddProducts}
+                postProduct={postProduct}
             />
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />

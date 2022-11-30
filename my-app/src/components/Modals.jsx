@@ -10,7 +10,8 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
     isAddPartner, closeAddPartner, isAddProduct, closeAddProduct, 
     isOpenDeletePartner, closeDeletePartner, 
     isOpenDeleteProduct, closeDeletProduct,
-    isOrderReady, closeOrderReady, deletePartner, deleteProduct, addPartners, setAddPartners,postPartner}){
+    isOrderReady, closeOrderReady, deletePartner, deleteProduct, addPartners, setAddPartners,postPartner,
+addProducts, setAddProducts, postProduct}){
 
     function resetQty() {
         setProductQty(()=>{
@@ -25,16 +26,22 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
     }; 
 
     function handleAddChange ({target}){
-        console.log(target);
        const { name, value } = target;
-
         const newValues = {
             ...addPartners,
             [name]: value,
         };
         setAddPartners(newValues);
     }
-    
+    function handleAddProductChange ({target}){
+       const { name, value } = target;
+
+        const newValues = {
+            ...addProducts,
+            [name]: value,
+        };
+        setAddProducts(newValues);
+    }
     
 
     return(
@@ -139,7 +146,7 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
         </form>
         </ModalAdd>  
         <ModalAdd isOpen= {isAddProduct} close= {closeAddProduct} >
-            <form className='admin-add-form'>
+            <form className='admin-add-form' onSubmit={postProduct}>
             <label className="add-msg">Add Product</label>
             <label className="field">Product's Name</label>
             <input 
@@ -148,6 +155,8 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     required
                     onInvalid={e => e.target.setCustomValidity('This field is empty')}
                     onInput = {e => e.target.setCustomValidity('')}
+                    onChange={handleAddProductChange}
+                    name='name'
             />
             <label className="field">Amount</label>
             <input 
@@ -156,6 +165,8 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     required
                     onInvalid={e => e.target.setCustomValidity('This field is empty')}
                     onInput = {e => e.target.setCustomValidity('')}
+                    onChange={handleAddProductChange}
+                    name=''
             />
             <label className="field">Price</label>
             <input 
@@ -164,20 +175,24 @@ function Modals ({isOpenConfirmOrder,closeConfirmOrder,
                     required
                     onInvalid={e => e.target.setCustomValidity('This field is empty')}
                     onInput = {e => e.target.setCustomValidity('')}
+                    onChange={handleAddProductChange}
+                    name='price'
             />
             <label className="field">Type</label>
             <select className='input-admin-form'
-                    required>
-                        <option>Breakfast</option>
-                        <option>Dinner</option>
+                    required
+                    onChange={handleAddProductChange}
+                    name='type'>
+                        <option>breakfast</option>
+                        <option>dinner</option>
                    </select>
             <div className="buttons-admin-container">
-                <div className="check">
+                <button className="check" type='submit'>
                     <img className='img-confirm-order'
                     alt='confirm-order'
                     src={check}>
                     </img>
-                </div>
+                </button>
                 <div className="close">
                     <img className='img-noconfirm-order'
                     alt='noconfirm-order'
