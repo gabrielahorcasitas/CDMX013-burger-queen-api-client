@@ -17,6 +17,13 @@ function Partners() {
     const [inputText, setInputText] = useState('')
     const [partners, setPartners] = useState(useLoaderData())
     const [filteredPartners, setFilteredPartners] = useState(partners)
+    // change input values
+    const [addPartners, setAddPartners]=useState({
+    email:'',
+    password:'',
+    role:''
+    })
+    
 
     const filterByEmail = partners.filter((element) => {
         return  element.email.toLowerCase().includes(inputText) ||  element.role.toLowerCase().includes(inputText)
@@ -40,7 +47,12 @@ function Partners() {
                 return setPartners(dataUsers)
             })
     }
-
+    function postPartner(){
+        axios.post(urlUsers, addPartners).then((resp) => {
+            console.log(resp.data)
+            return setPartners(resp.data)
+          })
+    }
     return (
         <>
             <NavBars />
@@ -50,6 +62,9 @@ function Partners() {
                 isOpenDeletePartner={isOpenDeletePartner}
                 closeDeletePartner={closeDeletePartner}
                 deletePartner={deletePartner}
+                 addPartners={addPartners}
+                setAddPartners={setAddPartners}
+                postPartner={postPartner}
             />
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />
