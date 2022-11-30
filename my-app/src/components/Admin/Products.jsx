@@ -34,6 +34,7 @@ function Products() {
             )
             .then(async () => {
                 const dataProducts = await getData(urlProducts)
+                setFilteredProducts(dataProducts)
                 closeDeleteProduct()
                 return setProducts(dataProducts)
             })
