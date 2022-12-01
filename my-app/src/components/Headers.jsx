@@ -28,24 +28,14 @@ if (location.pathname === '/waiters/new_order') {
  
 
 </Header>
-} else if(location.pathname === '/kitchen/active'){
+} else if(location.pathname === '/kitchen/active' || 
+location.pathname === '/kitchen/prepared'){
     content = <Header>
          <header>
                 <label className="role-letters-chefs">Chefs </label>;
             </header>
     </Header>
-        }else if(location.pathname === '/kitchen/prepared'){
-            content = <Header>
-                 <header>
-                        <div className="choose-table-box">
-                            <label className="choose-table-letter">Table: </label>
-                            
-                        </div>
-                        
-                        <label className="role-letters">Chefs </label>;
-                    </header>
-            </Header>
-                }
+        }
 
     return (
         <>

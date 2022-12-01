@@ -99,6 +99,7 @@ td {
   flex-direction: column;
   font: var(--principalFont);
   font-size: 4rem;
+  margin-left: 11rem;
 }
 .done {
   display: flex;
@@ -127,7 +128,6 @@ td {
 
 .container-order{
     display:flex ;
-    justify-content: space-around;
     flex-direction: row;
     width: 80rem;
 }
@@ -142,4 +142,30 @@ td {
 }
 .order-colum{
     width: 30rem;
+}
+.mgs-preparation-time{
+  width: 40rem;
+    font: var(--principalFont);
+    font-weight: 700;
+    font-size: 3rem;
+}
+.mgs-delivered{
+  width: 40rem;
+    font: var(--principalFont);
+    font-weight: 700;
+    font-size: 3rem;
+    color: #48BF53;
+    margin-top: 3rem;
+}
+.container-order-prepared{
+  display:flex ;
+    flex-direction: row;
+    width: 80rem;
+}
+.mgs-Box{
+  display: flex;
+  flex-direction: column;
+  font: var(--principalFont);
+  font-size: 4rem;
+  margin-left: 11rem;
 }

@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals'
 import WaitersLayout from './components/Waiters/WaitersLayout'
 import axios from 'axios'
 import Kitchen from './components/Kitchen/Kitchen'
+import PreparedContainer from './components/Kitchen/PreparedContainer'
 
 const router = createBrowserRouter([
  
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
     {
         path: '/kitchen/active',
         element: <Kitchen />,
+    },
+    {
+        path: '/kitchen/prepared',
+        element: <PreparedContainer />,
     },
 ])
 

@@ -68,7 +68,8 @@ function NavBars() {
                 </div>
             </NavBar>
         )
-    } else if (location.pathname === '/kitchen/active') {
+    } else if (location.pathname === '/kitchen/active' ||
+     location.pathname === '/kitchen/prepared') {
         content = (
             <NavBar>
                 <div className="logo-box">
@@ -83,10 +84,7 @@ function NavBars() {
                         alt="queen-letters"
                     ></img>
                 </div>
-                <NavLink
-                    style={({ isActive }) => {
-                        return { backgroundColor: '#FAC74F' }
-                    }}
+                <NavLink 
                     className="menu-letters"
                     to="/kitchen/active"
                 >
@@ -99,6 +97,7 @@ function NavBars() {
                         <label className="menu-letters">Active</label>
                     </div>
                 </NavLink>
+                <NavLink to="/kitchen/prepared">
                 <div className="menu-btns-box">
                     <img
                         className="prepared"
@@ -107,6 +106,7 @@ function NavBars() {
                     ></img>
                     <label className="menu-letters">Prepared</label>
                 </div>
+                </NavLink>
                 <div className="menu-btns-box" id="log-out-box">
                     <img
                         className="log-out"
