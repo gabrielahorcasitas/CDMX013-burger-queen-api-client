@@ -18,15 +18,17 @@ function Partners() {
     const [partners, setPartners] = useState(useLoaderData())
     const [filteredPartners, setFilteredPartners] = useState(partners)
     // change input values
-    const [addPartners, setAddPartners]=useState({
-    email:'',
-    password:'',
-    role:''
+    const [addPartners, setAddPartners] = useState({
+        email: '',
+        password: '',
+        role: 'admin',
     })
-    
 
     const filterByEmail = partners.filter((element) => {
-        return  element.email.toLowerCase().includes(inputText) ||  element.role.toLowerCase().includes(inputText)
+        return (
+            element.email.toLowerCase().includes(inputText) ||
+            element.role.toLowerCase().includes(inputText)
+        )
     })
 
     useEffect(() => {
@@ -47,11 +49,16 @@ function Partners() {
                 return setPartners(dataUsers)
             })
     }
-    function postPartner(){
+    function postPartner() {
         axios.post(urlUsers, addPartners).then((resp) => {
+            setAddPartners({
+                email: '',
+                password: '',
+                role: 'admin',
+            })
             console.log(resp.data)
             return setPartners(resp.data)
-          })
+        })
     }
     return (
         <>
@@ -62,7 +69,7 @@ function Partners() {
                 isOpenDeletePartner={isOpenDeletePartner}
                 closeDeletePartner={closeDeletePartner}
                 deletePartner={deletePartner}
-                 addPartners={addPartners}
+                addPartners={addPartners}
                 setAddPartners={setAddPartners}
                 postPartner={postPartner}
             />

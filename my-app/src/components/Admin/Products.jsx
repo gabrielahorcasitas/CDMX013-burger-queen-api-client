@@ -16,14 +16,17 @@ function Products() {
     const [products, setProducts] = useState(useLoaderData())
     const [inputText, setInputText] = useState('')
     const [filteredProducts, setFilteredProducts] = useState(products)
-    const [addProducts, setAddProducts]= useState({
-        name:'',
-        type:'',
-        price:''
+    const [addProducts, setAddProducts] = useState({
+        name: '',
+        type: 'breakfast',
+        price: '',
     })
 
     const filterByName = products.filter((element) => {
-        return element.name.toLowerCase().includes(inputText) || element.type.toLowerCase().includes(inputText)
+        return (
+            element.name.toLowerCase().includes(inputText) ||
+            element.type.toLowerCase().includes(inputText)
+        )
     })
 
     useEffect(() => {
@@ -44,11 +47,16 @@ function Products() {
                 return setProducts(dataProducts)
             })
     }
-    function postProduct(){
+    function postProduct() {
         axios.post(urlProducts, addProducts).then((resp) => {
+            setAddProducts({
+                name: '',
+                type: 'breakfast',
+                price: '',
+            })
             console.log(resp.data)
             return setProducts(resp.data)
-          })
+        })
     }
     return (
         <>
