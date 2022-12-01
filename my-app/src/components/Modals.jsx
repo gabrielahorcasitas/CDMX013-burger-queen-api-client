@@ -48,6 +48,7 @@ function Modals({
             ...addPartners,
             [name]: value,
         }
+        console.log(newValues)
         setAddPartners(newValues)
     }
     function handleAddProductChange({ target }) {
@@ -60,6 +61,7 @@ function Modals({
         setAddProducts(newValues)
     }
 
+    console.log(addPartners)
     return (
         <>
             <ModalConfirm isOpen={isOpenConfirmOrder} close={closeConfirmOrder}>

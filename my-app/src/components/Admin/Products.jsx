@@ -47,15 +47,18 @@ function Products() {
                 return setProducts(dataProducts)
             })
     }
-    function postProduct() {
+    function postProduct(event) {
+        event.preventDefault()
         axios.post(urlProducts, addProducts).then((resp) => {
+            setFilteredProducts([...products, resp.data])
+            closeAddProduct()
             setAddProducts({
                 name: '',
                 type: 'breakfast',
                 price: '',
             })
             console.log(resp.data)
-            return setProducts(resp.data)
+            return setProducts([...products, resp.data])
         })
     }
     return (

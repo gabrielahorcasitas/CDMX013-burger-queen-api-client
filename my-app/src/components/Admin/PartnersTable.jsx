@@ -1,9 +1,15 @@
 import burgerMenu from '../../images/burgerMenu.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
-import { useState } from 'react';
+import { useState } from 'react'
 
-function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal, partners}) {
+function PartnersTable({
+    openAddPartner,
+    openDeletePartner,
+    idModal,
+    setIdModal,
+    partners,
+}) {
     const rows = []
 
     if (partners !== undefined) {
@@ -34,17 +40,23 @@ function PartnersTable({ openAddPartner, openDeletePartner, idModal, setIdModal,
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
-                    <img
-                        src={add}
-                        alt="add"
-                        className="add-img"
-                        onClick={openAddPartner}
-                    ></img>
-                    <img
-                        className="burger-logo-menu"
-                        src={burgerMenu}
-                        alt="burger-logo-menu"
-                    ></img>
+                    <tr>
+                        <td>
+                            <img
+                                src={add}
+                                alt="add"
+                                className="add-img"
+                                onClick={openAddPartner}
+                            ></img>
+                        </td>
+                        <td>
+                            <img
+                                className="burger-logo-menu"
+                                src={burgerMenu}
+                                alt="burger-logo-menu"
+                            ></img>
+                        </td>
+                    </tr>
                 </tfoot>
             </table>
         </>
