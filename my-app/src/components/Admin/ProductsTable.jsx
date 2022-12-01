@@ -2,7 +2,12 @@ import ProductsItem from './ProductsItem'
 import burgerMenu from '../../images/burgerMenu.png'
 import add from '../../images/add.png'
 
-function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal }) {
+function ProductsTable({
+    openAddProduct,
+    openDeleteProduct,
+    products,
+    setIdModal,
+}) {
     const rows = []
 
     if (products !== undefined) {
@@ -34,17 +39,23 @@ function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
-                    <img
-                        src={add}
-                        alt="add"
-                        className="add-img"
-                        onClick={openAddProduct}
-                    ></img>
-                    <img
-                        className="burger-logo-menu"
-                        src={burgerMenu}
-                        alt="burger-logo-menu"
-                    ></img>
+                    <tr>
+                        <td>
+                            <img
+                                src={add}
+                                alt="add"
+                                className="add-img"
+                                onClick={openAddProduct}
+                            ></img>
+                        </td>
+                        <td>
+                            <img
+                                className="burger-logo-menu"
+                                src={burgerMenu}
+                                alt="burger-logo-menu"
+                            ></img>
+                        </td>
+                    </tr>
                 </tfoot>
             </table>
         </>

@@ -24,6 +24,7 @@ function Partners() {
         role: 'admin',
     })
 
+    console.log(addPartners)
     const filterByEmail = partners.filter((element) => {
         return (
             element.email.toLowerCase().includes(inputText) ||
@@ -49,15 +50,20 @@ function Partners() {
                 return setPartners(dataUsers)
             })
     }
-    function postPartner() {
+
+    function postPartner(event) {
+        event.preventDefault()
+        console.log(partners)
         axios.post(urlUsers, addPartners).then((resp) => {
             setAddPartners({
                 email: '',
                 password: '',
                 role: 'admin',
             })
+            setFilteredPartners([...partners, resp.data])
+            closeAddPartner()
             console.log(resp.data)
-            return setPartners(resp.data)
+            return setPartners([...partners, resp.data])
         })
     }
     return (

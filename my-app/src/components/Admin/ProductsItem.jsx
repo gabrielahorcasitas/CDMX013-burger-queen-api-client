@@ -2,9 +2,9 @@ import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
 function ProductsItem({ product, openDeleteProduct, setIdModal }) {
-    function sendId (){
-        openDeleteProduct();
-        setIdModal(product.product);
+    function sendId() {
+        openDeleteProduct()
+        setIdModal(product.product)
     }
 
     return (
@@ -23,19 +23,23 @@ function ProductsItem({ product, openDeleteProduct, setIdModal }) {
             <td className="price-product" style={{ width: '13rem' }}>
                 {product.price}
             </td>
-            <img
-                alt="edit"
-                src={pencil}
-                style={{ height: '5rem' }}
-                className="product-actions"
-            ></img>
-            <img
-                alt="delete"
-                src={trash}
-                onClick={sendId}
-                className="product-actions"
-                style={{ height: '5rem' }}
-            ></img>
+            <td>
+                <img
+                    alt="edit"
+                    src={pencil}
+                    style={{ height: '5rem' }}
+                    className="product-actions"
+                ></img>
+            </td>
+            <td>
+                <img
+                    alt="delete"
+                    src={trash}
+                    onClick={sendId}
+                    className="product-actions"
+                    style={{ height: '5rem' }}
+                ></img>
+            </td>
         </tr>
     )
 }
