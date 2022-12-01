@@ -19,7 +19,7 @@ function ProductsItem({ product, openDeleteProduct, setIdModal }) {
             <td className="product-name" style={{ width: '13rem' }}>
                 {product.name}
             </td>
-            <td>Items</td>
+            <td>{product.type}</td>
             <td className="price-product" style={{ width: '13rem' }}>
                 {product.price}
             </td>

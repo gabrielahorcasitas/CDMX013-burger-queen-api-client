@@ -17,9 +17,6 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(
-            axios.get('https://6372d80a348e947299fdd17b.mockapi.io/users')
-        )
         axios
             .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
             .then((result) => {

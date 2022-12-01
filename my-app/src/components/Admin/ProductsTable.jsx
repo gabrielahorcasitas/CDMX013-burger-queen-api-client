@@ -24,7 +24,7 @@ function ProductsTable({ openAddProduct, openDeleteProduct, products, setIdModal
                     <tr>
                         <th>Photo</th>
                         <th>Name</th>
-                        <th>Items</th>
+                        <th>Type</th>
                         <th>Price</th>
                         <th>Edit</th>
                         <th>Delete</th>
