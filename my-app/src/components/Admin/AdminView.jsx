@@ -1,6 +1,7 @@
 import NavBars from "../NavBars";
 import Modals from "../Modals";
 import { useModal } from "../useModal";
+import ModalAddPartner from "./AdminModals/ModalAddPartner";
 
 function Admin() {
   const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false);
@@ -15,6 +16,7 @@ function Admin() {
     isOpenDeletePartner={isOpenDeletePartner} closeDeletePartner= {closeDeletePartner}
     isOpenDeleteProduct={isOpenDeleteProduct} closeDeletProduct={closeDeleteProduct}
     />
+    <ModalAddPartner />
     <button onClick={openAddPartner}>Prueba Modal Partners</button>
     <button onClick={openAddProduct}>Prueba Modal Products</button>
     <button onClick={openDeletePartner}>Prueba Modal Borrar Partners</button>
