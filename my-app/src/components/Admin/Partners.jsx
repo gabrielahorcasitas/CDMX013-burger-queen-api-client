@@ -8,6 +8,9 @@ import { useState, useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import axios from 'axios'
 import getData from '../../getData'
+import ModalAddPartner from './AdminModals/ModalAddPartner'
+import ModalDeletePartner from './AdminModals/ModalDeletePartner'
+import ModalEditPartner from './AdminModals/ModalEditPartner'
 
 function Partners() {
     const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false)
@@ -85,7 +88,7 @@ function Partners() {
     return (
         <>
             <NavBars />
-            <Modals
+            {/* <Modals
                 isAddPartner={isAddPartner}
                 closeAddPartner={closeAddPartner}
                 isOpenDeletePartner={isOpenDeletePartner}
@@ -97,7 +100,17 @@ function Partners() {
                 putPartner={putPartner}
                 isEditPartner={isEditPartner}
                 closeEditPartner={closeEditPartner}
-            />
+            /> */}
+
+            <ModalAddPartner isOpen={isAddPartner}
+                close={closeAddPartner} addPartners={addPartners}
+                setAddPartners={setAddPartners}  postPartner={postPartner}/>
+            <ModalDeletePartner isOpen={isOpenDeletePartner} close={closeDeletePartner}
+                deletePartner={deletePartner}/>
+            <ModalEditPartner isOpen={isEditPartner}
+                close={closeEditPartner} addPartners={addPartners}
+                setAddPartners={setAddPartners} putPartner={putPartner}/>
+
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />
                 <PartnersTable

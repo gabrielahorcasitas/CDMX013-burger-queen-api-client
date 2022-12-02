@@ -1,7 +1,7 @@
 import './ModalAdmin.css'
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
-function ModalAddPartner ({ isOpen, close, addPartners, setAddPartners, postPartner }){
+function ModalEditPartner ({ isOpen, close, addPartners, setAddPartners, putPartner }){
 const handleModalContainerClick = (e) => e.stopPropagation();
 function handleAddChange({ target }) {
   const { name, value } = target
@@ -15,8 +15,8 @@ function handleAddChange({ target }) {
     return (
       <article className={`modal-admin ${isOpen && "is-open"}`} onClick={close}>
         <div className="modal-admin-container" onClick={handleModalContainerClick}>
-                <form className="admin-add-form" onSubmit={postPartner}>
-                    <label className="add-msg">Add Partner</label>
+                <form className="admin-add-form" onSubmit={putPartner}>
+                    <label className="add-msg">Edit Partner</label>
                     <label className="field">Email</label>
                     <input
                         className="input-admin-form"
@@ -28,6 +28,7 @@ function handleAddChange({ target }) {
                         onInput={(e) => e.target.setCustomValidity('')}
                         onChange={handleAddChange}
                         name="email"
+                        value={addPartners === undefined? '' : addPartners.email}
                     />
                     <label className="field">Password</label>
                     <input
@@ -40,6 +41,7 @@ function handleAddChange({ target }) {
                         onInput={(e) => e.target.setCustomValidity('')}
                         onChange={handleAddChange}
                         name="password"
+                        value={addPartners === undefined? '' : addPartners.password}
                     />
                     <label className="field">Position</label>
                     <select
@@ -47,6 +49,7 @@ function handleAddChange({ target }) {
                         required
                         onChange={handleAddChange}
                         name="role"
+                        value={addPartners === undefined? '' : addPartners.role}
                     >
                         <option>admin</option>
                         <option>kitchen</option>
@@ -74,4 +77,4 @@ function handleAddChange({ target }) {
       </article>
     );
 }
-export default ModalAddPartner;
+export default ModalEditPartner;

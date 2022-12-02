@@ -1,23 +1,23 @@
 import './ModalAdmin.css'
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
-function ModalAddPartner ({ isOpen, close, addPartners, setAddPartners, postPartner }){
+function ModalAddProduct ({ isOpen, close, addProducts, setAddProducts, postProduct }){
 const handleModalContainerClick = (e) => e.stopPropagation();
-function handleAddChange({ target }) {
-  const { name, value } = target
-  const newValues = {
-      ...addPartners,
-      [name]: value,
-  }
-  console.log(newValues)
-  setAddPartners(newValues)
+function handleAddProductChange({ target }) {
+    const { name, value } = target
+
+    const newValues = {
+        ...addProducts,
+        [name]: value,
+    }
+    setAddProducts(newValues)
 }
     return (
       <article className={`modal-admin ${isOpen && "is-open"}`} onClick={close}>
         <div className="modal-admin-container" onClick={handleModalContainerClick}>
-                <form className="admin-add-form" onSubmit={postPartner}>
-                    <label className="add-msg">Add Partner</label>
-                    <label className="field">Email</label>
+                <form className="admin-add-form" onSubmit={postProduct}>
+                    <label className="add-msg">Add Product</label>
+                    <label className="field">Product's Name</label>
                     <input
                         className="input-admin-form"
                         type="text"
@@ -26,31 +26,30 @@ function handleAddChange({ target }) {
                             e.target.setCustomValidity('This field is empty')
                         }
                         onInput={(e) => e.target.setCustomValidity('')}
-                        onChange={handleAddChange}
-                        name="email"
+                        onChange={handleAddProductChange}
+                        name="name"
                     />
-                    <label className="field">Password</label>
+                    <label className="field">Price</label>
                     <input
                         className="input-admin-form"
-                        type="password"
+                        type="number"
                         required
                         onInvalid={(e) =>
                             e.target.setCustomValidity('This field is empty')
                         }
                         onInput={(e) => e.target.setCustomValidity('')}
-                        onChange={handleAddChange}
-                        name="password"
+                        onChange={handleAddProductChange}
+                        name="price"
                     />
-                    <label className="field">Position</label>
+                    <label className="field">Type</label>
                     <select
                         className="input-admin-form"
                         required
-                        onChange={handleAddChange}
-                        name="role"
+                        onChange={handleAddProductChange}
+                        name="type"
                     >
-                        <option>admin</option>
-                        <option>kitchen</option>
-                        <option>waiter</option>
+                        <option>breakfast</option>
+                        <option>dinner</option>
                     </select>
                     <div className="buttons-admin-container">
                         <button className="check" type="submit">
@@ -74,4 +73,4 @@ function handleAddChange({ target }) {
       </article>
     );
 }
-export default ModalAddPartner;
+export default ModalAddProduct;
