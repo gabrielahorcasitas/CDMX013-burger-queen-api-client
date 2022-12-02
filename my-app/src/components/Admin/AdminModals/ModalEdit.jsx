@@ -1,5 +1,4 @@
 import './ModalAdmin.css'
-//Modal edit Partners
 function ModalEdit({ children, isOpen, close }) {
     const handleModalContainerClick = (e) => e.stopPropagation()
 

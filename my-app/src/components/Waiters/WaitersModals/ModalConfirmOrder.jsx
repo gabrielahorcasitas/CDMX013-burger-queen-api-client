@@ -3,7 +3,6 @@ import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
 
 function ModalConfirmOrder({ isOpen, close}){
-
 const handleModalContainerClick = (e) => e.stopPropagation();
 
     return (
