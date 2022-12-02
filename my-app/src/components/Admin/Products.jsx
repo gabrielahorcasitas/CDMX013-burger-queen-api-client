@@ -87,7 +87,7 @@ function Products() {
             addProducts={addProducts} setAddProducts={setAddProducts}
             postProduct={postProduct}/>
             <ModalDeleteProduct isOpen={isOpenDeleteProduct} close={closeDeleteProduct}
-                deletePartner={deleteProduct}/>
+                deleteProduct={deleteProduct}/>
             <ModalEditProduct isOpen={isEditProduct}
                 close={closeEditProduct} addProducts={addProducts}
                 setAddProducts={setAddProducts} putProduct={putProduct} />
