@@ -65,6 +65,7 @@ header {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
 .add-img {
@@ -115,4 +116,14 @@ a.active {
     min-height: 46rem;
     max-height: 46rem;
     overflow-y: scroll;
+}
+#burger-logo-admin{
+    margin-left: 10rem;
+
+}
+.container-burger{
+    display: flex;
+    justify-content: flex-end;
+    width: 75rem;
+    
 }

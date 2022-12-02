@@ -1,5 +1,5 @@
 import Item from "./Item";
-import burgerMenu from '../../images/burgerMenu.png'
+import burgerlogo from '../../images/burgerlogo.png'
 
 function Menu({products, productQty, setProductQty }){
   const rows = [];
@@ -22,7 +22,10 @@ function Menu({products, productQty, setProductQty }){
     <tbody className="menu-waiter-table-body">
       {rows}
       </tbody>
-      <tfoot className="logo-table-box"><tr className="container-logo-burger"><img className="burger-logo-menu" src={burgerMenu} alt ='burger-logo-menu'></img></tr>
+      <tfoot className="logo-table-box">
+        <tr className="tr-menu">
+          <td className="container-logo-burger"><img className="burger-logo-menu" src={burgerlogo} alt ='burger-logo-menu'></img>
+          </td></tr>
       </tfoot>
   </table>
   
