@@ -7,9 +7,13 @@ import { useLoaderData } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import getData from '../../getData'
+import ModalAddProduct from './AdminModals/ModalAddProduct'
+import ModalDeleteProduct from './AdminModals/ModalDeleteProduct'
+import ModalEditProduct from './AdminModals/ModalEditProduct'
 
 function Products() {
     const [isAddProduct, openAddProduct, closeAddProduct] = useModal(false)
+    const [isEditProduct, openEditProduct, closeEditProduct] = useModal(false)
     const [isOpenDeleteProduct, openDeleteProduct, closeDeleteProduct] =
         useModal(false)
     const [idModal, setIdModal] = useState('')
@@ -61,10 +65,24 @@ function Products() {
             return setProducts([...products, resp.data])
         })
     }
+    function putProduct() {
+        axios
+            .put(
+                `https://6372d80a348e947299fdd17b.mockapi.io/products/${idModal}`,
+                addProducts
+            )
+            .then(async () => {
+                const dataProducts = await getData(urlProducts)
+                setFilteredProducts(dataProducts)
+                closeEditProduct()
+                return setProducts(dataProducts)
+            })
+    }
+
     return (
         <>
             <NavBars />
-            <Modals
+          {/*<Modals
                 isAddProduct={isAddProduct}
                 closeAddProduct={closeAddProduct}
                 isOpenDeleteProduct={isOpenDeleteProduct}
@@ -73,7 +91,18 @@ function Products() {
                 addProducts={addProducts}
                 setAddProducts={setAddProducts}
                 postProduct={postProduct}
-            />
+    />*/}
+
+            <ModalAddProduct isOpen={isAddProduct} close={closeAddProduct} 
+            addProducts={addProducts} setAddProducts={setAddProducts}
+            postProduct={postProduct}/>
+            <ModalDeleteProduct isOpen={isOpenDeleteProduct} close={closeDeleteProduct}
+                deletePartner={deleteProduct}/>
+            <ModalEditProduct isOpen={isEditProduct}
+                close={closeEditProduct} addProducts={addProducts}
+                setAddProducts={setAddProducts} putProduct={putProduct}/>
+            
+
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />
                 <ProductsTable
@@ -85,6 +114,7 @@ function Products() {
                             ? filteredProducts
                             : products
                     }
+                    openEditProduct={openEditProduct}
                 />
             </div>
         </>

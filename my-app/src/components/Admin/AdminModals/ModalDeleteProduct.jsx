@@ -1,16 +1,17 @@
-import './Modal.css';
+import './ModalAdmin.css'
+import './ModalAdmin.css'
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
-
-function ModalConfirmOrder({ isOpen, close}){
+function ModalDeleteProduct ({ isOpen, close, deleteProduct}){
 const handleModalContainerClick = (e) => e.stopPropagation();
 
     return (
-      <article className={`modal ${isOpen && "is-open"}`} onClick={close}>
-        <div className="modal-container" onClick={handleModalContainerClick}>
-                <div className="confirm-container">
-                    <label className="confirm-msg">
-                        Is the order ready to be sent to the kitchen?
+      <article className={`modal-admin ${isOpen && "is-open"}`} onClick={close}>
+        <div className="modal-admin-delete-container" onClick={handleModalContainerClick}>
+                <div className="confirm-delete-container">
+                    <label className="confirm-delete-msg">
+                        This action is permanent Are you sure you want to delete
+                        this?
                     </label>
                     <div className="buttons-container">
                         <div className="check">
@@ -18,6 +19,7 @@ const handleModalContainerClick = (e) => e.stopPropagation();
                                 className="img-confirm-order"
                                 alt="confirm-order"
                                 src={check}
+                                onClick={deleteProduct}
                             ></img>
                         </div>
                         <div className="close">
@@ -34,4 +36,4 @@ const handleModalContainerClick = (e) => e.stopPropagation();
       </article>
     );
 }
-export default ModalConfirmOrder;
+export default ModalDeleteProduct;

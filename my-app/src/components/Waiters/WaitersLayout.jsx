@@ -7,7 +7,9 @@ import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { useModal } from "../useModal";
-import { useSearchParams } from 'react-router-dom'; 
+import { useSearchParams } from 'react-router-dom';
+import ModalConfirmOrder from "./WaitersModals/ModalConfirmOrder"; 
+import ModalConfirmCancel from "./WaitersModals/ModalConfirmCancel";
 
 function WaitersLayout(){
   const products= useLoaderData();
@@ -43,10 +45,12 @@ function WaitersLayout(){
     <div className="tables-menu-ticket">
     <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
     <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
-    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
+    {/* <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
     isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
     setProductQty={setProductQty} products={products}
-    />
+    /> */}
+    <ModalConfirmOrder isOpen={isOpenConfirmOrder} close={closeConfirmOrder}/>
+    <ModalConfirmCancel isOpen= {isOpenCancelOrder} close={closeCancelOrder} products={products} setProductQty={setProductQty}/>
     </div>
     </div>
     </>
