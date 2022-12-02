@@ -46,8 +46,8 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder})
             <tfoot className="logo-table-box">
             <tr className="container-ticketbuttons"> 
              <div className="confirm-order-buttons">
+                    <button className="button-cancel-order" onClick={openCancelOrder}>Cancel</button>
                     <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
-                    <button className="button-cancel-order" onClick={/*resetQty*/openCancelOrder}>Cancel</button>
                 </div></tr>
              </tfoot>
         </table>

@@ -19,7 +19,7 @@ function Menu({products, productQty, setProductQty }){
         <th>Menu</th>
       </tr>
     </thead>
-    <tbody className="menu-table-body">
+    <tbody className="menu-waiter-table-body">
       {rows}
       </tbody>
       <tfoot className="logo-table-box"><tr className="container-logo-burger"><img className="burger-logo-menu" src={burgerMenu} alt ='burger-logo-menu'></img></tr>

@@ -1,13 +1,19 @@
 import NavBars from "../NavBars";
+import Headers from "../Headers";
+import Orders from "./Orders";
 import Modals from "../Modals";
 import { useModal } from "../useModal";
 function Kitchen (){
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
     return(
-    <> 
-    <NavBars/>
+    <> <NavBars/>
+    <div className="body-active-order">
+    <Headers/>
+    <div>
+      <Orders isOrderReady={isOrderReady} openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} />
+    </div>
+    </div>
     <Modals  isOrderReady={isOrderReady} closeOrderReady={closeOrderReady} />
-    <button onClick={openOrderReady}>Prueba confirmar orden lista</button>
     </>)
 }
 export default Kitchen;
