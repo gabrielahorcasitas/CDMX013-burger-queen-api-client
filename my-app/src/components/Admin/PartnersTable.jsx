@@ -9,6 +9,8 @@ function PartnersTable({
     idModal,
     setIdModal,
     partners,
+    openEditPartner,
+    setAddPartners,
 }) {
     const rows = []
 
@@ -21,6 +23,9 @@ function PartnersTable({
                     key={partner.auth}
                     idModal={idModal}
                     setIdModal={setIdModal}
+                    openAddPartner={openAddPartner}
+                    openEditPartner={openEditPartner}
+                    setAddPartners={setAddPartners}
                 />
             )
         })

@@ -11,6 +11,7 @@ import getData from '../../getData'
 
 function Partners() {
     const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false)
+    const [isEditPartner, openEditPartner, closeEditPartner] = useModal(false)
     const [isOpenDeletePartner, openDeletePartner, closeDeletePartner] =
         useModal(false)
     const [idModal, setIdModal] = useState('')
@@ -51,6 +52,21 @@ function Partners() {
             })
     }
 
+    function putPartner(event) {
+        event.preventDefault()
+        axios
+            .put(
+                `https://6372d80a348e947299fdd17b.mockapi.io/users/${idModal}`,
+                addPartners
+            )
+            .then(async (resp) => {
+                const dataUsers = await getData(urlUsers)
+                setFilteredPartners(dataUsers)
+                closeEditPartner()
+                return setPartners(dataUsers)
+            })
+    }
+
     function postPartner(event) {
         event.preventDefault()
         console.log(partners)
@@ -78,6 +94,9 @@ function Partners() {
                 addPartners={addPartners}
                 setAddPartners={setAddPartners}
                 postPartner={postPartner}
+                putPartner={putPartner}
+                isEditPartner={isEditPartner}
+                closeEditPartner={closeEditPartner}
             />
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />
@@ -91,6 +110,8 @@ function Partners() {
                             ? filteredPartners
                             : partners
                     }
+                    openEditPartner={openEditPartner}
+                    setAddPartners={setAddPartners}
                 />
             </div>
         </>

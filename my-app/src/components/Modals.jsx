@@ -1,6 +1,7 @@
 import check from '../../src/images/check.png'
 import close from '../../src/images/close.png'
 import ModalAdd from './Admin/ModalAdd'
+import ModalEdit from './Admin/ModalEdit'
 import ModalConfirm from './Waiters/ModalConfirm'
 import ModalDelete from './Admin/ModalDelete'
 import ModalConfirmKitchen from './Kitchen/ModalConfirmKitchen'
@@ -30,6 +31,9 @@ function Modals({
     addProducts,
     setAddProducts,
     postProduct,
+    isEditPartner,
+    closeEditPartner,
+    putPartner,
 }) {
     function resetQty() {
         setProductQty(() => {
@@ -305,6 +309,66 @@ function Modals({
                     </div>
                 </div>
             </ModalConfirmKitchen>
+            <ModalEdit isOpen={isEditPartner} close={closeEditPartner}>
+                <form className="admin-add-form" onSubmit={putPartner}>
+                    <label className="add-msg">Edit Partner</label>
+                    <label className="field">Email</label>
+                    <input
+                        className="input-admin-form"
+                        type="text"
+                        required
+                        onInvalid={(e) =>
+                            e.target.setCustomValidity('This field is empty')
+                        }
+                        onInput={(e) => e.target.setCustomValidity('')}
+                        onChange={handleAddChange}
+                        name="email"
+                        value={addPartners.email}
+                    />
+                    <label className="field">Password</label>
+                    <input
+                        className="input-admin-form"
+                        type="password"
+                        required
+                        onInvalid={(e) =>
+                            e.target.setCustomValidity('This field is empty')
+                        }
+                        onInput={(e) => e.target.setCustomValidity('')}
+                        onChange={handleAddChange}
+                        name="password"
+                        value={addPartners.password}
+                    />
+                    <label className="field">Position</label>
+                    <select
+                        className="input-admin-form"
+                        required
+                        onChange={handleAddChange}
+                        name="role"
+                        value={addPartners.role}
+                    >
+                        <option>admin</option>
+                        <option>kitchen</option>
+                        <option>waiter</option>
+                    </select>
+                    <div className="buttons-admin-container">
+                        <button className="check" type="submit">
+                            <img
+                                className="img-confirm-order"
+                                alt="confirm-order"
+                                src={check}
+                            ></img>
+                        </button>
+                        <div className="close">
+                            <img
+                                className="img-noconfirm-order"
+                                alt="noconfirm-order"
+                                src={close}
+                                onClick={closeEditPartner}
+                            ></img>
+                        </div>
+                    </div>
+                </form>
+            </ModalEdit>
         </>
     )
 }
