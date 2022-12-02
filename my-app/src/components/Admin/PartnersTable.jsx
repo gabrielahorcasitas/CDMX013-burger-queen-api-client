@@ -1,7 +1,7 @@
-import burgerMenu from '../../images/burgerMenu.png'
+import burgerlogo from '../../images/burgerlogo.png'
 import PartnerItem from './PartnerItem'
 import add from '../../images/add.png'
-import { useState } from 'react'
+
 
 function PartnersTable({
     openAddPartner,
@@ -46,8 +46,8 @@ function PartnersTable({
                     {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
-                    <tr>
-                        <td>
+                    <tr >
+                        <td >
                             <img
                                 src={add}
                                 alt="add"
@@ -55,10 +55,10 @@ function PartnersTable({
                                 onClick={openAddPartner}
                             ></img>
                         </td>
-                        <td>
+                        <td className='container-burger'>
                             <img
-                                className="burger-logo-menu"
-                                src={burgerMenu}
+                                className="burger-logo-menu" id='burger-logo-admin'
+                                src={burgerlogo}
                                 alt="burger-logo-menu"
                             ></img>
                         </td>

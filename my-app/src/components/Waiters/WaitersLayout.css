@@ -147,14 +147,22 @@ table {
 }
 
 .burger-logo-menu {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 6rem;
+    opacity: 60%;
+    
+}
+.tr-menu{
+    display: flex;
+    align-content: center;
+    margin: 0;
 }
 .container-logo-burger {
     display: flex;
     justify-content: flex-end;
-    width: 42rem;
+    width: 38rem;
     margin-top: 0;
+    align-items: center;
 }
 .container-ticketbuttons {
     display: flex;
@@ -163,6 +171,8 @@ table {
     margin-top: 0;
 }
 .logo-table-box {
+    display: flex;
+    align-content: center;
     width: 42rem;
     height: 8rem;
     bottom: 0.1rem;

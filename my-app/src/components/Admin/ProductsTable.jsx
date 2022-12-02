@@ -1,5 +1,5 @@
 import ProductsItem from './ProductsItem'
-import burgerMenu from '../../images/burgerMenu.png'
+import burgerlogo from '../../images/burgerlogo.png'
 import add from '../../images/add.png'
 
 function ProductsTable({
@@ -52,10 +52,10 @@ function ProductsTable({
                                 onClick={openAddProduct}
                             ></img>
                         </td>
-                        <td>
+                        <td className='container-burger'>
                             <img
                                 className="burger-logo-menu"
-                                src={burgerMenu}
+                                src={burgerlogo}
                                 alt="burger-logo-menu"
                             ></img>
                         </td>
