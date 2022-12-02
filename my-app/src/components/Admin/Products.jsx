@@ -1,7 +1,6 @@
 import NavBars from '../NavBars'
 import Header from './Header'
 import ProductsTable from './ProductsTable'
-import Modals from '../Modals'
 import { useModal } from '../useModal'
 import { useLoaderData } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -65,7 +64,8 @@ function Products() {
             return setProducts([...products, resp.data])
         })
     }
-    function putProduct() {
+    function putProduct(event) {
+        event.preventDefault();
         axios
             .put(
                 `https://6372d80a348e947299fdd17b.mockapi.io/products/${idModal}`,
@@ -82,16 +82,6 @@ function Products() {
     return (
         <>
             <NavBars />
-          {/*<Modals
-                isAddProduct={isAddProduct}
-                closeAddProduct={closeAddProduct}
-                isOpenDeleteProduct={isOpenDeleteProduct}
-                closeDeletProduct={closeDeleteProduct}
-                deleteProduct={deleteProduct}
-                addProducts={addProducts}
-                setAddProducts={setAddProducts}
-                postProduct={postProduct}
-    />*/}
 
             <ModalAddProduct isOpen={isAddProduct} close={closeAddProduct} 
             addProducts={addProducts} setAddProducts={setAddProducts}
@@ -100,7 +90,7 @@ function Products() {
                 deletePartner={deleteProduct}/>
             <ModalEditProduct isOpen={isEditProduct}
                 close={closeEditProduct} addProducts={addProducts}
-                setAddProducts={setAddProducts} putProduct={putProduct}/>
+                setAddProducts={setAddProducts} putProduct={putProduct} />
             
 
             <div className="partners-layout">
@@ -115,6 +105,7 @@ function Products() {
                             : products
                     }
                     openEditProduct={openEditProduct}
+                    setAddProducts={setAddProducts}
                 />
             </div>
         </>

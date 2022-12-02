@@ -1,7 +1,7 @@
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
-function ProductsItem({ product, openDeleteProduct, setIdModal, openEditProduct }) {
+function ProductsItem({ product, openDeleteProduct, setIdModal, openEditProduct,  setAddProducts}) {
     function sendId() {
         openDeleteProduct()
         setIdModal(product.product)
@@ -10,6 +10,7 @@ function ProductsItem({ product, openDeleteProduct, setIdModal, openEditProduct 
     function sendIdEdit(){
         openEditProduct();
         setIdModal(product.product)
+        setAddProducts({ ...product })
     }
     return (
         <tr>

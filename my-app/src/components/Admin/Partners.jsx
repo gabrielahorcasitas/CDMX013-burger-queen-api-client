@@ -2,7 +2,6 @@ import NavBars from '../NavBars'
 import Header from './Header'
 import './Admin.css'
 import PartnersTable from './PartnersTable'
-import Modals from '../Modals'
 import { useModal } from '../useModal'
 import { useState, useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
@@ -88,20 +87,7 @@ function Partners() {
     return (
         <>
             <NavBars />
-            {/* <Modals
-                isAddPartner={isAddPartner}
-                closeAddPartner={closeAddPartner}
-                isOpenDeletePartner={isOpenDeletePartner}
-                closeDeletePartner={closeDeletePartner}
-                deletePartner={deletePartner}
-                addPartners={addPartners}
-                setAddPartners={setAddPartners}
-                postPartner={postPartner}
-                putPartner={putPartner}
-                isEditPartner={isEditPartner}
-                closeEditPartner={closeEditPartner}
-            /> */}
-
+    
             <ModalAddPartner isOpen={isAddPartner}
                 close={closeAddPartner} addPartners={addPartners}
                 setAddPartners={setAddPartners}  postPartner={postPartner}/>

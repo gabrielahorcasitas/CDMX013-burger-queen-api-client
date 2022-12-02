@@ -26,6 +26,7 @@ function PartnersTable({
                     openAddPartner={openAddPartner}
                     openEditPartner={openEditPartner}
                     setAddPartners={setAddPartners}
+                   
                 />
             )
         })

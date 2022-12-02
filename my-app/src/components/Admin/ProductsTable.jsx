@@ -7,7 +7,8 @@ function ProductsTable({
     openDeleteProduct,
     products,
     setIdModal,
-    openEditProduct
+    openEditProduct,
+    setAddProducts
 }) {
     const rows = []
 
@@ -20,6 +21,7 @@ function ProductsTable({
                     key={product.product}
                     setIdModal={setIdModal}
                     openEditProduct={openEditProduct}
+                    setAddProducts={setAddProducts}
                 />
             )
         })
