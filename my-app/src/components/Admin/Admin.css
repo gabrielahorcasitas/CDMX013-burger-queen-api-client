@@ -56,11 +56,16 @@ header {
     width: auto;
 }
 
+.product-name {
+    width: 13rem;
+}
+
 #partners-footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
 .add-img {
@@ -78,4 +83,47 @@ a:focus {
 
 a.active {
     background-color: #fac74f;
+}
+
+.product-img {
+    width: 7rem;
+}
+
+.product-actions {
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+}
+
+.td-partners {
+    margin-right: 9rem;
+}
+
+.menu-partners-table-body {
+    margin-left: 5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 46rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+}
+
+.menu-products-table-body{
+    margin-left: 5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 46rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+}
+#burger-logo-admin{
+    margin-left: 10rem;
+
+}
+.container-burger{
+    display: flex;
+    justify-content: flex-end;
+    width: 75rem;
+    
 }

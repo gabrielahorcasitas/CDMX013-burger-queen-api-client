@@ -1,7 +1,31 @@
 import ProductsItem from './ProductsItem'
-import burgerMenu from '../../images/burgerMenu.png'
+import burgerlogo from '../../images/burgerlogo.png'
 import add from '../../images/add.png'
-function ProductsTable({ openAddProduct, openDeleteProduct }) {
+
+function ProductsTable({
+    openAddProduct,
+    openDeleteProduct,
+    products,
+    setIdModal,
+    openEditProduct,
+    setAddProducts
+}) {
+    const rows = []
+
+    if (products !== undefined) {
+        products.forEach((product) => {
+            rows.push(
+                <ProductsItem
+                    product={product}
+                    openDeleteProduct={openDeleteProduct}
+                    key={product.product}
+                    setIdModal={setIdModal}
+                    openEditProduct={openEditProduct}
+                    setAddProducts={setAddProducts}
+                />
+            )
+        })
+    }
     return (
         <>
             <table className="tableMenu" id="partners">
@@ -9,29 +33,33 @@ function ProductsTable({ openAddProduct, openDeleteProduct }) {
                     <tr>
                         <th>Photo</th>
                         <th>Name</th>
-                        <th>Items</th>
+                        <th>Type</th>
                         <th>Price</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody className="menu-table-body" id="partners-body">
-                    {[1, 23, 4, 5, 6, 12, 3, 12, 31, 23].map(() => (
-                        <ProductsItem openDeleteProduct={openDeleteProduct} />
-                    ))}
+                <tbody className="menu-products-table-body" id="partners-body">
+                    {rows}
                 </tbody>
                 <tfoot className="logo-table-box" id="partners-footer">
-                    <img
-                        src={add}
-                        alt="add"
-                        className="add-img"
-                        onClick={openAddProduct}
-                    ></img>
-                    <img
-                        className="burger-logo-menu"
-                        src={burgerMenu}
-                        alt="burger-logo-menu"
-                    ></img>
+                    <tr>
+                        <td>
+                            <img
+                                src={add}
+                                alt="add"
+                                className="add-img"
+                                onClick={openAddProduct}
+                            ></img>
+                        </td>
+                        <td className='container-burger'>
+                            <img
+                                className="burger-logo-menu"
+                                src={burgerlogo}
+                                alt="burger-logo-menu"
+                            ></img>
+                        </td>
+                    </tr>
                 </tfoot>
             </table>
         </>

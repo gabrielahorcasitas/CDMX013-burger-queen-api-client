@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import {  useState } from 'react'
 import axios from 'axios'
 function Form() {
     let navigate = useNavigate()
@@ -7,6 +7,8 @@ function Form() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errorCredentials, changeCredentials] = useState(null)
+    
+
 
     const handleEmailChange = ({ target }) => {
         setEmail(target.value)
@@ -17,32 +19,27 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(
-            axios.get('https://6372d80a348e947299fdd17b.mockapi.io/users')
-        )
         axios
             .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
             .then((result) => {
                 let users = true
                 result.data.forEach((user) => {
                     if (user.password === password && user.email === email) {
+                        localStorage.setItem('UserId', JSON.stringify(user.auth));
                         users = false
                         const role = user.role
                         switch (role) {
                             case 'admin':
                                 navigate('/admin/partners')
-                                console.log(users)
                                 break
                             case 'kitchen':
                                 navigate('/kitchen/active')
-                                console.log(users)
                                 break
                             case 'waiter':
                                 navigate('/waiters/new_order')
                                 break
                             default:
                                 users = true
-                                console.log('no estas registrado')
                                 break
                         }
                     }
@@ -50,12 +47,16 @@ function Form() {
                 changeCredentials(users)
             })
     }
+
     return (
         <form className="form-box" onSubmit={handleSubmit}>
             <label id="logIn-logo">Log In</label>
-            <span className="fields-form">Email</span>
+            <label htmlFor="email" className="fields-form">
+                Email
+            </label>
             <input
                 className="input-form"
+                name="email"
                 placeholder="email"
                 value={email}
                 onChange={handleEmailChange}
@@ -66,9 +67,12 @@ function Form() {
                 }
                 onInput={(e) => e.target.setCustomValidity('')}
             />
-            <span className="fields-form">Password</span>
+            <label htmlFor="password" className="fields-form">
+                Password
+            </label>
             <input
                 className="input-form"
+                name="password"
                 placeholder="password"
                 value={password}
                 onChange={handlePasswordChange}

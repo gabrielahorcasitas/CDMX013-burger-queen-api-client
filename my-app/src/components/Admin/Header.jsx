@@ -1,8 +1,8 @@
 import SearchBar from './SearchBar'
-function Header() {
+function Header({inputText, setInputText}) {
     return (
         <header>
-            <SearchBar />
+            <SearchBar inputText={inputText} setInputText={setInputText} />
             <h1 className="role-letters">Admin</h1>
         </header>
     )

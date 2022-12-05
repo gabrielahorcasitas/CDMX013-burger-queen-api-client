@@ -1,8 +1,44 @@
 import ItemTicket from "./ItemTicket";
+import {useState} from "react"
 
 
 
 function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder}){
+    const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/orders";
+    const[userName, setUserName] = useState(()=> {
+        const savedItem = localStorage.getItem('UserId');
+        const parsedItem = JSON.parse(savedItem);
+        return parsedItem || "";
+      });
+      console.log(userName);
+    const [orders, setOrders]= useState({
+          userId: userName,
+          table: text,
+          products: productQty >= 1 ? products : null,
+          status: "sent",
+          dateEntry: new Date().getTime(),
+          dateProcessed: "",
+
+})
+
+// function saveOrder(event) {
+//     event.preventDefault()
+//     console.log(partners)
+//     axios.post(urlOrders, addOrders).then((resp) => {
+//         setAddOrders({
+//             //  userId: users.auth,
+//           table: '',
+//           products:'',
+//           status: "sent",
+//           dateEntry:'',
+//           dateProcessed: "",
+//         })
+//         closeAdd()
+//         console.log(resp.data)
+//         return setPartners([...partners, resp.data])
+//     })
+// }
+
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
@@ -46,8 +82,8 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder})
             <tfoot className="logo-table-box">
             <tr className="container-ticketbuttons"> 
              <div className="confirm-order-buttons">
+                    <button className="button-cancel-order" onClick={openCancelOrder}>Cancel</button>
                     <button className="button-confirm-order" onClick= {openConfirmOrder}>Confirm</button>
-                    <button className="button-cancel-order" onClick={/*resetQty*/openCancelOrder}>Cancel</button>
                 </div></tr>
              </tfoot>
         </table>
