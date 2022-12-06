@@ -40,7 +40,7 @@ function WaitersLayout(){
     return quantities;
   });
 
-  const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/orders";
+  const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/Orders";
   const productsEntries = Object.entries(productQty);
 
   const[userName, setUserName] = useState(()=> {
@@ -62,33 +62,26 @@ function WaitersLayout(){
   });
   console.log(productNumber)
 
-  const [orders, setOrders]= useState({
+  const [order, setOrder]= useState({
       userId: userName,
       table: text,
-      products: [...products, {productId: productName, productQty: productNumber}],
+      products: [],
       status: 'sent',
       dateEntry: new Date().getTime(),
       dateProcessed: "",
 })
-// const [orders, setOrders]= useState({
-//     userId: userName,
-//     table: text,
-//     products: [],
-//     status: 'sent',
-//     dateEntry: '',
-//     dateProcessed: "",
-// })
+
 
 function saveOrder(event) {
+  console.log('nueva orden: ')
+  console.log(order)
+  const arrOrderedProducts= []
 //event.preventDefault()
-axios.post(urlOrders, orders).then((resp) => {
+    axios.post(urlOrders, {...order,
+      products: arrOrderedProducts}).then((resp) => {
     closeConfirmOrder()
-    console.log(resp.data)
-    return setOrders([...orders, resp.data])
-  })
+   })
 } 
-//console.log(saveOrder())
-
   return (
     <>
     <NavBars/>
