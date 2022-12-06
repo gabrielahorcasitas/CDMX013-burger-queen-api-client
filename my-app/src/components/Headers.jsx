@@ -6,10 +6,12 @@ function Headers ({text, setText}){
 
    const handleInputChange = ({target}) => {
     setText(target.value)
+    localStorage.setItem('Text', JSON.stringify(target.value));
    }
+   
    const location = useLocation();
-  let content;
-  
+   let content;
+   
 if (location.pathname === '/waiters/new_order') {
   content = <Header>
       <header>
