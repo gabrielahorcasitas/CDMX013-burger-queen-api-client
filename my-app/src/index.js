@@ -13,6 +13,7 @@ import PreparedContainer from './components/Kitchen/PreparedContainer'
 
 const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
 const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
+const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/orders";
 
 const router = createBrowserRouter([
  
@@ -47,10 +48,16 @@ const router = createBrowserRouter([
     {
         path: '/kitchen/active',
         element: <Kitchen />,
+        loader: ({ request, params}) =>{
+            return getData(urlOrders)
+        }
     },
     {
         path: '/kitchen/prepared',
         element: <PreparedContainer />,
+        loader: ({ request, params}) =>{
+            return getData(urlOrders)
+        }
     },
 ])
 

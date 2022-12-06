@@ -1,10 +1,13 @@
 import ItemTicket from "./ItemTicket";
 import {useState} from "react"
+import { useLoaderData } from "react-router-dom";
+import axios from "axios";
 
 
 
-function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder}){
+function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder, closeConfirmOrder}){
     const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/orders";
+   // const [loadedOrders, setLoadedOrders] = useLoaderData();
     const[userName, setUserName] = useState(()=> {
         const savedItem = localStorage.getItem('UserId');
         const parsedItem = JSON.parse(savedItem);
@@ -14,30 +17,49 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder})
     const [orders, setOrders]= useState({
           userId: userName,
           table: text,
-          products: productQty >= 1 ? products : null,
-          status: "sent",
-          dateEntry: new Date().getTime(),
+          products: [],
+          status: 'sent',
+          dateEntry: '',
           dateProcessed: "",
 
 })
+const productsOfOrder = products.map(item =>{
+    return productsEntries.map(product => {
+    const productName = product[0];
+    const productQty = product[1];
+    
+    if(productQty === 0){
+        return "";
+    }
 
-// function saveOrder(event) {
-//     event.preventDefault()
-//     console.log(partners)
-//     axios.post(urlOrders, addOrders).then((resp) => {
-//         setAddOrders({
-//             //  userId: users.auth,
-//           table: '',
-//           products:'',
-//           status: "sent",
-//           dateEntry:'',
-//           dateProcessed: "",
-//         })
-//         closeAdd()
-//         console.log(resp.data)
-//         return setPartners([...partners, resp.data])
-//     })
-// }
+    if(productName === item.name){
+    
+        return setOrders(...orders, 
+                
+            {userId: userName,
+               table: text,
+               products: [...products, {productId: productName, productQty: productQty}],
+               status: "sent",
+               dateEntry: new Date().getTime(),
+               dateProcessed: "",
+            }
+        )
+    }
+    
+    return null;
+})
+}
+)
+
+function saveOrder(event) {
+    event.preventDefault()
+    axios.post(urlOrders, orders).then((resp) => {
+        
+        closeConfirmOrder()
+        console.log(resp.data)
+        return setOrders([...orders, resp.data])
+    })
+}
 
     const productsEntries = Object.entries(productQty);
     let total = 0;

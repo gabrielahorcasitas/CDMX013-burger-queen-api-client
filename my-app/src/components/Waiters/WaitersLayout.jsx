@@ -43,7 +43,7 @@ function WaitersLayout(){
     <Headers text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
+    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} close={closeConfirmOrder}/>
     <ModalConfirmOrder isOpen={isOpenConfirmOrder} close={closeConfirmOrder}/>
     <ModalConfirmCancel isOpen= {isOpenCancelOrder} close={closeCancelOrder} products={products} setProductQty={setProductQty}/>
     </div>
