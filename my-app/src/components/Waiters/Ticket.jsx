@@ -6,8 +6,6 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder})
     const productsEntries = Object.entries(productQty);
     let total = 0;
 
-    
-
     return (
         <>
         <table className="tableTicket">
@@ -26,7 +24,6 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder})
                     if(productQty === 0){
                         return null;
                     }
-
                     if(productName === item.name){
                         total = itemPrice + total;
                         return <ItemTicket key={productName} product={productName} quantity={productQty}  price={itemPrice}/>
