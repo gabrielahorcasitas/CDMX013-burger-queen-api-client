@@ -1,9 +1,8 @@
-const axios= {
-
- get: jest.fn((link) => {
-    if(link === 'https://6372d80a348e947299fdd17b.mockapi.io/users'){
-        return Promise.resolve({status:200});
+const axios = {
+    get: jest.fn((link) => {
+        if (link === 'https://6372d80a348e947299fdd17b.mockapi.io/users') {
+            return Promise.resolve({ data: [] })
+        }
+    }),
 }
-})
-}
-module.exports= axios;
+export default axios

@@ -1,12 +1,12 @@
 /* Predefined properties*/
 :root {
-    --colorBg: #FDDC9B;
-    --colorNavBar: #F63522;
-    --colorBoxBg: #FFF2Ec;
-    --colorBrownTables: #693B17;
-    --colorBrown: #773F2F;
-    --colorYellow: #FAC74F;
-    --colorWhiteish: #FFFEEC;
+    --colorBg: #fddc9b;
+    --colorNavBar: #f63522;
+    --colorBoxBg: #fff2ec;
+    --colorBrownTables: #693b17;
+    --colorBrown: #773f2f;
+    --colorYellow: #fac74f;
+    --colorWhiteish: #fffeec;
     --logotypeFont: 'Chewy';
     --principalFont: 'Alegreya Sans', sans-serif;
 }
@@ -14,7 +14,7 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%;
 }
 
 #root {
@@ -43,10 +43,9 @@
     height: 4.7rem;
     background-color: var(--colorBg);
     color: var(--colorBrownTables);
-   
-   
 }
-.increment, .decrement {
+.increment,
+.decrement {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +54,6 @@
     height: 5rem;
     background-color: var(--colorBrownTables);
     color: var(--colorWhiteish);
-   
 }
 
 .increment {
@@ -80,7 +78,7 @@
     margin-left: 5rem;
 }
 
-.container-bar{
+.container-bar {
     background-color: var(--colorNavBar);
     display: flex;
     flex-direction: column;
@@ -96,7 +94,8 @@
     height: 10rem;
     margin-top: 2rem;
 }
-.burger-letters, .queen-letters {
+.burger-letters,
+.queen-letters {
     width: 9rem;
     height: 5rem;
 }
@@ -104,18 +103,18 @@
 tr {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 3rem;
 }
 
-td{
+td {
     font-size: 3rem;
     width: 14rem;
     word-wrap: break-word;
     text-align: center;
 }
 
-.table-menu-header{
+.table-menu-header {
     display: flex;
     background-color: var(--colorBrownTables);
     font: var(--logotypeFont);
@@ -123,101 +122,110 @@ td{
     font-size: 10rem;
     color: var(--colorWhiteish);
     align-self: flex-start;
-    border-radius:1.5rem 1.5rem 0 0 ;
+    border-radius: 1.5rem 1.5rem 0 0;
     width: 42rem;
     padding-left: 1rem;
-    
 }
 
 table {
     border-spacing: 0;
 }
 
-.menu-table-body, .ticket-body{
+.menu-waiter-table-body,
+.ticket-body {
     display: flex;
     flex-direction: column;
     min-height: 46rem;
-    max-height:  46rem; 
+    max-height: 46rem;
     overflow-y: scroll;
+}
+.menu-waiter-table-body::-webkit-scrollbar {
+    display: none;
+}
+.ticket-body::-webkit-scrollbar {
+    display: none;
+}
+
+.burger-logo-menu {
+    width: 5rem;
+    height: 6rem;
+    opacity: 60%;
     
 }
-.menu-table-body::-webkit-scrollbar{
-    display: none;
-  }
-.ticket-body::-webkit-scrollbar{
-    display: none;
-  }
-
-.burger-logo-menu{
-    width: 8rem;
-    height: 8rem;
+.tr-menu{
+    display: flex;
+    align-content: center;
+    margin: 0;
 }
-.container-logo-burger{
+.container-logo-burger {
+    display: flex;
+    justify-content: flex-end;
+    width: 38rem;
+    margin-top: 0;
+    align-items: center;
+}
+.container-ticketbuttons {
     display: flex;
     justify-content: flex-end;
     width: 42rem;
     margin-top: 0;
 }
-.container-ticketbuttons{
+.logo-table-box {
     display: flex;
-    justify-content: flex-end;
-    width: 42rem;
-    margin-top: 0;
-
-}
-.logo-table-box{
+    align-content: center;
     width: 42rem;
     height: 8rem;
     bottom: 0.1rem;
 }
- .new-order,.log-out  {
+.new-order,
+.log-out {
     width: 7rem;
     height: 7rem;
     align-self: center;
     cursor: pointer;
- }
- 
- .ready{
+}
+
+.ready {
     width: 4.8rem;
     height: 4.2rem;
     align-self: center;
     cursor: pointer;
     margin-left: 1rem;
- }
+}
 
- .menu-letters{
+.menu-letters {
     color: var(--colorBoxBg);
     font-size: 2rem;
     font-family: 'Chewy', cursive;
-
- }
-
- .menu-btns-box{
+    text-decoration-color: white;
+}
+.menu-btns-box{
     width: 10rem;
-    height: 10rem;
+    height: 12rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
- }
-
- #log-out-box{
-    margin-bottom: 2rem;
- }
-
- #log-out-box:hover{
-    background-color: var(--colorYellow);
- }
-
-.menu-btns-box:hover{
-    cursor:pointer;
 }
 
-.body-new-order{
+#log-out-box {
+    margin-bottom: 2rem;
+}
+
+#log-out-box:hover {
+    background-color: var(--colorYellow);
+}
+
+.menu-btns-box:hover {
+    cursor: pointer;
+    background-color: var(--colorYellow);
+}
+
+.body-new-order {
     display: flex;
     flex-direction: column;
 }
 
-header{
+header {
     width: 103rem;
     height: 8rem;
     padding: 1rem;
@@ -225,14 +233,14 @@ header{
     justify-content: space-between;
 }
 
-.role-letters{
+.role-letters {
     font-family: 'Chewy', cursive;
     color: var(--colorNavBar);
     font-size: 5rem;
     height: 6rem;
 }
 
-.choose-table-box{
+.choose-table-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -242,18 +250,19 @@ header{
     margin-left: 5rem;
 }
 
-.input-table{
+.input-table {
     border: 0.2rem solid var(--colorBrownTables);
     border-radius: 0.9rem;
     margin-left: 2rem;
 }
 .input-table::-webkit-outer-spin-button,
 .input-table::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.input-table, .choose-table-letter{
+.input-table,
+.choose-table-letter {
     height: 4rem;
     width: 6rem;
     margin-top: 3rem;
@@ -263,7 +272,7 @@ header{
     color: var(--colorBrownTables);
 }
 
-.menu-hour-bottons{
+.menu-hour-bottons {
     width: 24rem;
     height: 6.7rem;
     margin-left: 15rem;
@@ -273,17 +282,20 @@ header{
     border-radius: 0.8rem;
 }
 
-.menu-bf{
+.menu-bf {
     width: 4.3rem;
     height: 4.3rem;
 }
 
-.menu-dinner{
+.menu-dinner {
     width: 4rem;
     height: 4rem;
 }
 
-.menu-bf-box, .menu-dinner-box, .menu-bf-box-off, .menu-dinner-box-off {
+.menu-bf-box,
+.menu-dinner-box,
+.menu-bf-box-off,
+.menu-dinner-box-off {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -291,44 +303,46 @@ header{
     width: 12rem;
     height: 6.5rem;
     border: 0.2rem solid var(--colorNavBar);
-
 }
-.menu-bf-box-off{
+.menu-bf-box-off {
     background-color: var(--colorWhiteish);
     border-radius: 0.6rem 0 0 0.6rem;
 }
 
-.menu-bf-box{
+.menu-bf-box {
     background-color: var(--colorNavBar);
     border-radius: 0.6rem 0 0 0.6rem;
 }
 
-.menu-dinner-box{
+.menu-dinner-box {
     background-color: var(--colorNavBar);
     border-radius: 0 0.6rem 0.6rem 0;
 }
-.menu-dinner-box-off{
+.menu-dinner-box-off {
     background-color: var(--colorWhiteish);
     border-radius: 0 0.6rem 0.6rem 0;
 }
-.bf-letters, .dinner-letters, .bf-letters-off, .dinner-letters-off {
+.bf-letters,
+.dinner-letters,
+.bf-letters-off,
+.dinner-letters-off {
     font-size: 2rem;
     font-family: 'Chewy', cursive;
 }
 
-.bf-letters{
+.bf-letters {
     color: var(--colorBoxBg);
 }
-.bf-letters-off{
+.bf-letters-off {
     color: var(--colorNavBar);
 }
-.dinner-letters{
+.dinner-letters {
     color: var(--colorWhiteish);
 }
-.dinner-letters-off{
-    color:var(--colorNavBar)
+.dinner-letters-off {
+    color: var(--colorNavBar);
 }
-.tables-menu-ticket{
+.tables-menu-ticket {
     display: flex;
     flex-direction: row;
 }
@@ -345,10 +359,9 @@ header{
     font-size: 15rem;
     margin-top: 2rem;
     margin-left: 5rem;
-
 }
 
-.table-ticket-header{
+.table-ticket-header {
     display: flex;
     font: var(--logotypeFont);
     font-family: 'Chewy', cursive;
@@ -356,19 +369,20 @@ header{
     color: var(--colorBrown);
     align-self: center;
     justify-content: center;
-    border-radius:1.5rem 1.5rem 0 0 ;
+    border-radius: 1.5rem 1.5rem 0 0;
     width: 42rem;
 }
 
-.confirm-order-buttons{
+.confirm-order-buttons {
     display: flex;
     flex-direction: row;
-    width:42rem;
+    width: 42rem;
     height: 7rem;
     justify-content: space-around;
 }
 
-.button-cancel-order, .button-confirm-order{
+.button-cancel-order,
+.button-confirm-order {
     width: 18.3rem;
     height: 5.6rem;
     background-color: var(--colorNavBar);
@@ -379,21 +393,21 @@ header{
     font-size: 3.6rem;
 }
 
-.ticket-total-box{
+.ticket-total-box {
     width: 42rem;
     display: flex;
     justify-content: flex-end;
     padding-right: 3.5rem;
 }
 
-.ticket-total{
-    color:var(--colorBrown);
+.ticket-total {
+    color: var(--colorBrown);
     font-family: 'Chewy', cursive;
     font-size: 3.6rem;
     border-top: solid;
 }
 
-.ticket-body{
+.ticket-body {
     display: flex;
     flex-direction: column;
 }

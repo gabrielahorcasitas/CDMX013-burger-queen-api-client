@@ -1,13 +1,14 @@
 import Menu from "./Menu";
 import NavBars from "../NavBars";
-import Header from "./Header";
+import Headers from "../Headers";
 import Ticket from "./Ticket";
-import Modals from "../Modals";
 import './WaitersLayout.css'
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import { useModal } from "../useModal";
-import { useSearchParams } from 'react-router-dom'; 
+import { useSearchParams } from 'react-router-dom';
+import ModalConfirmOrder from "./WaitersModals/ModalConfirmOrder"; 
+import ModalConfirmCancel from "./WaitersModals/ModalConfirmCancel";
 
 function WaitersLayout(){
   const products= useLoaderData();
@@ -24,6 +25,7 @@ function WaitersLayout(){
   const [text, setText] = useState('');
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
   const [isOpenCancelOrder, openCancelOrder, closeCancelOrder] = useModal(false);
+  
   const [productQty, setProductQty] = useState(()=>{
     const quantities = {}
     products.forEach(product => {
@@ -38,15 +40,12 @@ function WaitersLayout(){
     <>
     <NavBars/>
     <div className="body-new-order">
-    <Header text={text} setText = {setText}/>
+    <Headers text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
     <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
-    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} />
-    <Modals isOpenConfirmOrder={isOpenConfirmOrder} openConfirmOrder={openConfirmOrder} closeConfirmOrder={closeConfirmOrder} 
-    isOpenCancelOrder={isOpenCancelOrder} openCancelOrder={openCancelOrder} closeCancelOrder={closeCancelOrder}
-    setProductQty={setProductQty} products={products}
-    />
-   
+    <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} close={closeConfirmOrder}/>
+    <ModalConfirmOrder isOpen={isOpenConfirmOrder} close={closeConfirmOrder}/>
+    <ModalConfirmCancel isOpen= {isOpenCancelOrder} close={closeCancelOrder} products={products} setProductQty={setProductQty}/>
     </div>
     </div>
     </>
