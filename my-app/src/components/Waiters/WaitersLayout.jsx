@@ -71,15 +71,26 @@ function WaitersLayout(){
       dateProcessed: "",
 })
 
+function resetQty() {
+  setProductQty(() => {
+      const quantities = {}
+      products.forEach((product) => {
+          quantities[product.name] = 0
+      })
+      closeCancelOrder()
+      closeConfirmOrder()
+      return quantities
+  })
+}
 
-function saveOrder(event) {
+function saveOrder() {
   console.log('nueva orden: ')
   console.log(order)
   const arrOrderedProducts= []
-//event.preventDefault()
     axios.post(urlOrders, {...order,
       products: arrOrderedProducts}).then((resp) => {
     closeConfirmOrder()
+    resetQty()
    })
 } 
   return (
@@ -91,7 +102,7 @@ function saveOrder(event) {
     <Menu products={actualProducts} productQty={productQty} setProductQty={setProductQty}/>
     <Ticket text={text} productQty={productQty} products={actualProducts} openConfirmOrder={openConfirmOrder} openCancelOrder={openCancelOrder} close={closeConfirmOrder}/>
     <ModalConfirmOrder isOpen={isOpenConfirmOrder} close={closeConfirmOrder} saveOrder={saveOrder}/>
-    <ModalConfirmCancel isOpen= {isOpenCancelOrder} close={closeCancelOrder} products={products} setProductQty={setProductQty}/>
+    <ModalConfirmCancel isOpen= {isOpenCancelOrder} close={closeCancelOrder} products={products} setProductQty={setProductQty} resetQty={resetQty}/>
     </div>
     </div>
     </>
