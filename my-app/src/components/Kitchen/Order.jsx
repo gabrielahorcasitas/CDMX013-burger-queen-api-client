@@ -1,24 +1,30 @@
-function Order({isOrderReady,openOrderReady, closeOrderReady}) {
+function Order({isOrderReady,openOrderReady, closeOrderReady, order}) {
+  console.log(order.products[0].quantity)
+  let productValue= Object.values(order);
+  let products = productValue[2];
+ 
+  let productData =[];
+   products.forEach(element => {
+    productData.push(<p className="product-qtys"> ({element.quantity}) {element.name}</p>)
+    
+   })
+   
+
   return (
     <>
       <tr>
         <div className="container-order">
         <td className="order-colum">
          <div className= "seccion-order">
-            <h1 className="number-table"> Table # 1</h1> 
+            <h1 className="number-table">Table: {order.table}</h1> 
            <div className="box-cout-product">
-             <p>(2)</p>
-             <p className="product-names">Burger</p>
-            </div> 
-            <div className="box-cout-product">
-             <p>(2)</p>
-             <p className="product-names">Natural Fruit Juice</p>
+             {productData} 
             </div> 
           </div>
         </td>
         <td className="order-colum">
           <div className="recived-button-Box">
-            <h1 className="mgs-recived">Recived:       09-11-2022     17:00:52</h1>
+            <h1 className="mgs-recived">Recived: {order.dataEntry}  </h1>
             <button className="done" onClick={openOrderReady}>Done</button>
           </div>
         </td>

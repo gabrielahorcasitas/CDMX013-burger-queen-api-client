@@ -52,7 +52,7 @@ function WaitersLayout(){
       table: text,
       products: [],
       status: 'sent',
-      dataEntry: new Date().getTime(),
+      dataEntry: new Date(),
       dataProcessed: "",
 });
 
@@ -83,7 +83,7 @@ function saveOrder() {
      const quantity = product[1];
      if(name === obj.name && quantity >= 1){
        //console.log([obj, name, quantity]);
-       arrProducts.push([obj, name, quantity]);
+       arrProducts.push({ quantity, name, product:obj});
      } 
   })
 });
