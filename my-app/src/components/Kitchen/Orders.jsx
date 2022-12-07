@@ -1,6 +1,6 @@
 import './kitchenView.css';
 import Order from "./Order"
-import burgerMenu from '../../images/burgerMenu.png';
+import burgerlogo from '../../images/burgerlogo.png';
 function  Orders ({isOrderReady,openOrderReady, closeOrderReady}){
     return(
         <>
@@ -13,7 +13,16 @@ function  Orders ({isOrderReady,openOrderReady, closeOrderReady}){
     <tbody className="order-table-body">
       <Order isOrderReady={isOrderReady}  openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} />
       </tbody>
-      <tfoot className="logo-table-box"><tr className="container-logo-burger-orders"><img className="burger-logo-menu" src={burgerMenu} alt ='burger-logo-menu'></img></tr>
+      <tfoot className="logo-table-box-chefs">
+        <tr className="container-logo-burger-orders">
+                      <td className='container-burger-chefs'>
+                            <img
+                                className="burger-logo-menu" id='burger-logo-admin'
+                                src={burgerlogo}
+                                alt="burger-logo-menu"
+                            ></img>
+                      </td>
+          </tr>
       </tfoot>
   </table>
   

@@ -64,7 +64,7 @@
 .container-logo-burger-orders {
   display: flex;
   justify-content: flex-end;
-  width: 91.2rem;
+  width: 85rem;
   margin-top: 0;
 }
 .seccion-order {
@@ -130,6 +130,7 @@ td {
     display:flex ;
     flex-direction: row;
     width: 80rem;
+    margin-left: 8rem;
 }
 
 .role-letters-chefs {
@@ -161,6 +162,7 @@ td {
   display:flex ;
     flex-direction: row;
     width: 80rem;
+    margin-left: 6rem;
 }
 .mgs-Box{
   display: flex;
@@ -169,3 +171,8 @@ td {
   font-size: 4rem;
   margin-left: 11rem;
 }
+.logo-table-box-chefs{
+display:flex;
+
+}
+
