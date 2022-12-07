@@ -5,7 +5,7 @@ import Header from "./Waiters/Header";
 function Headers ({text, setText}){
 
    const handleInputChange = ({target}) => {
-    setText(target.value)
+    setText(target.value);
     localStorage.setItem('Text', JSON.stringify(target.value));
    }
    

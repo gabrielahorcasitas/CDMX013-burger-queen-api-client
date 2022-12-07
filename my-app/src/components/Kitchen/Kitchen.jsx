@@ -1,7 +1,6 @@
 import NavBars from "../NavBars";
 import Headers from "../Headers";
 import Orders from "./Orders";
-import { useState } from "react";
 import { useModal } from "../useModal";
 import ModalConfirmKitchen from "./KitchenModals/ModalConfirmKitchen";
 function Kitchen (){

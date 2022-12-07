@@ -1,5 +1,4 @@
 import ItemTicket from "./ItemTicket";
-import {useState} from "react"
 function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder, closeConfirmOrder}){
     
     const productsEntries = Object.entries(productQty);
@@ -19,7 +18,6 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder, 
                     const productName = product[0];
                     const productQty = product[1];
                     const itemPrice = item.price*productQty;
-                    
                     if(productQty === 0){
                         return null;
                     }
@@ -27,7 +25,6 @@ function Ticket({text, productQty, products, openConfirmOrder, openCancelOrder, 
                         total = itemPrice + total;
                         return <ItemTicket key={productName} product={productName} quantity={productQty}  price={itemPrice}/>
                     }
-                    
                     return null;
                 })
                 }

@@ -23,12 +23,6 @@ function WaitersLayout(){
     return false
   })
 
-  const [text, setText] = useState(()=> {
-    const savedItem = localStorage.getItem('Text');
-    const parsedItem = JSON.parse(savedItem);
-    return parsedItem || "";
-  });
-
   const [isOpenConfirmOrder, openConfirmOrder, closeConfirmOrder] = useModal(false);
   const [isOpenCancelOrder, openCancelOrder, closeCancelOrder] = useModal(false);
   
@@ -40,36 +34,27 @@ function WaitersLayout(){
     return quantities;
   });
 
-  const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/Orders";
-  const productsEntries = Object.entries(productQty);
-
   const[userName, setUserName] = useState(()=> {
     const savedItem = localStorage.getItem('UserId');
     const parsedItem = JSON.parse(savedItem);
     return parsedItem || "";
   });
 
-  const moreThanOneProducts= productsEntries.filter((product) => {
-   return product[1] >= 1
+  //const [text, setText] = useState('');
+  const [text, setText] = useState(()=> {
+    const savedItem = localStorage.getItem('Text');
+    const parsedItem = JSON.parse(savedItem);
+    return parsedItem || "";
   });
-  console.log(moreThanOneProducts)
-  const productName = moreThanOneProducts.map((product) => {
-      return product[0];
-  });
-  console.log(productName)
-  const productNumber = moreThanOneProducts.map((product) => {
-      return product[1];
-  });
-  console.log(productNumber)
 
   const [order, setOrder]= useState({
       userId: userName,
-      table: text,
+      table: '',
       products: [],
       status: 'sent',
-      dateEntry: new Date().getTime(),
-      dateProcessed: "",
-})
+      dataEntry: new Date().getTime(),
+      dataProcessed: "",
+});
 
 function resetQty() {
   setProductQty(() => {
@@ -81,18 +66,36 @@ function resetQty() {
       closeConfirmOrder()
       return quantities
   })
-}
+};
+
+const urlOrders = "https://638e40c1aefc455fb2b94c24.mockapi.io/Orders";
+const productsEntries = Object.entries(productQty);
 
 function saveOrder() {
-  console.log('nueva orden: ')
-  console.log(order)
-  const arrOrderedProducts= []
-    axios.post(urlOrders, {...order,
-      products: arrOrderedProducts}).then((resp) => {
-    closeConfirmOrder()
-    resetQty()
+  // console.log('nueva orden: ')
+  //console.log(order)
+  //array que contiene el objeto y la cantidad del producto para generar la orden
+  let arrProducts=[];
+  products.forEach((productObj) => {
+     productsEntries.forEach((product) => {
+     const obj = productObj;
+     const name = product[0];
+     const quantity = product[1];
+     if(name === obj.name && quantity >= 1){
+       //console.log([obj, name, quantity]);
+       arrProducts.push([obj, name, quantity]);
+     } 
+  })
+});
+  axios.post(urlOrders, {...order,
+      table: text,
+      products: arrProducts})
+      .then((resp) => {
+        closeConfirmOrder()
+        resetQty()
    })
-} 
+};
+
   return (
     <>
     <NavBars/>
