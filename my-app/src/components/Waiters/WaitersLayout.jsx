@@ -40,19 +40,19 @@ function WaitersLayout(){
     return parsedItem || "";
   });
 
-  //const [text, setText] = useState('');
-  const [text, setText] = useState(()=> {
-    const savedItem = localStorage.getItem('Text');
-    const parsedItem = JSON.parse(savedItem);
-    return parsedItem || "";
-  });
+  const [text, setText] = useState('');
+  // const [text, setText] = useState(()=> {
+  //   const savedItem = localStorage.getItem('Text');
+  //   const parsedItem = JSON.parse(savedItem);
+  //   return parsedItem || "";
+  // });
 
   const [order, setOrder]= useState({
       userId: userName,
-      table: '',
+      table: text,
       products: [],
       status: 'sent',
-      dataEntry: new Date().getTime(),
+      dataEntry: new Date(),
       dataProcessed: "",
 });
 
@@ -83,7 +83,7 @@ function saveOrder() {
      const quantity = product[1];
      if(name === obj.name && quantity >= 1){
        //console.log([obj, name, quantity]);
-       arrProducts.push([obj, name, quantity]);
+       arrProducts.push({ quantity, name, product:obj});
      } 
   })
 });
@@ -91,6 +91,8 @@ function saveOrder() {
       table: text,
       products: arrProducts})
       .then((resp) => {
+        setText('')
+        document.querySelector(".input-table").value=''
         closeConfirmOrder()
         resetQty()
    })

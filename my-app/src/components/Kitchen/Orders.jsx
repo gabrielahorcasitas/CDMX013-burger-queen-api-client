@@ -1,7 +1,26 @@
 import './kitchenView.css';
 import Order from "./Order"
-import burgerMenu from '../../images/burgerMenu.png';
-function  Orders ({isOrderReady,openOrderReady, closeOrderReady}){
+import burgerlogo from '../../images/burgerlogo.png';
+function  Orders ({isOrderReady,openOrderReady, closeOrderReady, orderReady, setOrderReady}){
+ 
+  let ordersContainer = ''  ;
+  
+  if (orderReady !== undefined) {
+    ordersContainer = orderReady.map((order) => {
+     return( <Order
+      order={order}
+      openOrderReady={openOrderReady}
+      key={order.id}
+  />)
+})
+         
+}
+  
+  
+ 
+
+  
+
     return(
         <>
         <table className="tableOrders">
@@ -11,9 +30,19 @@ function  Orders ({isOrderReady,openOrderReady, closeOrderReady}){
       </tr>
     </thead>
     <tbody className="order-table-body">
-      <Order isOrderReady={isOrderReady}  openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} />
+     {ordersContainer}
+      {/* <Order isOrderReady={isOrderReady}  openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} /> */}
       </tbody>
-      <tfoot className="logo-table-box"><tr className="container-logo-burger-orders"><img className="burger-logo-menu" src={burgerMenu} alt ='burger-logo-menu'></img></tr>
+      <tfoot className="logo-table-box-chefs">
+        <tr className="container-logo-burger-orders">
+                      <td className='container-burger-chefs'>
+                            <img
+                                className="burger-logo-menu" id='burger-logo-admin'
+                                src={burgerlogo}
+                                alt="burger-logo-menu"
+                            ></img>
+                      </td>
+          </tr>
       </tfoot>
   </table>
   
