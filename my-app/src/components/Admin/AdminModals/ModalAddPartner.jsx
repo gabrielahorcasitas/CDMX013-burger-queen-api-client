@@ -9,7 +9,6 @@ function handleAddChange({ target }) {
       ...addPartners,
       [name]: value,
   }
-  console.log(newValues)
   setAddPartners(newValues)
 }
     return (

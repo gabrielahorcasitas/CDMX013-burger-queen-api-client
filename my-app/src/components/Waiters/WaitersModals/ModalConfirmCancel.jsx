@@ -2,20 +2,9 @@ import './Modal.css';
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
 
-function ModalConfirmCancel({ isOpen, close, products, setProductQty }){
+function ModalConfirmCancel({ isOpen, close, products, setProductQty, resetQty }){
 
 const handleModalContainerClick = (e) => e.stopPropagation();
-
-function resetQty() {
-    setProductQty(() => {
-        const quantities = {}
-        products.forEach((product) => {
-            quantities[product.name] = 0
-        })
-        close()
-        return quantities
-    })
-}
 
     return (
       <article className={`modal ${isOpen && "is-open"}`} onClick={close}>

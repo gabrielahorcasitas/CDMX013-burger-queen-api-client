@@ -2,7 +2,7 @@ import './Modal.css';
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
 
-function ModalConfirmOrder({ isOpen, close}){
+function ModalConfirmOrder({ isOpen, close, saveOrder}){
 const handleModalContainerClick = (e) => e.stopPropagation();
 
     return (
@@ -18,6 +18,7 @@ const handleModalContainerClick = (e) => e.stopPropagation();
                                 className="img-confirm-order"
                                 alt="confirm-order"
                                 src={check}
+                                onClick={saveOrder}
                             ></img>
                         </div>
                         <div className="close">
