@@ -40,16 +40,16 @@ function WaitersLayout(){
     return parsedItem || "";
   });
 
-  //const [text, setText] = useState('');
-  const [text, setText] = useState(()=> {
-    const savedItem = localStorage.getItem('Text');
-    const parsedItem = JSON.parse(savedItem);
-    return parsedItem || "";
-  });
+  const [text, setText] = useState('');
+  // const [text, setText] = useState(()=> {
+  //   const savedItem = localStorage.getItem('Text');
+  //   const parsedItem = JSON.parse(savedItem);
+  //   return parsedItem || "";
+  // });
 
   const [order, setOrder]= useState({
       userId: userName,
-      table: '',
+      table: text,
       products: [],
       status: 'sent',
       dataEntry: new Date().getTime(),
@@ -91,6 +91,8 @@ function saveOrder() {
       table: text,
       products: arrProducts})
       .then((resp) => {
+        setText('')
+        document.querySelector(".input-table").value=''
         closeConfirmOrder()
         resetQty()
    })

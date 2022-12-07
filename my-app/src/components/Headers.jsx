@@ -6,7 +6,7 @@ function Headers ({text, setText}){
 
    const handleInputChange = ({target}) => {
     setText(target.value);
-    localStorage.setItem('Text', JSON.stringify(target.value));
+    // localStorage.setItem('Text', JSON.stringify(target.value));
    }
    
    const location = useLocation();
