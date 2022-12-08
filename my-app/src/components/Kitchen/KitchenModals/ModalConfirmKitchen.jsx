@@ -1,8 +1,10 @@
 import './ModalConfirmKitchen.css'
 import check from '../../../images/check.png'
 import closeImg from '../../../images/closeImg.png'
-function ModalConfirmKitchen ({ isOpen, close}){
+function ModalConfirmKitchen ({isOpen, close, editState}){
 const handleModalContainerClick = (e) => e.stopPropagation();
+
+
 
     return (
       <article className={`modalKitchen ${isOpen && "is-open"}`} onClick={close}>
@@ -17,6 +19,7 @@ const handleModalContainerClick = (e) => e.stopPropagation();
                                 className="img-confirm-order"
                                 alt="confirm-order"
                                 src={check}
+                                onClick={editState}
                             ></img>
                         </div>
                         <div className="close">

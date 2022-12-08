@@ -12,6 +12,7 @@ function ProductsItem({ product, openDeleteProduct, setIdModal, openEditProduct,
         setIdModal(product.product)
         setAddProducts({ ...product })
     }
+    
     return (
         <tr>
             <td>
