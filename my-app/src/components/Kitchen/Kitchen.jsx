@@ -33,15 +33,15 @@ function Kitchen(){
 
     return(
     <> 
-    <NavBars/>
-    <div className="body-active-order">
-    <Headers/>
-    <div>
-    <Orders isOrderReady={isOrderReady} openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} 
-    orderReady={orderReady} setOrderReady={setOrderReady} setIdOrder={setIdOrder} setEditOrder={setEditOrder}/>
-    <ModalConfirmKitchen isOpen={isOrderReady} close={closeOrderReady} editState={editState}/>
-    </div>
-    </div>
+      <NavBars/>
+      <div className="body-active-order">
+      <Headers/>
+        <div>
+        <Orders isOrderReady={isOrderReady} openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} 
+        orderReady={orderReady} setOrderReady={setOrderReady} setIdOrder={setIdOrder} setEditOrder={setEditOrder}/>
+        <ModalConfirmKitchen isOpen={isOrderReady} close={closeOrderReady} editState={editState}/>
+        </div>
+      </div>
     </>
     )
 }
