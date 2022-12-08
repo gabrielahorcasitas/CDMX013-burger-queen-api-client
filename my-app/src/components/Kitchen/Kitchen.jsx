@@ -23,7 +23,7 @@ function Kitchen(){
 
   function editState(){
     const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
-    axios.put(urlOrders, {...editOrder, status : 'done'})
+    axios.put(urlOrders, {...editOrder, status : 'done', dataProcessed : new Date().toLocaleString('en-GB',{hour12: false})})
     .then(async (result) => {
         const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
         closeOrderReady()

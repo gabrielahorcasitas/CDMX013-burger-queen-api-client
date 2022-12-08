@@ -28,7 +28,7 @@ function Order({openOrderReady, order, setIdOrder, setEditOrder}) {
         </td>
         <td className="order-colum">
           <div className="recived-button-Box">
-            <h1 className="mgs-recived">Recived: {order.dataEntry}  </h1>
+            <h1 className="mgs-recived">Recived: {order.dataEntry} </h1>
             <button className="done" onClick={sendId}>Done</button>
           </div>
         </td>
