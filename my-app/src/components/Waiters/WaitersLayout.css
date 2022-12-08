@@ -373,6 +373,13 @@ header {
     width: 42rem;
 }
 
+.confirm-order-buttons-cell{
+    display: flex;
+    width: 42rem;
+    justify-content: space-around;
+}   
+
+
 .confirm-order-buttons {
     display: flex;
     flex-direction: row;

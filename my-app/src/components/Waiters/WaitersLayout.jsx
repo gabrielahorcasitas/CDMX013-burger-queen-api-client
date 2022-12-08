@@ -41,20 +41,15 @@ function WaitersLayout(){
   });
 
   const [text, setText] = useState('');
-  // const [text, setText] = useState(()=> {
-  //   const savedItem = localStorage.getItem('Text');
-  //   const parsedItem = JSON.parse(savedItem);
-  //   return parsedItem || "";
-  // });
 
   const [order, setOrder]= useState({
       userId: userName,
       table: text,
       products: [],
       status: 'sent',
-      dataEntry: new Date(),
+      dataEntry: new Date().toLocaleString('en-GB',{hour12: false}),
       dataProcessed: "",
-});
+  });
 
 function resetQty() {
   setProductQty(() => {
@@ -72,8 +67,6 @@ const urlOrders = "https://6372d80a348e947299fdd17b.mockapi.io/orders";
 const productsEntries = Object.entries(productQty);
 
 function saveOrder() {
-  // console.log('nueva orden: ')
-  //console.log(order)
   //array que contiene el objeto y la cantidad del producto para generar la orden
   let arrProducts=[];
   products.forEach((productObj) => {
@@ -82,7 +75,6 @@ function saveOrder() {
      const name = product[0];
      const quantity = product[1];
      if(name === obj.name && quantity >= 1){
-       //console.log([obj, name, quantity]);
        arrProducts.push({ quantity, name, product:obj});
      } 
   })

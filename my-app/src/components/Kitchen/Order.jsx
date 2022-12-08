@@ -1,14 +1,12 @@
 function Order({isOrderReady,openOrderReady, closeOrderReady, order}) {
-  console.log(order.products[0].quantity)
-  let productValue= Object.values(order);
-  let products = productValue[2];
+
+  const productValue= Object.values(order);
+  const products = productValue[2];
  
   let productData =[];
    products.forEach(element => {
     productData.push(<p className="product-qtys"> ({element.quantity}) {element.name}</p>)
-    
-   })
-   
+   });
 
   return (
     <>
@@ -29,7 +27,6 @@ function Order({isOrderReady,openOrderReady, closeOrderReady, order}) {
           </div>
         </td>
         </div>
-        
       </tr>
     </>
   );
