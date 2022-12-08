@@ -16,23 +16,25 @@ function Order({openOrderReady, order, setIdOrder, setEditOrder}) {
 
   return (
     <>
-      <tr>
+     <tr>
+        <td>
         <div className="container-order">
-        <td className="order-colum">
+        <div className="order-colum">
          <div className= "seccion-order">
             <h1 className="number-table">Table: {order.table}</h1> 
            <div className="box-cout-product">
              {productData} 
             </div> 
           </div>
-        </td>
-        <td className="order-colum">
+        </div>
+        <div className="order-colum">
           <div className="recived-button-Box">
-            <h1 className="mgs-recived">Recived: {order.dataEntry}  </h1>
+            <h1 className="mgs-recived">Recived: {order.dataEntryStr} </h1>
             <button className="done" onClick={sendId}>Done</button>
           </div>
-        </td>
         </div>
+        </div>
+        </td>
       </tr>
     </>
   );

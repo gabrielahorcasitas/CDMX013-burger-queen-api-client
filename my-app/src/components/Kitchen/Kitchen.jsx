@@ -13,23 +13,27 @@ function Kitchen(){
     const [orderReady, setOrderReady] = useState(useLoaderData());
     const [idOrder, setIdOrder] = useState('');
     const [editOrder, setEditOrder] = useState({
-      userId: '',
-      table: '',
-      products: [],
-      status: '',
-      dataEntry: '',
-      dataProcessed: '',
-  });
-
-  function editState(){
-    const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
-    axios.put(urlOrders, {...editOrder, status : 'done'})
-    .then(async (result) => {
-        const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
-        closeOrderReady()
-        return setOrderReady(dataProducts)
-    })
-   }
+        userId: '',
+        table: '',
+        products: [],
+        status: '',
+        dataEntryStr: '',
+        dataEntryMil: '',
+        dataProcessedStr: '',
+        dataProcessedMil: '',
+    });
+  
+    function editState(){
+        const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
+        axios.put(urlOrders, {...editOrder, status : 'done', dataProcessedStr: new Date().toLocaleString('en-GB',{hour12: false}), 
+        dataProcessedMil: new Date().getTime()})
+        .then(async (result) => {
+            const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
+            closeOrderReady()
+            return setOrderReady(dataProducts)
+        })
+       }
+    
 
     return(
     <> 

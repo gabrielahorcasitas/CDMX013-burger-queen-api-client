@@ -1,7 +1,21 @@
 import './kitchenView.css';
 import burgerlogo from '../../images/burgerlogo.png';
 import Prepared from './Prepared';
-function  PreparedTable ({isOrderReady,openOrderReady, closeOrderReady}){
+function  PreparedTable ({isOrderReady,openOrderReady, closeOrderReady, orderReady}){
+  let ordersContainer = ''  ;
+
+  if (orderReady !== undefined) {
+    const sentOrders = orderReady.filter((order) => order.status === 'done');
+    ordersContainer = sentOrders.map((order) => {
+     return( <Prepared
+      isOrderReady={isOrderReady}
+      openOrderReady={openOrderReady}
+      closeOrderReady={closeOrderReady}
+      order={order}
+      key={order.id}
+      />)
+  })        
+};
     return(
         <>
         <table className="tableOrders">
@@ -11,7 +25,7 @@ function  PreparedTable ({isOrderReady,openOrderReady, closeOrderReady}){
       </tr>
     </thead>
     <tbody className="order-table-body">
-      <Prepared isOrderReady={isOrderReady}  openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} />
+      {ordersContainer}
     </tbody>
     <tfoot className="logo-table-box-chefs">
       <tr className="container-logo-burger-orders">
