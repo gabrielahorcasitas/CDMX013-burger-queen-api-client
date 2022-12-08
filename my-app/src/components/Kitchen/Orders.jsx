@@ -4,9 +4,10 @@ import burgerlogo from '../../images/burgerlogo.png';
 function  Orders ({isOrderReady,openOrderReady, closeOrderReady, orderReady, setIdOrder, setEditOrder}){
  
   let ordersContainer = ''  ;
-  
+
   if (orderReady !== undefined) {
-    ordersContainer = orderReady.map((order) => {
+    const sentOrders = orderReady.filter((order) => order.status !== 'done');
+    ordersContainer = sentOrders.map((order) => {
      return( <Order
       isOrderReady={isOrderReady}
       openOrderReady={openOrderReady}
