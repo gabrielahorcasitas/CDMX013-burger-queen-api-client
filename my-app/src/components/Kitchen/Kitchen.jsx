@@ -9,7 +9,6 @@ function Kitchen (){
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
     const [orderReady, setOrderReady] = useState(useLoaderData())
     
-
    
     return(
     <> <NavBars/>

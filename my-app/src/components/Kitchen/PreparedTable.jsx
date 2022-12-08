@@ -12,22 +12,21 @@ function  PreparedTable ({isOrderReady,openOrderReady, closeOrderReady}){
     </thead>
     <tbody className="order-table-body">
       <Prepared isOrderReady={isOrderReady}  openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} />
-      </tbody>
-      <tfoot className="logo-table-box-chefs">
+    </tbody>
+    <tfoot className="logo-table-box-chefs">
       <tr className="container-logo-burger-orders">
-                      <td className='container-burger-chefs'>
-                            <img
-                                className="burger-logo-menu" id='burger-logo-admin'
-                                src={burgerlogo}
-                                alt="burger-logo-menu"
-                            ></img>
-                      </td>
+        <td className='container-burger-chefs'>
+            <img
+              className="burger-logo-menu" id='burger-logo-admin'
+              src={burgerlogo}
+              alt="burger-logo-menu"
+             ></img>
+        </td>
       </tr>
-      </tfoot>
+    </tfoot>
   </table>
-  
-        </>
-    )
+  </>
+  )
 }
 
 export default PreparedTable;

@@ -60,7 +60,6 @@ function Products() {
                 type: 'breakfast',
                 price: '',
             })
-            console.log(resp.data)
             return setProducts([...products, resp.data])
         })
     }
