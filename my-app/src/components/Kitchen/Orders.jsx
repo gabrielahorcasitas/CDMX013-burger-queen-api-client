@@ -1,15 +1,19 @@
 import './kitchenView.css';
 import Order from "./Order"
 import burgerlogo from '../../images/burgerlogo.png';
-function  Orders ({isOrderReady,openOrderReady, closeOrderReady, orderReady, setOrderReady}){
+function  Orders ({isOrderReady,openOrderReady, closeOrderReady, orderReady, setIdOrder, setEditOrder}){
  
   let ordersContainer = ''  ;
   
   if (orderReady !== undefined) {
     ordersContainer = orderReady.map((order) => {
      return( <Order
-      order={order}
+      isOrderReady={isOrderReady}
       openOrderReady={openOrderReady}
+      closeOrderReady={closeOrderReady}
+      order={order}
+      setIdOrder={setIdOrder}
+      setEditOrder={setEditOrder}
       key={order.id}
       />)
   })        

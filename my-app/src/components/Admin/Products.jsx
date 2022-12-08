@@ -91,7 +91,6 @@ function Products() {
                 close={closeEditProduct} addProducts={addProducts}
                 setAddProducts={setAddProducts} putProduct={putProduct} />
             
-
             <div className="partners-layout">
                 <Header inputText={inputText} setInputText={setInputText} />
                 <ProductsTable
