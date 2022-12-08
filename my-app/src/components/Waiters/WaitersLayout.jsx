@@ -47,8 +47,11 @@ function WaitersLayout(){
       table: text,
       products: [],
       status: 'sent',
-      dataEntry: new Date().toLocaleString('en-GB',{hour12: false}),
-      dataProcessed: "",
+      dataEntryStr: new Date().toLocaleString('en-GB',{hour12: false}),
+      dataEntryMil: new Date().getTime(),
+      dataProcessedMil: "",
+      dataProcessedStr: ""
+
   });
 
 function resetQty() {
