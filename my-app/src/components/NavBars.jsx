@@ -22,7 +22,7 @@ function NavBars() {
     let content
 
 
-    if (location.pathname === '/waiters/new_order') {
+    if (location.pathname === '/waiters/new_order' || '/waiters/ready') {
         content = (
             <NavBar>
                 <div className="logo-box">
@@ -37,10 +37,7 @@ function NavBars() {
                         alt="queen-letters"
                     ></img>
                 </div>
-                <NavLink
-                    style={({ isActive }) => {
-                        return { backgroundColor: '#FAC74F' }
-                    }}
+                <NavLink 
                     className="menu-letters"
                     to="/waiters/new_order"
                 >
@@ -53,10 +50,15 @@ function NavBars() {
                         <label className="menu-letters">New Order</label>
                     </div>
                 </NavLink>
+                <NavLink
+                    className="menu-letters"
+                    to="/waiters/ready"
+                >
                 <div className="menu-btns-box">
                     <img className="ready" src={check} alt="ready"></img>
                     <label className="menu-letters">Ready</label>
                 </div>
+                </NavLink>
                 <div className="menu-btns-box" id="log-out-box">
                     <img
                         className="log-out"

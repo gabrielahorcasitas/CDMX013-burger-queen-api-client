@@ -1,4 +1,3 @@
-import { parsePath } from 'react-router-dom'
 import pencil from '../../images/pencil.png'
 import trash from '../../images/trash.png'
 
