@@ -10,7 +10,7 @@ const handleModalContainerClick = (e) => e.stopPropagation();
         <div className="modal-container" onClick={handleModalContainerClick}>
                 <div className="confirm-container">
                     <label className="confirm-msg">
-                        Is the order ready to be sent to the kitchen?
+                        Is the order ready to be deliver?
                     </label>
                     <div className="buttons-container">
                         <div className="check">
