@@ -22,7 +22,8 @@ function NavBars() {
     let content
 
 
-    if (location.pathname === '/waiters/new_order' || '/waiters/ready') {
+    if (location.pathname === '/waiters/new_order' || 
+    location.pathname === '/waiters/ready') {
         content = (
             <NavBar>
                 <div className="logo-box">

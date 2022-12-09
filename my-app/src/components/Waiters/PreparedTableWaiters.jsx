@@ -2,7 +2,8 @@ import '../Kitchen/kitchenView.css'
 import burgerlogo from '../../images/burgerlogo.png';
 import PreparedWaiters from './PreparedWaiters';
 
-function  PreparedTableWaiters ({orderReady}){
+function  PreparedTableWaiters ({orderReady, openOrderDelivered, 
+  setIdOrder, setEditOrderDelivered }){
   let ordersContainer = ''  ;
 
   if (orderReady !== undefined) {
@@ -11,6 +12,11 @@ function  PreparedTableWaiters ({orderReady}){
      return( <PreparedWaiters
       order={order}
       key={order.id}
+      openOrderDelivered={openOrderDelivered} 
+      setIdOrder={setIdOrder} 
+      setEditOrderDelivered={setEditOrderDelivered} 
+      
+
       />)
   })        
 };
