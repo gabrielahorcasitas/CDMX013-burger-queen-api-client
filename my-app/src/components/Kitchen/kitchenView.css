@@ -89,6 +89,17 @@
   justify-items: flex-start;
   text-align: start;
 }
+.box-cout-product-waiters{
+  display: flex;
+  flex-direction: row;
+  font: var(--principalFont);
+  font-size: 4rem;
+  text-align: start;
+  width: 60rem;
+}
+.product-qtys-waiters{
+  width: 30rem;
+}
 td {
   font-size: 3rem;
   width: 14rem;
@@ -159,6 +170,21 @@ td {
     color: #48BF53;
     margin-top: 3rem;
 }
+
+.mgs-delivered-waiters{
+  width: 40rem;
+  font: var(--principalFont);
+  font-weight: 700;
+  font-size: 3rem;
+  color: #48BF53;
+}
+.msg-total-price{
+  font: var(--principalFont);
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--colorNavBar);
+}
+
 .container-order-prepared{
   display:flex ;
     flex-direction: row;
@@ -171,6 +197,16 @@ td {
   font: var(--principalFont);
   font-size: 4rem;
   margin-left: 11rem;
+}
+
+.mgs-box-waiters{
+  display: flex;
+  flex-direction: column;
+  font: var(--principalFont);
+  font-size: 4rem;
+  margin-left: 11rem;
+  width: 40rem;
+  justify-content: space-between;
 }
 .logo-table-box-chefs{
 display:flex;
