@@ -1,4 +1,5 @@
-function PreparedWaiters({order}) {
+function PreparedWaiters({order, openOrderDelivered, 
+  setIdOrder, setEditOrderDelivered }) {
     const productValue= Object.values(order);
     const products = productValue[2];
     let total = 0;
@@ -12,11 +13,17 @@ function PreparedWaiters({order}) {
         <p className="product-qtys-waiters" key={element.id}>${element.product.price}</p>
         </div>)
      });
+
+     function sendId(){
+      openOrderDelivered()
+      setIdOrder(order.id);
+      setEditOrderDelivered({...order})
+     }
     
       return (
         <>
         <tr>
-          <td>
+          <td className="td-waiters-ready">
           <div className="container-order-prepared">
             <div className="order-colum">
               <div className= "seccion-order">
@@ -24,9 +31,10 @@ function PreparedWaiters({order}) {
                    {productData} 
                 </div>
             </div>
-              <div className="mgs-box-waiters">
-                <h2 className="mgs-delivered-waiters">Delivered:  {order.dataProcessedStr} </h2>
-                <h2 className="msg-total-price">Total ${total}</h2>
+              <div className="mgs-box-waiters-ready">
+                <h2 className="mgs-delivered-waiters">Done:  {order.dataProcessedStr} </h2>
+                <h2 className="msg-total-price-ready">Total ${total}</h2>
+                <button className="delivered" onClick={sendId} >Deliver </button>
               </div>
            </div>
           </td>

@@ -1,4 +1,4 @@
-function Prepared(order) {
+function Prepared({order}) {
 
   const productValue= Object.values(order);
   const products = productValue[2];

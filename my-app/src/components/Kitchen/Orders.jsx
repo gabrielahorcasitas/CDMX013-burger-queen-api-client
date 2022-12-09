@@ -6,7 +6,7 @@ function  Orders ({isOrderReady,openOrderReady, closeOrderReady, orderReady, set
   let ordersContainer = ''  ;
 
   if (orderReady !== undefined) {
-    const sentOrders = orderReady.filter((order) => order.status !== 'done');
+    const sentOrders = orderReady.filter((order) => order.status === 'sent');
     ordersContainer = sentOrders.map((order) => {
      return( <Order
       isOrderReady={isOrderReady}

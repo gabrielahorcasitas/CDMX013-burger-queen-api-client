@@ -190,6 +190,7 @@ td {
     flex-direction: row;
     width: 80rem;
     margin-left: 6rem;
+    justify-content: space-around;
 }
 .mgs-Box{
   display: flex;

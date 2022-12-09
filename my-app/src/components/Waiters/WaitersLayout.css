@@ -418,3 +418,41 @@ header {
     display: flex;
     flex-direction: column;
 }
+.delivered{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 4rem;
+  background-color: #48BF53;;
+  border: 2px solid #48BF53;;
+  border-radius: 1.6rem;
+  font: var(--logotypeFont);
+  font-family: 'Chewy', cursive;
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: var(--colorWhiteish);
+ align-self: flex-end;
+}
+.msg-total-price-ready{
+    font: var(--principalFont);
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--colorNavBar);
+
+}
+.td-waiters-ready{
+    font-size: 3rem;
+    width: 14rem;
+    word-wrap: break-word;
+    text-align: initial;
+}
+.mgs-box-waiters-ready{
+    display: flex;
+    flex-direction: column;
+    font: var(--principalFont);
+    font-size: 4rem;
+    margin-left: 11rem;
+    width: 33rem;
+    justify-content: space-between;
+}
