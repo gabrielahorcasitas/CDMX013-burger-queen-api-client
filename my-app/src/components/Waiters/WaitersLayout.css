@@ -456,3 +456,10 @@ header {
     width: 33rem;
     justify-content: space-between;
 }
+.container-order-ready{
+    display: flex;
+    flex-direction: row;
+    width: 80rem;
+    margin-left: 6rem;
+    justify-content: space-around;
+}

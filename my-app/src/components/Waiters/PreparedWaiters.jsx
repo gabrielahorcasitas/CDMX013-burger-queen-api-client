@@ -24,7 +24,7 @@ function PreparedWaiters({order, openOrderDelivered,
         <>
         <tr>
           <td className="td-waiters-ready">
-          <div className="container-order-prepared">
+          <div className="container-order-ready">
             <div className="order-colum">
               <div className= "seccion-order">
                   <h1 className="number-table"> Table #{order.table}</h1> 
