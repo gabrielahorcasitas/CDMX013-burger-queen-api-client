@@ -5,7 +5,7 @@ function Order({openOrderReady, order, setIdOrder, setEditOrder}) {
  
   let productData =[];
    products.forEach(element => {
-    productData.push(<p className="product-qtys" > ({element.quantity}) {element.name}</p>)
+    productData.push(<p className="product-qtys" key={element.id}> ({element.quantity}) {element.name}</p>)
    });
 
    function sendId(){

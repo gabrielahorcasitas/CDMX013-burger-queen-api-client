@@ -10,6 +10,7 @@ import WaitersLayout from './components/Waiters/WaitersLayout'
 import getData from './getData'
 import Kitchen from './components/Kitchen/Kitchen'
 import PreparedContainer from './components/Kitchen/PreparedContainer'
+import OrdersReady from './components/Waiters/OrdersReady'
 
 const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
 const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
@@ -43,6 +44,13 @@ const router = createBrowserRouter([
         element: <WaitersLayout />,
         loader: ({ request, params }) => {
             return getData(urlProducts)
+        },
+    },
+    {
+        path: '/waiters/ready',
+        element: <OrdersReady />,
+        loader: ({ request, params }) => {
+            return getData(urlOrders)
         },
     },
     {

@@ -11,11 +11,12 @@ function PreparedContainer (){
     const [orderReady, setOrderReady] = useState(useLoaderData());
 
     return(
-    <> <NavBars/>
+    <> 
+    <NavBars/>
     <div className="body-active-order">
     <Headers/>
     <div>
-      <PreparedTable isOrderReady={isOrderReady} openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} orderReady={orderReady}/>
+    <PreparedTable isOrderReady={isOrderReady} openOrderReady={openOrderReady} closeOrderReady={closeOrderReady} orderReady={orderReady}/>
     </div>
     </div>
     <ModalConfirmKitchen  isOrderReady={isOrderReady} closeOrderReady={closeOrderReady} />
