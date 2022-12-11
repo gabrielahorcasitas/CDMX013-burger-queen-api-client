@@ -14,65 +14,65 @@ import OrdersReady from './components/Waiters/OrdersReady'
 
 const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
 const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
-const urlOrders = "https://6372d80a348e947299fdd17b.mockapi.io/orders";
+const urlOrders = 'https://6372d80a348e947299fdd17b.mockapi.io/orders'
 
 const router = createBrowserRouter([
- 
-    {
-        path: '/',
-        element: <LoginView />,
-        loader: ({ request, params }) => {
-            return getData(urlUsers)
-        },
+  {
+    path: '/',
+    element: <LoginView />,
+    loader: ({ request, params }) => {
+      console.log(request)
+      return getData(urlUsers)
     },
-    {
-        path: '/admin/partners',
-        element: <Partners />,
-        loader: ({ request, params }) => {
-            return getData(urlUsers)
-        }
+  },
+  {
+    path: '/admin/partners',
+    element: <Partners />,
+    loader: ({ request, params }) => {
+      return getData(urlUsers)
     },
-    {
-        path: '/admin/products',
-        element: <Products />,
-        loader: ({ request, params }) => {
-            return getData(urlProducts)
-        },
+  },
+  {
+    path: '/admin/products',
+    element: <Products />,
+    loader: ({ request, params }) => {
+      return getData(urlProducts)
     },
-    {
-        path: '/waiters/new_order',
-        element: <WaitersLayout />,
-        loader: ({ request, params }) => {
-            return getData(urlProducts)
-        },
+  },
+  {
+    path: '/waiters/new_order',
+    element: <WaitersLayout />,
+    loader: ({ request, params }) => {
+      return getData(urlProducts)
     },
-    {
-        path: '/waiters/ready',
-        element: <OrdersReady />,
-        loader: ({ request, params }) => {
-            return getData(urlOrders)
-        },
+  },
+  {
+    path: '/waiters/ready',
+    element: <OrdersReady />,
+    loader: ({ request, params }) => {
+      return getData(urlOrders)
     },
-    {
-        path: '/kitchen/active',
-        element: <Kitchen />,
-        loader: ({ request, params}) =>{
-            return getData(urlOrders)
-        }
+  },
+  {
+    path: '/kitchen/active',
+    element: <Kitchen />,
+    loader: ({ request, params }) => {
+      return getData(urlOrders)
     },
-    {
-        path: '/kitchen/prepared',
-        element: <PreparedContainer />,
-        loader: ({ request, params}) =>{
-            return getData(urlOrders)
-        }
+  },
+  {
+    path: '/kitchen/prepared',
+    element: <PreparedContainer />,
+    loader: ({ request, params }) => {
+      return getData(urlOrders)
     },
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <RouterProvider router={router} />
-    </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
