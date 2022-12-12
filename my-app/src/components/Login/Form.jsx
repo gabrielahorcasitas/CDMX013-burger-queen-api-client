@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import {  useState } from 'react'
 import axios from 'axios'
-function Form() {
+function Form({handleAccount}) {
     let navigate = useNavigate()
 
     const [email, setEmail] = useState('')
@@ -24,7 +24,8 @@ function Form() {
             .then((result) => {
                 let users = true
                 result.data.forEach((user) => {
-                    if (user.password === password && user.email === email) {
+                    if ( user.email === email) {
+                        handleAccount(user)
                         localStorage.setItem('UserId', JSON.stringify(user.auth));
                         users = false
                         const role = user.role
