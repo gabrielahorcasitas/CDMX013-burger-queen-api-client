@@ -8,7 +8,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import getData from "../../getData";
 
-function Kitchen(){
+function Kitchen({handleAccount}){
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
     const [orderReady, setOrderReady] = useState(useLoaderData());
     const [idOrder, setIdOrder] = useState('');
@@ -36,7 +36,7 @@ function Kitchen(){
 
     return(
     <> 
-    <NavBars/>
+    <NavBars handleAccount={handleAccount}/>
     <div className="body-active-order">
     <Headers/>
     <div>

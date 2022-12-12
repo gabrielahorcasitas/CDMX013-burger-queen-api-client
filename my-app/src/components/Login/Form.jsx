@@ -26,7 +26,6 @@ function Form({handleAccount}) {
                 result.data.forEach((user) => {
                     if ( user.email === email) {
                         handleAccount(user)
-                        localStorage.setItem('UserId', JSON.stringify(user.auth));
                         users = false
                         const role = user.role
                         switch (role) {

@@ -10,7 +10,7 @@ import ModalAddProduct from './AdminModals/ModalAddProduct'
 import ModalDeleteProduct from './AdminModals/ModalDeleteProduct'
 import ModalEditProduct from './AdminModals/ModalEditProduct'
 
-function Products() {
+function Products({handleAccount}) {
     const [isAddProduct, openAddProduct, closeAddProduct] = useModal(false)
     const [isEditProduct, openEditProduct, closeEditProduct] = useModal(false)
     const [isOpenDeleteProduct, openDeleteProduct, closeDeleteProduct] =
@@ -80,7 +80,7 @@ function Products() {
 
     return (
         <>
-            <NavBars />
+            <NavBars handleAccount={handleAccount}/>
 
             <ModalAddProduct isOpen={isAddProduct} close={closeAddProduct} 
             addProducts={addProducts} setAddProducts={setAddProducts}

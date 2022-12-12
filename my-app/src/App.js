@@ -33,51 +33,45 @@ export default function App() {
     
     const routerAuth = createBrowserRouter([
  
-        {
-            path: '/',
-            element: <LoginView handleAccount={handleAccount} />,
-            loader: ({ request, params }) => {
-                return getData(urlUsers)
-            },
-        },
+     
         {
             path: '/admin/partners',
-            element: <Partners />,
+            element: <Partners handleAccount={handleAccount}/>,
             loader: ({ request, params }) => {
                 return getData(urlUsers)
             }
         },
         {
             path: '/admin/products',
-            element: <Products />,
+            element: <Products handleAccount={handleAccount}/>,
             loader: ({ request, params }) => {
                 return getData(urlProducts)
             },
         },
         {
             path: '/waiters/new_order',
-            element: <WaitersLayout />,
+            element: <WaitersLayout user={user} handleAccount={handleAccount}/>,
             loader: ({ request, params }) => {
                 return getData(urlProducts)
             },
         },
         {
             path: '/waiters/ready',
-            element: <OrdersReady />,
+            element: <OrdersReady handleAccount={handleAccount} />,
             loader: ({ request, params }) => {
                 return getData(urlOrders)
             },
         },
         {
             path: '/kitchen/active',
-            element: <Kitchen />,
+            element: <Kitchen handleAccount={handleAccount}/>,
             loader: ({ request, params}) =>{
                 return getData(urlOrders)
             }
         },
         {
             path: '/kitchen/prepared',
-            element: <PreparedContainer />,
+            element: <PreparedContainer handleAccount={handleAccount} />,
             loader: ({ request, params}) =>{
                 return getData(urlOrders)
             }
