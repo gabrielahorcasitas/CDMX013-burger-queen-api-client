@@ -2,15 +2,17 @@ import NavBars from "../NavBars";
 import Headers from "../Headers";
 import Orders from "./Orders";
 import { useModal } from "../useModal";
-import {useLoaderData} from "react-router-dom";
+import {useLoaderData, useRevalidator} from "react-router-dom";
 import ModalConfirmKitchen from "./KitchenModals/ModalConfirmKitchen";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 import getData from "../../getData";
 
 function Kitchen({handleAccount}){
+    const revalidator = useRevalidator();
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
-    const [orderReady, setOrderReady] = useState(useLoaderData());
+    const data = useLoaderData();
+    const [orderReady, setOrderReady] = useState(data);
     const [idOrder, setIdOrder] = useState('');
     const [editOrder, setEditOrder] = useState({
         userId: '',
@@ -22,6 +24,18 @@ function Kitchen({handleAccount}){
         dataProcessedStr: '',
         dataProcessedMil: '',
     });
+
+    useEffect(() => {
+        setOrderReady(data)
+    }, [data])
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            revalidator.revalidate();
+        }, 5000);
+
+        return () => clearInterval(id);
+    }, []);
   
     function editState(){
         const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
@@ -30,7 +44,7 @@ function Kitchen({handleAccount}){
         .then(async (result) => {
             const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
             closeOrderReady()
-            return setOrderReady(dataProducts)
+            revalidator.revalidate();
         })
        }
 
