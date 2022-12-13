@@ -1,0 +1,465 @@
+/* Predefined properties*/
+:root {
+    --colorBg: #fddc9b;
+    --colorNavBar: #f63522;
+    --colorBoxBg: #fff2ec;
+    --colorBrownTables: #693b17;
+    --colorBrown: #773f2f;
+    --colorYellow: #fac74f;
+    --colorWhiteish: #fffeec;
+    --logotypeFont: 'Chewy';
+    --principalFont: 'Alegreya Sans', sans-serif;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+#root {
+    display: flex;
+    flex-direction: row;
+    width: 113rem;
+    height: 75rem;
+    background-color: var(--colorBg);
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0.1rem solid var(--colorBrownTables);
+    border-radius: 0.5rem;
+    width: 10.1rem;
+    height: 5rem;
+    font-size: 4rem;
+}
+.count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.9rem;
+    height: 4.7rem;
+    background-color: var(--colorBg);
+    color: var(--colorBrownTables);
+}
+.increment,
+.decrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 3.4rem;
+    height: 5rem;
+    background-color: var(--colorBrownTables);
+    color: var(--colorWhiteish);
+}
+
+.increment {
+    border-radius: 0.2rem 0 0 0.2rem;
+}
+
+.decrement {
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+
+.tableMenu {
+    width: 42rem;
+    height: 64rem;
+    background-color: var(--colorWhiteish);
+    border: 0.5rem solid var(--colorNavBar);
+    border-radius: 2rem;
+    font-weight: bold;
+    font-family: var(--principalFont);
+    color: var(--colorBrown);
+    font-size: 15rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+.container-bar {
+    background-color: var(--colorNavBar);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10rem;
+    height: 75rem;
+    border-radius: 0 3rem 3rem 0;
+}
+.logo-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 9rem;
+    height: 10rem;
+    margin-top: 2rem;
+}
+.burger-letters,
+.queen-letters {
+    width: 9rem;
+    height: 5rem;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+td {
+    font-size: 3rem;
+    width: 14rem;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.table-menu-header {
+    display: flex;
+    background-color: var(--colorBrownTables);
+    font: var(--logotypeFont);
+    font-family: 'Chewy', cursive;
+    font-size: 10rem;
+    color: var(--colorWhiteish);
+    align-self: flex-start;
+    border-radius: 1.5rem 1.5rem 0 0;
+    width: 42rem;
+    padding-left: 1rem;
+}
+
+table {
+    border-spacing: 0;
+}
+
+.menu-waiter-table-body,
+.ticket-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 46rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+}
+.menu-waiter-table-body::-webkit-scrollbar {
+    display: none;
+}
+.ticket-body::-webkit-scrollbar {
+    display: none;
+}
+
+.burger-logo-menu {
+    width: 5rem;
+    height: 6rem;
+    opacity: 60%;
+    
+}
+.tr-menu{
+    display: flex;
+    align-content: center;
+    margin: 0;
+}
+.container-logo-burger {
+    display: flex;
+    justify-content: flex-end;
+    width: 38rem;
+    margin-top: 0;
+    align-items: center;
+}
+.container-ticketbuttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 42rem;
+    margin-top: 0;
+}
+.logo-table-box {
+    display: flex;
+    align-content: center;
+    width: 42rem;
+    height: 8rem;
+    bottom: 0.1rem;
+}
+.new-order,
+.log-out {
+    width: 7rem;
+    height: 7rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.ready {
+    width: 4.8rem;
+    height: 4.2rem;
+    align-self: center;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.menu-letters {
+    color: var(--colorBoxBg);
+    font-size: 2rem;
+    font-family: 'Chewy', cursive;
+    text-decoration-color: white;
+}
+.menu-btns-box{
+    width: 10rem;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#log-out-box {
+    margin-bottom: 2rem;
+}
+
+#log-out-box:hover {
+    background-color: var(--colorYellow);
+}
+
+.menu-btns-box:hover {
+    cursor: pointer;
+    background-color: var(--colorYellow);
+}
+
+.body-new-order {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 103rem;
+    height: 8rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.role-letters {
+    font-family: 'Chewy', cursive;
+    color: var(--colorNavBar);
+    font-size: 5rem;
+    height: 6rem;
+}
+
+.choose-table-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 12rem;
+    margin-left: 5rem;
+}
+
+.input-table {
+    border: 0.2rem solid var(--colorBrownTables);
+    border-radius: 0.9rem;
+    margin-left: 2rem;
+}
+.input-table::-webkit-outer-spin-button,
+.input-table::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-table,
+.choose-table-letter {
+    height: 4rem;
+    width: 6rem;
+    margin-top: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: var(--principalFont);
+    color: var(--colorBrownTables);
+}
+
+.menu-hour-bottons {
+    width: 24rem;
+    height: 6.7rem;
+    margin-left: 15rem;
+    margin-right: 10rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.8rem;
+}
+
+.menu-bf {
+    width: 4.3rem;
+    height: 4.3rem;
+}
+
+.menu-dinner {
+    width: 4rem;
+    height: 4rem;
+}
+
+.menu-bf-box,
+.menu-dinner-box,
+.menu-bf-box-off,
+.menu-dinner-box-off {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 6.5rem;
+    border: 0.2rem solid var(--colorNavBar);
+}
+.menu-bf-box-off {
+    background-color: var(--colorWhiteish);
+    border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.menu-bf-box {
+    background-color: var(--colorNavBar);
+    border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.menu-dinner-box {
+    background-color: var(--colorNavBar);
+    border-radius: 0 0.6rem 0.6rem 0;
+}
+.menu-dinner-box-off {
+    background-color: var(--colorWhiteish);
+    border-radius: 0 0.6rem 0.6rem 0;
+}
+.bf-letters,
+.dinner-letters,
+.bf-letters-off,
+.dinner-letters-off {
+    font-size: 2rem;
+    font-family: 'Chewy', cursive;
+}
+
+.bf-letters {
+    color: var(--colorBoxBg);
+}
+.bf-letters-off {
+    color: var(--colorNavBar);
+}
+.dinner-letters {
+    color: var(--colorWhiteish);
+}
+.dinner-letters-off {
+    color: var(--colorNavBar);
+}
+.tables-menu-ticket {
+    display: flex;
+    flex-direction: row;
+}
+
+.tableTicket {
+    width: 42rem;
+    height: 64rem;
+    background-color: var(--colorWhiteish);
+    border: 0.5rem solid var(--colorBrown);
+    border-radius: 2rem;
+    font-weight: bold;
+    font-family: var(--principalFont);
+    color: var(--colorBrown);
+    font-size: 15rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+.table-ticket-header {
+    display: flex;
+    font: var(--logotypeFont);
+    font-family: 'Chewy', cursive;
+    font-size: 10rem;
+    color: var(--colorBrown);
+    align-self: center;
+    justify-content: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+    width: 42rem;
+}
+
+.confirm-order-buttons-cell{
+    display: flex;
+    width: 42rem;
+    justify-content: space-around;
+}   
+
+
+.confirm-order-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 42rem;
+    height: 7rem;
+    justify-content: space-around;
+}
+
+.button-cancel-order,
+.button-confirm-order {
+    width: 18.3rem;
+    height: 5.6rem;
+    background-color: var(--colorNavBar);
+    border: none;
+    border-radius: 1.6rem;
+    color: var(--colorWhiteish);
+    font-family: 'Chewy', cursive;
+    font-size: 3.6rem;
+}
+
+.ticket-total-box {
+    width: 42rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3.5rem;
+}
+
+.ticket-total {
+    color: var(--colorBrown);
+    font-family: 'Chewy', cursive;
+    font-size: 3.6rem;
+    border-top: solid;
+}
+
+.ticket-body {
+    display: flex;
+    flex-direction: column;
+}
+.delivered{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 4rem;
+  background-color: #48BF53;;
+  border: 2px solid #48BF53;;
+  border-radius: 1.6rem;
+  font: var(--logotypeFont);
+  font-family: 'Chewy', cursive;
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: var(--colorWhiteish);
+ align-self: flex-end;
+}
+.msg-total-price-ready{
+    font: var(--principalFont);
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--colorNavBar);
+
+}
+.td-waiters-ready{
+    font-size: 3rem;
+    width: 14rem;
+    word-wrap: break-word;
+    text-align: initial;
+}
+.mgs-box-waiters-ready{
+    display: flex;
+    flex-direction: column;
+    font: var(--principalFont);
+    font-size: 4rem;
+    margin-left: 11rem;
+    width: 33rem;
+    justify-content: space-between;
+}
+.container-order-ready{
+    display: flex;
+    flex-direction: row;
+    width: 80rem;
+    margin-left: 6rem;
+    justify-content: space-around;
+}
