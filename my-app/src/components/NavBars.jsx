@@ -16,17 +16,12 @@ function NavBars({handleAccount}) {
     
     let navigate = useNavigate()
     function handleNavigate() {
-        navigate('/')
         handleAccount(null)
-        
-       
-      
+        navigate('/')
     }
-
 
     const location = useLocation()
     let content
-
 
     if (location.pathname === '/waiters/new_order' || 
     location.pathname === '/waiters/ready') {
