@@ -1,26 +1,19 @@
-function PreparedWaiters({
-  order,
-  openOrderDelivered,
-  setIdOrder,
-  setEditOrderDelivered,
-}) {
-  const productValue = Object.values(order)
-  const products = productValue[2]
-  let total = 0
+function PreparedWaiters({order, openOrderDelivered, 
+  setIdOrder, setEditOrderDelivered }) {
+    const productValue= Object.values(order);
+    const products = productValue[2];
+    let total = 0;
+   
+    let productData =[];
+     products.forEach((element, index )=> {
+     const itemPrice = element.product.price*element.quantity;
+     total = itemPrice+total;
+      productData.push(<div className="box-cout-product-waiters" key={index}>
+        <p className="product-qtys-waiters" >({element.quantity}) {element.name}</p>
+        <p className="product-qtys-waiters" >${element.product.price}</p>
+        </div>)
+     });
 
-  let productData = []
-  products.forEach((element) => {
-    const itemPrice = element.product.price * element.quantity
-    total = itemPrice + total
-    productData.push(
-      <div className="box-cout-product-waiters" key={element.product.id}>
-        <p className="product-qtys-waiters">
-          ({element.quantity}) {element.name}
-        </p>
-        <p className="product-qtys-waiters">${element.product.price}</p>
-      </div>
-    )
-  })
 
   function sendId() {
     openOrderDelivered()

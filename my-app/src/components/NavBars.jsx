@@ -12,11 +12,17 @@ import products from '../images/products.png'
 import NavBar from './Waiters/NavBar'
 import { useLocation } from 'react-router-dom'
 
-function NavBars() {
+function NavBars({handleAccount}) {
+    
     let navigate = useNavigate()
     function handleNavigate() {
         navigate('/')
+        handleAccount(null)
+        
+       
+      
     }
+
 
     const location = useLocation()
     let content
@@ -165,6 +171,7 @@ function NavBars() {
                             className="log-out"
                             src={logout}
                             alt="log-out"
+                            onClick={handleNavigate}
                         ></img>
                         <label className="menu-letters">Log Out</label>
                     </div>

@@ -2,14 +2,10 @@ function Prepared({ order }) {
   const productValue = Object.values(order)
   const products = productValue[2]
 
-  let productData = []
-  products.forEach((element) => {
-    productData.push(
-      <p className="product-qtys" key={element.product.id}>
-        ({element.quantity}) {element.name}
-      </p>
-    )
-  })
+  let productData =[];
+   products.forEach((element, index) => {
+    productData.push(<p className="product-qtys" key={index}>({element.quantity}) {element.name}</p>)
+   });
 
   const prepatationTime = (
     (order.dataProcessedMil - order.dataEntryMil) /
