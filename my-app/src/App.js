@@ -9,6 +9,7 @@ import getData from './getData'
 import Kitchen from './components/Kitchen/Kitchen'
 import PreparedContainer from './components/Kitchen/PreparedContainer'
 import OrdersReady from './components/Waiters/OrdersReady'
+import ErrorLayout from './ErrorLayout'
 
     const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
     const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
@@ -29,7 +30,13 @@ export default function App() {
             loader: ({ request, params }) => {
                 return getData(urlUsers)
             },
-        }])
+        },
+        {
+            path: '*',
+            element: < ErrorLayout handleAccount={handleAccount} />,
+            
+        },
+    ])
     
     const routerAuth = createBrowserRouter([
  
