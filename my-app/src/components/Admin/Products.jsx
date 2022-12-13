@@ -5,7 +5,7 @@ import { useModal } from '../useModal'
 import { useLoaderData } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import getData from '../../getData'
+import {getData,deleteOneProduct} from '../../serviceApi'
 import ModalAddProduct from './AdminModals/ModalAddProduct'
 import ModalDeleteProduct from './AdminModals/ModalDeleteProduct'
 import ModalEditProduct from './AdminModals/ModalEditProduct'
@@ -39,10 +39,7 @@ function Products({handleAccount}) {
     const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
 
     function deleteProduct() {
-        axios
-            .delete(
-                `https://6372d80a348e947299fdd17b.mockapi.io/products/${idModal}`
-            )
+        deleteOneProduct(idModal)
             .then(async () => {
                 const dataProducts = await getData(urlProducts)
                 setFilteredProducts(dataProducts)
@@ -50,6 +47,7 @@ function Products({handleAccount}) {
                 return setProducts(dataProducts)
             })
     }
+
     function postProduct(event) {
         event.preventDefault()
         axios.post(urlProducts, addProducts).then((resp) => {

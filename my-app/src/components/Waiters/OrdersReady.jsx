@@ -6,7 +6,7 @@ import PreparedTableWaiters from "./PreparedTableWaiters";
 import ModalConfirmDelivered from "./WaitersModals/ModalConfirmDelivered";
 import { useModal } from "../useModal";
 import axios from "axios";
-import getData from "../../getData";
+import {getData} from "../../serviceApi";
 
 function OrdersReady ({handleAccount}){
     const revalidator = useRevalidator();
