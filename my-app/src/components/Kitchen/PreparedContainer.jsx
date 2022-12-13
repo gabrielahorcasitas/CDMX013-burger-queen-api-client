@@ -6,13 +6,13 @@ import ModalConfirmKitchen from "./KitchenModals/ModalConfirmKitchen";
 import {useState} from 'react';
 import {useLoaderData} from 'react-router-dom'
 
-function PreparedContainer (){
+function PreparedContainer ({handleAccount}){
     const[isOrderReady, openOrderReady, closeOrderReady]=useModal(false);
     const [orderReady, setOrderReady] = useState(useLoaderData());
 
     return(
     <> 
-    <NavBars/>
+    <NavBars handleAccount={handleAccount}/>
     <div className="body-active-order">
     <Headers/>
     <div>
