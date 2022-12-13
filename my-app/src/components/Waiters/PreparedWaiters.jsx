@@ -5,12 +5,12 @@ function PreparedWaiters({order, openOrderDelivered,
     let total = 0;
    
     let productData =[];
-     products.forEach(element => {
+     products.forEach((element, index )=> {
      const itemPrice = element.product.price*element.quantity;
      total = itemPrice+total;
-      productData.push(<div className="box-cout-product-waiters">
-        <p className="product-qtys-waiters" key={element.id}>({element.quantity}) {element.name}</p>
-        <p className="product-qtys-waiters" key={element.id}>${element.product.price}</p>
+      productData.push(<div className="box-cout-product-waiters" key={index}>
+        <p className="product-qtys-waiters" >({element.quantity}) {element.name}</p>
+        <p className="product-qtys-waiters" >${element.product.price}</p>
         </div>)
      });
 

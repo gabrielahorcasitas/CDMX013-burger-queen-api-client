@@ -1,0 +1,43 @@
+:root{
+    --logotypeFont: 'Chewy';
+}
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+.error-msg-box{
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    justify-items: center;
+    width: 113rem;
+    height: 74rem;
+    font-size: 10rem;
+   
+    gap: 2rem;
+   
+    color:  #f63522;
+    font-family: 'Chewy', cursive;
+
+}
+.potato-fire{
+    width: 50rem;
+    height: 50rem;
+    border-radius: 4.5rem;
+
+}
+.button-return{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16.4rem;
+    height: 5.6rem;
+    background-color: var(--colorNavBar);
+    border: 2px solid var(--colorNavBar);
+    border-radius: 1.6rem;
+    font: var(--logotypeFont);
+    font-family: 'Chewy', cursive;
+    font-weight: 400;
+    font-size: 4.8rem;
+    color: var(--colorWhiteish);
+  }

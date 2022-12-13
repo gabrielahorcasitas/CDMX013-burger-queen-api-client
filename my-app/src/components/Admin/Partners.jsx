@@ -11,7 +11,7 @@ import ModalAddPartner from './AdminModals/ModalAddPartner'
 import ModalDeletePartner from './AdminModals/ModalDeletePartner'
 import ModalEditPartner from './AdminModals/ModalEditPartner'
 
-function Partners() {
+function Partners({handleAccount}) {
     const [isAddPartner, openAddPartner, closeAddPartner] = useModal(false)
     const [isEditPartner, openEditPartner, closeEditPartner] = useModal(false)
     const [isOpenDeletePartner, openDeletePartner, closeDeletePartner] =
@@ -83,7 +83,7 @@ function Partners() {
     }
     return (
         <>
-            <NavBars />
+            <NavBars handleAccount={handleAccount}/>
     
             <ModalAddPartner isOpen={isAddPartner}
                 close={closeAddPartner} addPartners={addPartners}

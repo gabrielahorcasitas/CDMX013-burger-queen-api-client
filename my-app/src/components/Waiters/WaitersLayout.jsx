@@ -11,7 +11,7 @@ import ModalConfirmOrder from "./WaitersModals/ModalConfirmOrder";
 import ModalConfirmCancel from "./WaitersModals/ModalConfirmCancel";
 import axios from "axios";
 
-function WaitersLayout(){
+function WaitersLayout({user, handleAccount}){
   const products= useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -34,11 +34,7 @@ function WaitersLayout(){
     return quantities;
   });
 
-  const[userName, setUserName] = useState(()=> {
-    const savedItem = localStorage.getItem('UserId');
-    const parsedItem = JSON.parse(savedItem);
-    return parsedItem || "";
-  });
+  const[userName, setUserName] = useState(user.auth);
 
   const [text, setText] = useState('');
 
@@ -95,7 +91,7 @@ function saveOrder() {
 
   return (
     <>
-    <NavBars/>
+    <NavBars handleAccount={handleAccount}/>
     <div className="body-new-order">
     <Headers text={text} setText = {setText}/>
     <div className="tables-menu-ticket">
