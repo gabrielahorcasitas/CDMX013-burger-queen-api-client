@@ -8,7 +8,7 @@ import { useModal } from "../useModal";
 import axios from "axios";
 import getData from "../../getData";
 
-function OrdersReady (){
+function OrdersReady ({handleAccount}){
     const revalidator = useRevalidator();
     const data = useLoaderData()
     const [orderReady, setOrderReady] = useState(data);
@@ -50,7 +50,7 @@ function OrdersReady (){
     
 return (
     <>
-    <NavBars/>
+    <NavBars handleAccount={handleAccount}/>
     <div className="body-active-order">
     <Headers/>
     <div>

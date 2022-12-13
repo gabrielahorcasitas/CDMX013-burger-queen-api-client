@@ -11,19 +11,19 @@ import PreparedContainer from './components/Kitchen/PreparedContainer'
 import OrdersReady from './components/Waiters/OrdersReady'
 import ErrorLayout from './ErrorLayout'
 
-    const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
-    const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
-    const urlOrders = "https://6372d80a348e947299fdd17b.mockapi.io/orders";
+const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
+const urlProducts = 'https://6372d80a348e947299fdd17b.mockapi.io/products'
+const urlOrders = "https://6372d80a348e947299fdd17b.mockapi.io/orders";
 
 export default function App() {
-    const [user,setUser]=useState(null)
+    const [user, setUser] = useState(null)
 
-    const handleAccount=(userAuth)=>{
+    const handleAccount = (userAuth) => {
         setUser(userAuth)
     }
 
     const routerNoAuth = createBrowserRouter([
- 
+
         {
             path: '/',
             element: <LoginView handleAccount={handleAccount} />,
@@ -34,30 +34,29 @@ export default function App() {
         {
             path: '*',
             element: < ErrorLayout handleAccount={handleAccount} />,
-            
+
         },
     ])
-    
+
     const routerAuth = createBrowserRouter([
- 
-     
+
         {
             path: '/admin/partners',
-            element: <Partners handleAccount={handleAccount}/>,
+            element: <Partners handleAccount={handleAccount} />,
             loader: ({ request, params }) => {
                 return getData(urlUsers)
             }
         },
         {
             path: '/admin/products',
-            element: <Products handleAccount={handleAccount}/>,
+            element: <Products handleAccount={handleAccount} />,
             loader: ({ request, params }) => {
                 return getData(urlProducts)
             },
         },
         {
             path: '/waiters/new_order',
-            element: <WaitersLayout user={user} handleAccount={handleAccount}/>,
+            element: <WaitersLayout user={user} handleAccount={handleAccount} />,
             loader: ({ request, params }) => {
                 return getData(urlProducts)
             },
@@ -71,25 +70,25 @@ export default function App() {
         },
         {
             path: '/kitchen/active',
-            element: <Kitchen handleAccount={handleAccount}/>,
-            loader: ({ request, params}) =>{
+            element: <Kitchen handleAccount={handleAccount} />,
+            loader: ({ request, params }) => {
                 return getData(urlOrders)
             }
         },
         {
             path: '/kitchen/prepared',
             element: <PreparedContainer handleAccount={handleAccount} />,
-            loader: ({ request, params}) =>{
+            loader: ({ request, params }) => {
                 return getData(urlOrders)
             }
         },
     ])
-    
-    
 
-  return (
-         <>
-         {user?<RouterProvider router={routerAuth} />:<RouterProvider router={routerNoAuth} />}
-         </>
-  )
+
+
+    return (
+        <>
+            {user ? <RouterProvider router={routerAuth} /> : <RouterProvider router={routerNoAuth} />}
+        </>
+    )
 }
