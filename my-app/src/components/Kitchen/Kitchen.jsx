@@ -5,8 +5,7 @@ import { useModal } from "../useModal";
 import { useLoaderData, useRevalidator } from "react-router-dom";
 import ModalConfirmKitchen from "./KitchenModals/ModalConfirmKitchen";
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import {getData} from "../../serviceApi";
+import {getData, putOneOrder} from "../../serviceApi";
 
 function Kitchen({ handleAccount }) {
 
@@ -39,11 +38,11 @@ function Kitchen({ handleAccount }) {
     }, []);
 
     function editState() {
-        const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
-        axios.put(urlOrders, {
+        const updateOrder = {
             ...editOrder, status: 'done', dataProcessedStr: new Date().toLocaleString('en-GB', { hour12: false }),
             dataProcessedMil: new Date().getTime()
-        })
+        }
+        putOneOrder(idOrder, updateOrder )
             .then(async (result) => {
                 const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
                 closeOrderReady()
