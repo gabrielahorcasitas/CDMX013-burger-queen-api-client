@@ -7,7 +7,11 @@ function  PreparedTableWaiters ({orderReady, openOrderDelivered,
   let ordersContainer = ''  ;
 
   if (orderReady !== undefined) {
-    const sentOrders = orderReady.filter((order) => order.status === 'done');
+    const sentOrders = orderReady.filter((order) => order.status === 'done').sort((a, b) => a.dataProcessedMil
+    - b.dataProcessedMil
+    );
+ 
+
     ordersContainer = sentOrders.map((order) => {
      return( <PreparedWaiters
       order={order}

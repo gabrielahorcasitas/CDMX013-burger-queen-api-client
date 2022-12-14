@@ -5,8 +5,7 @@ import PartnersTable from './PartnersTable'
 import { useModal } from '../useModal'
 import { useState, useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
-import axios from 'axios'
-import getData from '../../getData'
+import {deleteOneUser, getData, postOneUser, putOneUser }from '../../serviceApi'
 import ModalAddPartner from './AdminModals/ModalAddPartner'
 import ModalDeletePartner from './AdminModals/ModalDeletePartner'
 import ModalEditPartner from './AdminModals/ModalEditPartner'
@@ -41,10 +40,7 @@ function Partners({handleAccount}) {
     const urlUsers = 'https://6372d80a348e947299fdd17b.mockapi.io/users'
 
     function deletePartner() {
-        axios
-            .delete(
-                `https://6372d80a348e947299fdd17b.mockapi.io/users/${idModal}`
-            )
+        deleteOneUser(idModal)
             .then(async () => {
                 const dataUsers = await getData(urlUsers)
                 setFilteredPartners(dataUsers)
@@ -55,11 +51,7 @@ function Partners({handleAccount}) {
 
     function putPartner(event) {
         event.preventDefault()
-        axios
-            .put(
-                `https://6372d80a348e947299fdd17b.mockapi.io/users/${idModal}`,
-                addPartners
-            )
+        putOneUser(idModal,addPartners)
             .then(async (resp) => {
                 const dataUsers = await getData(urlUsers)
                 setFilteredPartners(dataUsers)
@@ -70,7 +62,7 @@ function Partners({handleAccount}) {
 
     function postPartner(event) {
         event.preventDefault()
-        axios.post(urlUsers, addPartners).then((resp) => {
+        postOneUser(addPartners).then((resp) => {
             setAddPartners({
                 email: '',
                 password: '',
@@ -81,6 +73,7 @@ function Partners({handleAccount}) {
             return setPartners([...partners, resp.data])
         })
     }
+    
     return (
         <>
             <NavBars handleAccount={handleAccount}/>
