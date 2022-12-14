@@ -38,11 +38,9 @@ function OrdersReady ({handleAccount}){
   
    
     function editStateDelivered(){
-        const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
         const updateOrder = {...editOrderDelivered, status : 'delivered'}
-        putOneOrder (updateOrder)
+        putOneOrder (idOrder, updateOrder)
         .then(async (result) => {
-            const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
             closeOrderDelivered()
             revalidator.revalidate();
         })
