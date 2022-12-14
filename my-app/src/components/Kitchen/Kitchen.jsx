@@ -6,7 +6,7 @@ import { useLoaderData, useRevalidator } from "react-router-dom";
 import ModalConfirmKitchen from "./KitchenModals/ModalConfirmKitchen";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import getData from "../../getData";
+import {getData} from "../../serviceApi";
 
 function Kitchen({ handleAccount }) {
 

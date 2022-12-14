@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import axios from 'axios'
-
+import { getUsers } from '../../serviceApi'
 function Form({handleAccount}) {
     let navigate = useNavigate()
 
@@ -20,8 +19,7 @@ function Form({handleAccount}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios
-            .get('https://6372d80a348e947299fdd17b.mockapi.io/users')
+        getUsers()
             .then((result) => {
                 let users = true
                 result.data.forEach((user) => {
