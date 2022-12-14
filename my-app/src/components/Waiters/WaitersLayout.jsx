@@ -9,7 +9,7 @@ import { useModal } from "../useModal";
 import { useSearchParams } from 'react-router-dom';
 import ModalConfirmOrder from "./WaitersModals/ModalConfirmOrder"; 
 import ModalConfirmCancel from "./WaitersModals/ModalConfirmCancel";
-import axios from "axios";
+import { postOneOrder } from "../../serviceApi";
 
 function WaitersLayout({user, handleAccount}){
   const products= useLoaderData();
@@ -62,7 +62,7 @@ function resetQty() {
   })
 };
 
-const urlOrders = "https://6372d80a348e947299fdd17b.mockapi.io/orders";
+
 const productsEntries = Object.entries(productQty);
 
 function saveOrder() {
@@ -77,10 +77,11 @@ function saveOrder() {
        arrProducts.push({ quantity, name, product:obj});
      } 
   })
-});
-  axios.post(urlOrders, {...order,
-      table: text,
-      products: arrProducts})
+  });
+  const newOrder = {...order,
+    table: text,
+    products: arrProducts}
+    postOneOrder( newOrder)
       .then((resp) => {
         setText('')
         document.querySelector(".input-table").value=''

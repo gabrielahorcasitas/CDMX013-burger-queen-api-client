@@ -5,8 +5,7 @@ import Headers from "../Headers";
 import PreparedTableWaiters from "./PreparedTableWaiters";
 import ModalConfirmDelivered from "./WaitersModals/ModalConfirmDelivered";
 import { useModal } from "../useModal";
-import axios from "axios";
-import {getData} from "../../serviceApi";
+import {getData, putOneOrder} from "../../serviceApi";
 
 function OrdersReady ({handleAccount}){
     const revalidator = useRevalidator();
@@ -40,7 +39,8 @@ function OrdersReady ({handleAccount}){
    
     function editStateDelivered(){
         const urlOrders = `https://6372d80a348e947299fdd17b.mockapi.io/orders/${idOrder}`;
-        axios.put(urlOrders, {...editOrderDelivered, status : 'delivered'})
+        const updateOrder = {...editOrderDelivered, status : 'delivered'}
+        putOneOrder (updateOrder)
         .then(async (result) => {
             const dataProducts = await getData("https://6372d80a348e947299fdd17b.mockapi.io/orders/");
             closeOrderDelivered()
