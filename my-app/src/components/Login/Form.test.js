@@ -1,11 +1,19 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+//import * as router from 'react-router'
 
 import Form from './Form'
 
 import axios from 'axios'
-jest.mock('axios')
+jest.mock('axios');
 
+
+const mockedUsedNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+   useNavigate: () => mockedUsedNavigate, 
+ }));
 
 describe('LogIn component renders correctly', () => {
     test('Should render inputs and button on Form layout', () => {
@@ -60,11 +68,37 @@ describe('submit is called when click on start button', () => {
         const spy = jest.spyOn(axios, 'get')
         render(
             <MemoryRouter>
-                {' '}
-                <Form />
+            {' '}
+            <Form />
             </MemoryRouter>
         )
         fireEvent.click(screen.getByText('Start'))
         expect(spy).toHaveBeenCalled()
     });
 });
+
+// describe('onSubmit should navigate', () => {
+
+//     test('it should navigate to correct route', () => {
+//         axios.get = jest.fn(() => Promise.resolve({ data: [] }))
+//         const spy = jest.spyOn(axios, 'get')
+//         render(
+//             <MemoryRouter>
+//                 {' '}
+//                 <Form />
+//             </MemoryRouter>
+//         )
+    
+//         const emailInputElement = screen.getByRole('textbox');
+//         const testValueEmail = 'admin_karla@gmail.com';
+//         fireEvent.change(emailInputElement, {target: {value: testValueEmail} });
+
+//         const passwordInputElement = screen.getByRole('textbox');
+//         const testValuePswd = '123456';
+//         fireEvent.change(passwordInputElement, {target: {value: testValuePswd} });
+
+//         fireEvent.click(screen.getByText('Start'));
+//         expect(spy).toHaveBeenCalled()
+//         expect(mockedUsedNavigate).toHaveBeenCalled();
+//     });
+// });
