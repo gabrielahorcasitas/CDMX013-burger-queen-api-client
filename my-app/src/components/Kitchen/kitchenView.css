@@ -16,13 +16,14 @@
   box-sizing: border-box;
   font-size: 62.5%;
 }
-#root {
+.container-kitchen {
     display: flex;
     flex-direction: row;
     width: 113rem;
     height: 75rem;
     background-color: var(--colorBg);
 }
+
 .body-active-order{
   display: flex;
   flex-direction: column;

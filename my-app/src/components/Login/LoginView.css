@@ -21,7 +21,6 @@
     width: 113rem;
     height: 75rem;
 } */
-
 .main-container{
     width: 113rem;
     height: 75rem;
@@ -120,24 +119,21 @@
 
 @media (min-width: 1180px) {
 
-    /* #root {
-        width: 118rem;
-        height: 65rem;
-    } */
-
     .main-container{
-        width: 118rem;
-        height: 50rem;
+
+        width: 136rem;
+        height: 62.5rem;
+        gap:10rem;
     }
 
     .burgerLogo{
-        width: 55rem;
-        height: 55rem;
+        width: 70rem;
+        height: auto;
     }
 
     .container-form{
-        width: 40rem;
-        height: 50rem;
+        width: 45rem;
+        height: 55rem;
         background-color: var(--colorBoxBg);
         margin-top: 3rem;
         margin-right: 3rem;
@@ -151,7 +147,7 @@
 
     #logIn-logo{
         margin-top: 4rem;
-        font-size: 4.8rem;
+        font-size: 6rem;
     }
 
     .fields-form{
@@ -159,7 +155,7 @@
     }
 
     .input-form{
-        width: 32rem;
+        width: 38rem;
         height: 5rem;
         font-size: 2rem;
         padding: 1rem;
@@ -168,7 +164,7 @@
     #start{
         width: 15rem;
         height: 6rem;
-        margin-top: 4rem;
+        margin-top: 6rem;
         font-size: 4rem;
     }
     

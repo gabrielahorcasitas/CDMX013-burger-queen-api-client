@@ -47,7 +47,7 @@ function OrdersReady ({handleAccount}){
        }
     
 return (
-    <>
+    <div className='container-waiters'>
     <NavBars handleAccount={handleAccount}/>
     <div className="body-active-order">
     <Headers/>
@@ -57,7 +57,7 @@ return (
     <ModalConfirmDelivered idOrder={idOrder} setIdOrder={setIdOrder} isOpen={isOpenOrderDelivered} close={closeOrderDelivered} editStateDelivered={editStateDelivered} />
     </div>
     </div>
-    </>
+    </div>
 )
 }
 
