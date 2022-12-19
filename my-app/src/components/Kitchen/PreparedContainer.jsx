@@ -26,7 +26,7 @@ function PreparedContainer ({handleAccount}){
 
 
     return(
-        <>
+        <><div className="container-kitchen">
             <NavBars handleAccount={handleAccount} />
             <div className="body-active-order">
                 <Headers />
@@ -35,6 +35,7 @@ function PreparedContainer ({handleAccount}){
                 </div>
             </div>
             <ModalConfirmKitchen isOrderReady={isOrderReady} closeOrderReady={closeOrderReady} />
+            </div>
         </>)
 }
 export default PreparedContainer;

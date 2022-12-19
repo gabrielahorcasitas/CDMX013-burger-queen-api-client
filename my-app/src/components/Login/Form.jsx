@@ -26,6 +26,7 @@ function Form({handleAccount}) {
                 result.data.forEach((user) => {
                     if ( user.email === email) {
                         handleAccount(user)
+                        console.log('test')
                         users = false
                         const role = user.role
                         switch (role) {

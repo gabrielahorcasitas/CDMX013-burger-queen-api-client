@@ -72,7 +72,7 @@ function Products({handleAccount}) {
     }
 
     return (
-        <>
+        <div className='container-waiters'>
             <NavBars handleAccount={handleAccount}/>
 
             <ModalAddProduct isOpen={isAddProduct} close={closeAddProduct} 
@@ -99,7 +99,7 @@ function Products({handleAccount}) {
                     setAddProducts={setAddProducts}
                 />
             </div>
-        </>
+        </div>
     )
 }
 
