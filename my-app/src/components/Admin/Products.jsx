@@ -103,4 +103,4 @@ function Products({handleAccount}) {
     )
 }
 
-export default Products
+export default Products;
