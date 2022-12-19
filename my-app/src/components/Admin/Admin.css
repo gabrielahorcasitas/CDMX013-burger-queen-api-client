@@ -1,3 +1,5 @@
+/*header*/
+
 header {
     width: 103rem;
     height: 8rem;
@@ -36,6 +38,9 @@ header {
     width: 3.2rem;
     height: 3.8rem;
 }
+
+/*table*/
+
 #partners-header {
     width: auto;
 }
