@@ -96,5 +96,5 @@ describe('submit is called when click on start button', () => {
         expect(mockedUsedNavigate).toHaveBeenCalledTimes(1)
         
         });
-    });
+    
 

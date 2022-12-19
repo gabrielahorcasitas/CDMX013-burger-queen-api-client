@@ -132,3 +132,17 @@ a.active {
     width: 75rem;
     
 }
+
+@media (min-width: 1180px){
+    #partners {
+        /* height: 50rem; */
+        margin-left: 6rem;
+    }
+
+    .menu-partners-table-body, .menu-products-table-body {
+        min-height: 29rem;
+        max-height: 29rem;
+       
+    }
+    
+}
