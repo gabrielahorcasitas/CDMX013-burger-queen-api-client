@@ -30,7 +30,7 @@ if (location.pathname === '/waiters/new_order') {
             </Header>
 } else if(location.pathname === '/kitchen/active' || location.pathname === '/kitchen/prepared'){
     content = <Header>
-                <header>
+                <header className="header-chefs">
                  <label className="role-letters-chefs">Chefs </label>;
                 </header>
              </Header>
