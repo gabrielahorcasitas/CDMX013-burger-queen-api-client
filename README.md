@@ -25,7 +25,7 @@ We start the design process searching and reviewing the web apps of various fast
 
 The color pallette choosen, according to users, it's associated with the field of restaurants, food, and even the sensation of hunger.
 
-![Color Pallette BQ](READMEImg/pallette_BQ2.png)
+![Color Pallette BQ](./readmeImages/pallette_BQ2.png)
 
 Being an app developed as SPA (Mobile First), prioritizing its use in tablet-type devices, we considered the legibility of the text, without leaving behind the style of the later, the size of the buttons and inputs, and the intuitiveness of its navigation.
 
@@ -35,11 +35,11 @@ A total of eight user stories were written
 
 ### 1. Login
 
-![Login Layout](READMEImg/LogIn.png)
+![Login Layout](./readmeImages/LogIn.png)
 
 ### 2. A waiter can create and cancel a new order 
 
-![Waiters Layout](READMEImg/WaitersMenu.png)
+![Waiters Layout](./readmeImages/WaitersMenu.png)
 
 ### 3. Chefs can view pending orders chronologically 
 
@@ -47,27 +47,27 @@ A total of eight user stories were written
 
 ### 4. Chefs can mark the orders as done once completed
 
-![Chefs Layout](READMEImg/ChefsReceived.png)
+![Chefs Layout](./readmeImages/ChefsReceived.png)
 
 ### 5. Chefs can visualize the orders done but pending to be delivered to the clients by the waiters
 
-![Chefs Layout](READMEImg/ChefsDelivered.png)
+![Chefs Layout](./readmeImages/ChefsDelivered.png)
 
 ### 6. Waiters can visualize the orders ready to be served and mark them as delivered to the clients 
 
-![Waiters Layout](READMEImg/WaitersOrdersReady.png)
+![Waiters Layout](./readmeImages/WaitersOrdersReady.png)
 
 ### 7. Administrators can visualize, create, edit, and delete members of the staff
 
-![Administrators Layout](READMEImg/AdminPar.png)
+![Administrators Layout](./readmeImages/AdminPar.png)
 
 An example of the modals design for the confirmation of actions in the app, is the modal of adding a partner
 
-![Administrators Modal](READMEImg/ModalExample.png)
+![Administrators Modal](./readmeImages/ModalExample.png)
 
 ### 8. Administrators can visualize, create, edit, and delete products in the warehouse
 
-![Administrators Layout](READMEImg/AdminProd.png)
+![Administrators Layout](./readmeImages/AdminProd.png)
 
 ## 4. Final Version
 
@@ -79,7 +79,7 @@ The final functional version of this app can be visited [here](https://burgerque
 
 For the unit test in this project, we started to get acquainted with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). For this reason, we only test the login layout in this iteration of the project.
 
-![Unit Tests](READMEImg/UnitTests.png)
+![Unit Tests](./readmeImages/UnitTests.png)
 
 ## 6. Credits and Acknowledgments
 
