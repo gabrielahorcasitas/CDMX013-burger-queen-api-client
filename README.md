@@ -23,10 +23,6 @@ To make the mentioned functionalities possible, we consumed data from a RESTful 
 
 We start the design process searching and reviewing the web apps of various fast-food restaurants for inspiration.
 
-We designed a striking logo, alluding to the business concept.
-
-![Logo Burger Queen](./readmeImages/logoReadme.png)
-
 The color pallette choosen, according to users, it's associated with the field of restaurants, food, and even the sensation of hunger.
 
 ![Color Pallette BQ](./readmeImages/pallette_BQ2.png)
@@ -37,7 +33,7 @@ Being an app developed as SPA (Mobile First), prioritizing its use in tablet-typ
 
 A total of eight user stories were written
 
-### 1. Login
+### 1. Login for business members, including administrators, chefs and waiters
 
 ![Login Layout](./readmeImages/LogIn.png)
 
