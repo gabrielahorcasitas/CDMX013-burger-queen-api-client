@@ -25,7 +25,7 @@ We start the design process searching and reviewing the web apps of various fast
 
 We designed a striking logo, alluding to the business concept.
 
-1[Logo Burger Queen](./readmeImages/logoReadme.png)
+![Logo Burger Queen](./readmeImages/logoReadme.png)
 
 The color pallette choosen, according to users, it's associated with the field of restaurants, food, and even the sensation of hunger.
 
