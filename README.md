@@ -23,6 +23,10 @@ To make the mentioned functionalities possible, we consumed data from a RESTful 
 
 We start the design process searching and reviewing the web apps of various fast-food restaurants for inspiration.
 
+We designed a striking logo, alluding to the business concept.
+
+1[Logo Burger Queen](./readmeImages/logoReadme.png)
+
 The color pallette choosen, according to users, it's associated with the field of restaurants, food, and even the sensation of hunger.
 
 ![Color Pallette BQ](./readmeImages/pallette_BQ2.png)
@@ -61,7 +65,7 @@ A total of eight user stories were written
 
 ![Administrators Layout](./readmeImages/AdminPar.png)
 
-An example of the modals design for the confirmation of actions in the app, is the modal of adding a partner
+An example of the modals design for the confirmation of actions in the app, it's the modal of adding a partner
 
 ![Administrators Modal](./readmeImages/ModalExample.png)
 
@@ -85,6 +89,6 @@ For the unit test in this project, we started to get acquainted with [React Test
 
 This project was developed by Gabriela C. Horcasitas, Karla P. Cruz and Lizbeth A. López.
 
-We want to thank the entire Laboratoria team for the support they gave us in our first steps as developers.
+We want to thank the entire Laboratoria's team for the support they gave us in our first steps as developers.
 
 We would also like to acknowledge the effort and care of the student community of Laboratoria's MEX013 generation, their bolster up was crucial on our journey.
